@@ -1,0 +1,32 @@
+.\" Modified from man(1) of FreeBSD, the NetBSD mdoc.template and mdoc.samples
+.\" See man mdoc for the short list of editing options
+.Dd August 27, 2023     \" DATE
+.Dt gnostr-node 1           \" Program name and manual section number
+.Os unix-like
+.Sh NAME                 \" Section Header - required - don't modify
+.Nm gnostr-gnode
+.\" The following lines are read in generating the apropos database.
+.\" Use only key words here as the database is built on these.
+.\" Use .Nm macro to designate other names for the documented program.
+.Sh SYNOPSIS             \" Section Header - required - don't modify
+.Nm
+<port>                 \" Arguments
+.Sh DESCRIPTION          \" Section Header - required - don't modify
+Invoke a nostr relay
+.Sh FILES                \" Files used or created by the program
+.Bl -tag -width "/usr/local/bin/gnostr-gnode        " -compact
+.It Pa /usr/local/bin/gnostr-gnode
+binary executable
+.El                      \" Ends the list
+.Sh SEE ALSO
+.\" List links in ascending order by section, alphabetically within a section.
+.\" Please do not reference files that do not exist without filing a bug report
+.Xr gnostr-test 1 ,
+
+.Xr gnostr-relays 1 ,
+
+.Xr gnostr-get-relays 1 ,
+
+.Xr gnostr-set-relays 1 ,
+
+.Xr gnostr-proxy 1
