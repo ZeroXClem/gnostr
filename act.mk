@@ -7,7 +7,7 @@ ubuntu-git:submodules docker-start## 	run act in .github
 ubuntu-jq:submodules docker-start## 	run act in .github
 	#we use -b to bind the repo to the act container
 	#in the single dep instances we reuse (-r) the container
-	@export $(cat ~/gh_token.txt) && act -v  -W $(PWD)/.github/workflows/$@.yml
+	@export $(cat ~/gh_token.txt) && act -vb -W $(PWD)/.github/workflows/$@.yml
 ubuntu-nostcat:submodules docker-start## 	run act in .github
 	#we use -b to bind the repo to the act container
 	#in the single dep instances we reuse (-r) the container

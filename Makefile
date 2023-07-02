@@ -100,7 +100,7 @@ deps/jq/.git:
 #.PHONY:deps/jq/.libs/libjq.a
 deps/jq/.libs/libjq.a:deps/jq/.git
 	cd deps/jq && \
-		autoreconf -fi && ./configure  --disable-maintainer-mode &&  make install
+		autoreconf -fi && ./configure --disable-maintainer-mode && make
 ##libjq.a
 ##	cp $< deps/jq/libjq.a .
 libjq.a: deps/jq/.libs/libjq.a## 	libjq.a
