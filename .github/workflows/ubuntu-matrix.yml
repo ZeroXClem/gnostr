@@ -56,9 +56,9 @@ jobs:
       - name: make act-install
         run: |
           make act-install
-      #- name: make gnostr
-      #  run: |
-      #    make gnostr
+      - name: make gnostr
+        run: |
+          sudo make install
       - name: Save deps
         id: cache-deps-save
         uses: actions/cache/save@v3
