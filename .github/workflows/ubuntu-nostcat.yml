@@ -51,8 +51,8 @@ jobs:
           toolchain: stable
       - name: rustup
         run: |
-          printenv && sudo apt-get update && \
-          apt-get install -y python3 make autoconf automake libtool build-essential tclsh gettext libcurl4-openssl-dev
+          sudo apt-get update
+          sudo apt-get install -y python3 make autoconf automake libtool build-essential tclsh gettext libcurl4-openssl-dev
           touch ~/GH_ACT_TOKEN.txt
           rustup default stable
           source "$HOME/.cargo/env"
