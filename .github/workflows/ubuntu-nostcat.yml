@@ -32,7 +32,10 @@ jobs:
         with:
           access_token: ${{ github.token }}
       - uses: actions/checkout@v3
-        fetch-depth: 0
+        with:
+          fetch-depth: '0'
+          submodules: 'true'
+          set-safe-directory: 'true'
       - name: Restore deps
         id: cache-deps-restore
         uses: actions/cache/restore@v3
