@@ -66,7 +66,6 @@ wss://nostr.cheeserobot.org
 wss://nostr.thank.eu
 wss://relay.hamnet.io
 wss://nostr.shroomslab.net
-wss://nostr.truckenbucks.com
 wss://zee-relay.fly.dev
 wss://nostr.blockpower.capital
 wss://nostr.sidnlabs.nl
@@ -155,6 +154,7 @@ wss://relay.nostrgraph.net
 wss://rsslay.nostr.moe
 wss://nostrex.fly.dev
 wss://relay.roli.social
+wss://brb.io
 wss://eden.nostr.land
 wss://nostr-verified.wellorder.net
 wss://nostr.noones.com
@@ -205,7 +205,6 @@ wss://relay.mrjohnsson.net
 wss://mastodon.cloud/api/v1/streaming
 wss://nostr.256k1.dev
 wss://relay.beta.fogtype.com
-wss://frighteningdeafeningagent.nailuogg.repl.co
 wss://rsslay.ch3n2k.com
 wss://nostr.rocketnode.space
 wss://relay.nostr.bg
