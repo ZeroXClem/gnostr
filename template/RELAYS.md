@@ -155,6 +155,7 @@ wss://relay.nostrgraph.net
 wss://rsslay.nostr.moe
 wss://nostrex.fly.dev
 wss://relay.roli.social
+wss://brb.io
 wss://eden.nostr.land
 wss://nostr-verified.wellorder.net
 wss://nostr.noones.com
@@ -209,6 +210,7 @@ wss://frighteningdeafeningagent.nailuogg.repl.co
 wss://rsslay.ch3n2k.com
 wss://nostr.rocketnode.space
 wss://relay.nostr.bg
+wss://nostr.malin.onl
 wss://nostr.reamde.dev
 wss://nostr-01.dorafactory.org
 wss://nostr.globals.fans
