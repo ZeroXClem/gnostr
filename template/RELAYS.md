@@ -80,6 +80,7 @@ wss://spore.ws
 wss://relay.727whisky.com
 wss://nostr.ch3n2k.com
 wss://nostr.island.network
+wss://relay.1bps.io
 wss://relay.nostrview.com
 wss://relay.nostromo.social
 wss://offchain.pub
@@ -212,7 +213,6 @@ wss://nostr.malin.onl
 wss://nostr.reamde.dev
 wss://nostr-01.dorafactory.org
 wss://nostr.globals.fans
-wss://nostr.oxtr.dev
 wss://nostr.fractalized.ovh
 wss://nostr.primz.org
 wss://relay.nostr.au
