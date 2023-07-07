@@ -40,3 +40,5 @@ libtclstub.a
 libsecp256k1.a
 
 nostcat
+
+bin
