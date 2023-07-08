@@ -81,7 +81,7 @@ submodules:deps/secp256k1/.git deps/jq/.git deps/git/.git deps/nostcat/.git deps
 #	@git submodule update --init --recursive
 	@git submodule foreach --recursive "git submodule update --init --recursive; git fetch --all"
 
-.PHONY:deps/secp256k1/config.log
+#.PHONY:deps/secp256k1/config.log
 .ONESHELL:
 deps/secp256k1/.git:
 deps/secp256k1/include/secp256k1.h: deps/secp256k1/.git
