@@ -145,18 +145,19 @@ tcl-unix:libtclstub.a## 	deps/tcl/unix/libtclstub.a
 
 deps/nostcat/.git:
 	@devtools/refresh-submodules.sh $(SUBMODULES)
-.PHONY:deps/nostcat
+#.PHONY:deps/nostcat
 deps/nostcat:deps/nostcat/.git
+deps/nostcat/target/release/nostcat:deps/nostcat
 	cd deps/nostcat && \
 		make cargo-install
-deps/nostcat/target/release/nostcat:deps/nostcat
-	cp $@ nostcat
 #.PHONY:deps/nostcat
 ##nostcat
 ##deps/nostcat deps/nostcat/.git
 ##	cd deps/nostcat; \
 ##	make cargo-install
 nostcat:deps/nostcat/target/release/nostcat## 	nostcat
+	@cp $@ nostcat || echo "" 2>/dev/null
+
 deps/hyper-sdk/.git:
 	@devtools/refresh-submodules.sh $(SUBMODULES)
 deps/hyper-nostr/.git:
@@ -187,7 +188,7 @@ gnostr-relay:initialize $(HEADERS) $(GNOSTR_RELAY_OBJS) $(ARS)## 	make gnostr-re
 	git submodule update --init --recursive
 	$(CC) $(CFLAGS) $(GNOSTR_RELAY_OBJS) $(ARS) -o $@
 
-.PHONY:gnostr-xor
+#.PHONY:gnostr-xor
 gnostr-xor: $(HEADERS) $(GNOSTR_XOR_OBJS) $(ARS)## 	make gnostr-xor
 ##gnostr-xor
 	echo $@
