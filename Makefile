@@ -11,8 +11,14 @@ HEADERS                                 = $(HEADER_INCLUDE)/hex.h \
                                          $(HEADER_INCLUDE)/config.h \
                                          $(HEADER_INCLUDE)/sha256.h \
                                          deps/secp256k1/include/secp256k1.h
-PREFIX                                 ?= /usr/local
-export PREFIX
+
+ifneq ($(prefix),)
+	PREFIX                             :=$(prefix)
+else
+	PREFIX                             :=/usr/local
+endif
+#export PREFIX
+
 ARS                                     = libsecp256k1.a libgit.a libjq.a libtclstub.a
 
 SUBMODULES                              = deps/secp256k1 deps/git deps/jq deps/nostcat deps/hyper-nostr deps/tcl deps/hyper-sdk
