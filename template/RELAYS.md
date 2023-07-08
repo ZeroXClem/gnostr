@@ -7,6 +7,7 @@ wss://nostr.slothy.win
 wss://global.relay.red
 wss://sg.qemura.xyz
 wss://relay.stoner.com
+wss://nostr.swiss-enigma.ch
 wss://nos.lol
 wss://relay.nostr.band
 wss://nostr-relay.derekross.me
