@@ -49,6 +49,6 @@
 [submodule "deps/hyper-sdk"]
 	path = deps/hyper-sdk
 	url = https://github.com/gnostr-org/hyper-sdk.git
-	branch = node_modules
+	branch = 38db824808be1bffae4ca3bc76051aaadc1b6b82
 	ignore = dirty
 	shallow = true

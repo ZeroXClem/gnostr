@@ -32,13 +32,9 @@ jobs:
       - name: "make submodules"
         run: |
           make submodules
-      - name: "make libsecp256k1.a"
+      - name: "make all gnostr"
         run: |
-          make libsecp256k1.a
-          make submodules
-      - name: "make libgit.a"
-        run: |
-          make libgit.a
+          make all gnostr
           #- name: "mv ./gnostr"
           #  run: |
           #    mv ./gnostr ./gnostr-$RUNNER_OS-$RUNNER_ARCH
