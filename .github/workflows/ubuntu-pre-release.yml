@@ -22,6 +22,10 @@ jobs:
         with:
           access_token: ${{ github.token }}
       - uses: actions/checkout@v3
+        with:
+          fetch-depth: '0'
+          submodules: 'recursive'
+          set-safe-directory: 'true'
       - name: "printenv"
         run: |
           printenv
@@ -35,13 +39,13 @@ jobs:
       - name: "make libgit.a"
         run: |
           make libgit.a
-					#- name: "mv ./gnostr"
-      		#  run: |
-      		#    mv ./gnostr ./gnostr-$RUNNER_OS-$RUNNER_ARCH
-      		#    shasum -a 256 gnostr-$RUNNER_OS-$RUNNER_ARCH > gnostr-$RUNNER_OS-$RUNNER_ARCH.sha256.txt
-      		#    #mv nostril-query nostril-query-$RUNNER_OS-$RUNNER_ARCH
-      		#    #shasum -a 256 nostril-query-$RUNNER_OS-$RUNNER_ARCH > nostril-query-$RUNNER_OS-$RUNNER_ARCH.sha256.txt
-      		#    ls -a
+          #- name: "mv ./gnostr"
+          #  run: |
+          #    mv ./gnostr ./gnostr-$RUNNER_OS-$RUNNER_ARCH
+          #    shasum -a 256 gnostr-$RUNNER_OS-$RUNNER_ARCH > gnostr-$RUNNER_OS-$RUNNER_ARCH.sha256.txt
+          #    #mv nostril-query nostril-query-$RUNNER_OS-$RUNNER_ARCH
+          #    #shasum -a 256 nostril-query-$RUNNER_OS-$RUNNER_ARCH > nostril-query-$RUNNER_OS-$RUNNER_ARCH.sha256.txt
+          #    ls -a
       - name: Save state
         run: echo "{name}={value}" >> $GITHUB_STATE
       - name: Set output
