@@ -7,9 +7,6 @@ wss://nostr.slothy.win
 wss://global.relay.red
 wss://sg.qemura.xyz
 wss://relay.stoner.com
-wss://nostr.einundzwanzig.space
-wss://nostr.cercatrova.me
-wss://nostr.swiss-enigma.ch
 wss://nos.lol
 wss://relay.nostr.band
 wss://nostr-relay.derekross.me
@@ -42,7 +39,6 @@ wss://nostr.satsophone.tk
 wss://nostr.easydns.ca
 wss://relay.dwadziesciajeden.pl
 wss://nostr-pub1.southflorida.ninja
-wss://relay.orangepill.dev
 wss://nostr.600.wtf
 wss://nostr.mouton.dev
 wss://e.nos.lol
@@ -66,6 +62,7 @@ wss://nostr.cheeserobot.org
 wss://nostr.thank.eu
 wss://relay.hamnet.io
 wss://nostr.shroomslab.net
+wss://nostr.truckenbucks.com
 wss://zee-relay.fly.dev
 wss://nostr.blockpower.capital
 wss://nostr.sidnlabs.nl
@@ -120,7 +117,6 @@ wss://nostr-eu.coinfundit.com
 wss://nproxy.kristapsk.lv
 wss://nostr.topeth.info
 wss://nostr.klabo.blog
-wss://puravida.nostr.land
 wss://nostr.bitcoiner.social
 wss://relay.orange-crush.com
 wss://nostr.screaminglife.io
@@ -154,7 +150,6 @@ wss://relay.nostrgraph.net
 wss://rsslay.nostr.moe
 wss://nostrex.fly.dev
 wss://relay.roli.social
-wss://brb.io
 wss://eden.nostr.land
 wss://nostr-verified.wellorder.net
 wss://nostr.noones.com
@@ -205,6 +200,7 @@ wss://relay.mrjohnsson.net
 wss://mastodon.cloud/api/v1/streaming
 wss://nostr.256k1.dev
 wss://relay.beta.fogtype.com
+wss://frighteningdeafeningagent.nailuogg.repl.co
 wss://rsslay.ch3n2k.com
 wss://nostr.rocketnode.space
 wss://relay.nostr.bg
@@ -212,6 +208,7 @@ wss://nostr.malin.onl
 wss://nostr.reamde.dev
 wss://nostr-01.dorafactory.org
 wss://nostr.globals.fans
+wss://nostr.oxtr.dev
 wss://nostr.fractalized.ovh
 wss://nostr.primz.org
 wss://relay.nostr.au
@@ -224,7 +221,6 @@ wss://nostr.lorentz.is
 wss://relay.nostrified.org
 wss://nostr.ownscale.org
 wss://nostr.rocks
-wss://nostr.orangepill.dev
 wss://nostr.pinkanki.org
 wss://relay.s3x.social
 wss://relay.primal.net
