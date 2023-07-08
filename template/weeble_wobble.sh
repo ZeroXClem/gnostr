@@ -128,12 +128,16 @@ fi
 if [[ ! -z "$1" ]] || [[ ! -z "$2" ]]; then
     echo "content="$1
     content=$1
-    echo "counter="$2
+	echo "\n"
+    echo -e "counter="$2
+	echo "\n"
     counter=$2
 else
     echo "content="
     content=""
+	echo "\n"
     echo "counter="0
+	echo "\n"
     counter=0
 fi
 
@@ -141,24 +145,24 @@ while [[ $counter -lt $LENGTH ]]
     do
     #get_weeble_wobble
 	#test
-	nostril --sec $(echo -en "" | openssl dgst -sha256) | jq
+	gnostr --sec $(echo -en "" | openssl dgst -sha256 | sed 's/SHA2-256(stdin)= //g' ) | $(which jq)
     for relay in $RELAYS; do
-       echo "counter=$counter"
+       echo -e "counter=$counter\n"
        echo "randomBetweenAnswer=$randomBetweenAnswer"
 	   #secret=$(echo "$counter" | openssl dgst -sha256 && echo $secret | tr '[a-z]' '[A-Z]')
-	   secret=$(echo "$counter" | openssl dgst -sha256)
+	   secret=$(echo "$counter" | openssl dgst -sha256  | sed 's/SHA2-256(stdin)= //g'   )
        export secret
        echo "secret=$secret"
 
-       touch ./keys/$secret && echo $secret > ./keys/$secret
+	   touch $PWD/keys/$secret && echo $secret > $PWD/keys/$secret
        echo "$relay"
 
-       if hash nostril; then
+       if hash gnostr; then
            if hash nostcat; then
 
 			   #blob location/remote blob location
 			   #empty hash nostr profile "0"
-			   nostril --sec "$(echo -en "" | openssl dgst -sha256)" --kind 2 \
+			   gnostr --sec "$(echo -en "" | openssl dgst -sha256 | sed 's/SHA2-256(stdin)= //g'   )" --kind 2 \
 				   --envelope \
 				   --tag weeble/wobble $(get_weeble_wobble) \
 				   --tag weeble $(get_weeble) \
@@ -169,7 +173,7 @@ while [[ $counter -lt $LENGTH ]]
 				   --tag location "$relay/$(get_weeble_wobble)/(blob_hash)" \
 				   --created-at $(date +%s) #| $(which jq)
 
-			   nostril --sec "$secret" --kind 2 \
+			   gnostr --sec "$secret" --kind 2 \
 				   --envelope \
 				   --tag weeble/wobble $(get_weeble_wobble) \
 				   --tag weeble $(get_weeble) \
@@ -179,7 +183,7 @@ while [[ $counter -lt $LENGTH ]]
 				   --tag blob_hash "blob_hash" \
 				   --tag location "$relay/$(get_weeble_wobble)/(blob_hash)" \
 				   --created-at $(date +%s) #| $(which jq)
-			   nostril --sec $secret --kind 2 \
+			   gnostr --sec $secret --kind 2 \
 				   --envelope \
 				   --tag weeble/wobble $(get_weeble_wobble) \
 				   --tag weeble $(get_weeble) \
@@ -189,7 +193,7 @@ while [[ $counter -lt $LENGTH ]]
 				   --tag blob_hash "blob_hash" \
 				   --tag location "$relay/$(get_weeble_wobble)/(blob_hash)" \
 				   --created-at $(date +%s) | websocat $relay
-			   nostril --sec $secret --kind 2 \
+			   gnostr --sec $secret --kind 2 \
 				   --envelope \
 				   --tag weeble/wobble $(get_weeble_wobble) \
 				   --tag weeble $(get_weeble) \
@@ -204,9 +208,9 @@ while [[ $counter -lt $LENGTH ]]
                make -C deps/nostcat/ rustup-install cargo-install
            fi
        else
-           make nostril
+           make gnostr
        fi
-	   git diff RELAYS.md && git add RELAYS.md
+	   git diff $PWD/RELAYS.md && git add $PWD/RELAYS.md
 	   git commit -m "$PROJECT_NAME/$CURRENT_BRANCH: RELAYS.md" -- RELAYS.md && git push 2>/dev/null || echo
 	   get_relays
 	   get_time
