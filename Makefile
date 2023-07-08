@@ -79,7 +79,8 @@ dist: docs version## 	create tar distribution
 .PHONY:submodules
 submodules:deps/secp256k1/.git deps/jq/.git deps/git/.git deps/nostcat/.git deps/tcl/.git deps/hyper-sdk/.git deps/hyper-nostr/.git## 	refresh-submodules
 #	@git submodule update --init --recursive
-	@git submodule foreach --recursive "git submodule update --init --recursive; git fetch --all"
+	@git submodule foreach --recursive "git submodule update --init --recursive;"
+	@git submodule foreach --recursive "git fetch --all;"
 
 #.PHONY:deps/secp256k1/config.log
 .ONESHELL:
@@ -106,7 +107,7 @@ libsecp256k1.a: deps/secp256k1/.libs/libsecp256k1.a## libsecp256k1.a
 
 deps/jq/modules/oniguruma.git:
 	@devtools/refresh-submodules.sh $(SUBMODULES)
-	cd deps/jq/modules/oniguruma && ./autogen.sh && ./configure && make && make install
+	#cd deps/jq/modules/oniguruma && ./autogen.sh && ./configure && make && make install
 deps/jq/.git: deps/jq/modules/oniguruma.git
 #.PHONY:deps/jq/.libs/libjq.a
 deps/jq/.libs/libjq.a:deps/jq/.git
