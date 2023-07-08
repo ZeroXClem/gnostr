@@ -15,7 +15,7 @@ PREFIX                                 ?= /usr/local
 export PREFIX
 ARS                                     = libsecp256k1.a libgit.a libjq.a libtclstub.a
 
-SUBMODULES                              = deps/secp256k1 deps/git deps/jq deps/nostcat deps/hyper-nostr deps/tcl
+SUBMODULES                              = deps/secp256k1 deps/git deps/jq deps/nostcat deps/hyper-nostr deps/tcl deps/hyper-sdk
 
 VERSION                                :=$(shell cat version)
 export VERSION
@@ -71,7 +71,9 @@ dist: docs version## 	create tar distribution
 	##rsync -avzP dist/ charon:/www/cdn.jb55.com/tarballs/gnostr/
 
 .PHONY:submodules
-submodules:deps/secp256k1/.git deps/jq/.git deps/git/.git deps/nostcat/.git deps/tcl/.git## 	refresh-submodules
+submodules:deps/secp256k1/.git deps/jq/.git deps/git/.git deps/nostcat/.git deps/tcl/.git deps/hyper-sdk/.git deps/hyper-nostr/.git## 	refresh-submodules
+#	@git submodule update --init --recursive
+	@git submodule foreach --recursive "git submodule update --init --recursive; git fetch --all"
 
 .PHONY:deps/secp256k1/config.log
 .ONESHELL:
@@ -101,10 +103,11 @@ deps/jq/modules/oniguruma.git:
 	cd deps/jq/modules/oniguruma && ./autogen.sh && ./configure && make && make install
 deps/jq/.git:
 	@devtools/refresh-submodules.sh $(SUBMODULES)
-.PHONY:deps/jq/.libs/libjq.a
+#.PHONY:deps/jq/.libs/libjq.a
 deps/jq/.libs/libjq.a:deps/jq/.git deps/jq/modules/oniguruma.git
 	cd deps/jq && \
-		autoreconf -fi && ./configure --disable-maintainer-mode && make
+		autoreconf -fi && ./configure --disable-maintainer-mode && make all install && cd ../..
+	pushd deps/jq && autoreconf -fi && ./configure  --disable-maintainer-mode  && make all install && pushd
 ##libjq.a
 ##	cp $< deps/jq/libjq.a .
 libjq.a: deps/jq/.libs/libjq.a## 	libjq.a
@@ -137,17 +140,22 @@ tcl-unix:libtclstub.a## 	deps/tcl/unix/libtclstub.a
 
 deps/nostcat/.git:
 	@devtools/refresh-submodules.sh $(SUBMODULES)
+.PHONY:deps/nostcat
 deps/nostcat:deps/nostcat/.git
 	cd deps/nostcat && \
 		make cargo-install
 deps/nostcat/target/release/nostcat:deps/nostcat
 	cp $@ nostcat
-.PHONY:deps/nostcat
+#.PHONY:deps/nostcat
 ##nostcat
 ##deps/nostcat deps/nostcat/.git
 ##	cd deps/nostcat; \
 ##	make cargo-install
 nostcat:deps/nostcat/target/release/nostcat## 	nostcat
+deps/hyper-sdk/.git:
+	@devtools/refresh-submodules.sh $(SUBMODULES)
+deps/hyper-nostr/.git:
+	@devtools/refresh-submodules.sh $(SUBMODULES)
 
 %.o: %.c $(HEADERS)
 	@echo "cc $<"
