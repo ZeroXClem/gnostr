@@ -1,9 +1,9 @@
 CFLAGS                                  = -Wall -O2 -Ideps/secp256k1/include
 CFLAGS                                 += -I/include
 LDFLAGS                                 = -Wl -V
-OBJS                                    = sha256.o gnostr.o aes.o base64.o
-GNOSTR_GIT_OBJS                         = sha256.o aes.o base64.o gnostr-git.o
-GNOSTR_RELAY_OBJS                       = sha256.o aes.o base64.o gnostr-relay.o
+OBJS                                    = sha256.o gnostr.o       aes.o base64.o
+GNOSTR_GIT_OBJS                         = sha256.o gnostr-git.o   aes.o base64.o
+GNOSTR_RELAY_OBJS                       = sha256.o gnostr-relay.o aes.o base64.o
 GNOSTR_XOR_OBJS                         = gnostr-xor.o
 HEADER_INCLUDE                          = include
 HEADERS                                 = $(HEADER_INCLUDE)/hex.h \
@@ -80,7 +80,7 @@ dist: docs version## 	create tar distribution
 submodules:deps/secp256k1/.git deps/jq/.git deps/git/.git deps/nostcat/.git deps/tcl/.git deps/hyper-sdk/.git deps/hyper-nostr/.git## 	refresh-submodules
 #	@git submodule update --init --recursive
 	@git submodule foreach --recursive "git submodule update --init --recursive;"
-	@git submodule foreach --recursive "git fetch --all;"
+	#@git submodule foreach --recursive "git fetch --all;"
 
 #.PHONY:deps/secp256k1/config.log
 .ONESHELL:
@@ -108,7 +108,7 @@ libsecp256k1.a: deps/secp256k1/.libs/libsecp256k1.a## libsecp256k1.a
 deps/jq/modules/oniguruma.git:
 	@devtools/refresh-submodules.sh $(SUBMODULES)
 	#cd deps/jq/modules/oniguruma && ./autogen.sh && ./configure && make && make install
-deps/jq/.git: deps/jq/modules/oniguruma.git
+deps/jq/.git:#deps/jq/modules/oniguruma.git
 #.PHONY:deps/jq/.libs/libjq.a
 deps/jq/.libs/libjq.a:deps/jq/.git
 	cd deps/jq && \
@@ -233,6 +233,11 @@ clean:## 	remove gnostr *.o *.a gnostr.1
 ##	remove deps/hyper-nostr
 clean-hyper-nostr:## 	remove deps/hyper-nostr
 	rm -rf deps/hyper-nostr
+
+##clean-hyper-sdk
+##	remove deps/hypersdk
+clean-hyper-sdk:## 	remove deps/hyper-sdk
+	rm -rf deps/hyper-sdk
 
 ##clean-secp
 ##	remove deps/secp256k1

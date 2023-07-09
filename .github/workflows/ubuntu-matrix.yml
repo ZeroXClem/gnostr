@@ -34,7 +34,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: '0'
-          submodules: 'recursive'
+          submodules: 'true'
           set-safe-directory: 'true'
       - name: Restore deps
         id: cache-deps-restore
@@ -42,52 +42,47 @@ jobs:
         if: ${{ !env.ACT }}
         with:
           path: |
-            nostcat
-            deps/*/**.a
-            libjq.a
-            libgit.a
-            libtclstub.a
-            libsecp256k1.a
-            deps/jq/libjq.a
-            deps/git/libgit.a
-            deps/tcl/unix/libtclstub.a
-            deps/secp256k1/.libs/libsecp256k1.a
-            deps/jq/modules/oniguruma/src/.libs/libsecp256k1.a
-            deps/nostcat/target/release/nostcat
+            deps/jq
+            deps/git
+            deps/secp256k1
+            deps/hyper-sdk
+            deps/hyper-nostr
+            /root/.cargo
+            /root/.rustup
           key: ${{ runner.os }}-deps
 
-      - name: apt-get update and install
+      - uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+      - name: rustup
         run: |
-          printenv
-          apt-get update && apt-get install -y python3 make autoconf automake libtool build-essential tclsh gettext libcurl4-gnutls-dev
-          touch ~/GH_ACT_TOKEN.txt
-      - name: make submodules
-        run: |
-          echo
-          #make submodules
-      #- name: make act-install
+          sudo apt-get update
+          sudo apt-get install -y python3 make autoconf automake libtool build-essential tclsh gettext libcurl4-openssl-dev bash util-linux
+          touch ~/GITHUB_TOKEN.txt
+          #rustup default stable
+          #source "$HOME/.cargo/env"
+          #cd deps/nostcat && make cargo-install #--release --all-features
+
+      #- name: make clean-all
       #  run: |
-      #    make act-install
-      - name: make gnostr
+      #    make clean-all
+
+      - name: make all gnostr
         run: |
-          sudo make install
+          make libsecp256k1.a gnostr
+
       - name: Save deps
         id: cache-deps-save
         uses: actions/cache/save@v3
         if: ${{ !env.ACT }}
         with:
           path: |
-            nostcat
-            deps/*/**.a
-            libjq.a
-            libgit.a
-            libtclstub.a
-            libsecp256k1.a
-            deps/jq/libjq.a
-            deps/git/libgit.a
-            deps/tcl/unix/libtclstub.a
-            deps/secp256k1/.libs/libsecp256k1.a
-            deps/jq/modules/oniguruma/src/.libs/libsecp256k1.a
-            deps/nostcat/target/release/nostcat
+            deps/jq
+            deps/git
+            deps/secp256k1
+            deps/hyper-sdk
+            deps/hyper-nostr
+            /root/.cargo
+            /root/.rustup
           key: ${{ steps.cache-deps-restore.outputs.cache-primary-key }}
 

@@ -29,27 +29,35 @@ TRIPLET                                 :=aarch64-linux-gnu
 export TRIPLET
 endif
 
+ifeq ($(verbose),true)
+VERBOSE                                 :=-v
+else
+VERBOSE                                 :=
+endif
+export VERBOSE
+
 ifeq ($(reuse),true)
 REUSE                                   :=-r
 else
-REUSE                                   :=	
+REUSE                                   :=
 endif
 export REUSE
+
 ifeq ($(bind),true)
 BIND                                    :=-b
 else
-BIND                                    :=      
+BIND                                    :=
 endif
 export BIND
 
 ifeq ($(token),)
-GH_ACT_TOKEN                            :=$(shell cat ~/GH_ACT_TOKEN.txt || echo "0")
+GITHUB_TOKEN                            :=$(shell cat ~/GITHUB_TOKEN.txt || echo "0")
 else
-GH_ACT_TOKEN                            :=$(shell echo $(token))
+GITHUB_TOKEN                            :=$(shell echo $(token))
 endif
-export GH_ACT_TOKEN
+export GITHUB_TOKEN
 
-export $(cat ~/GH_ACT_TOKEN) && make act
+export $(cat ~/GITHUB_TOKEN) && make act
 
 PYTHON                                  := $(shell which python)
 export PYTHON
