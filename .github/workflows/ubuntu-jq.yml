@@ -43,6 +43,12 @@ jobs:
         with:
           path: |
             deps/jq
+            deps/git
+            deps/secp256k1
+            deps/hyper-sdk
+            deps/hyper-nostr
+            /root/.cargo
+            /root/.rustup
           key: ${{ runner.os }}-deps
 
       - name: apt-get update and install
@@ -67,7 +73,7 @@ jobs:
           #make -j8 && \
           #make check && \
           #make install
-          #touch ~/GITHUB_TOKEN.txt
+          touch ~/GITHUB_TOKEN.txt
       - name: make libjq.a
         run: |
           #pushd deps/jq && autoreconf -i && ./configure  --disable-maintainer-mode  && make all install && popd
@@ -79,5 +85,11 @@ jobs:
         with:
           path: |
             deps/jq
+            deps/git
+            deps/secp256k1
+            deps/hyper-sdk
+            deps/hyper-nostr
+            /root/.cargo
+            /root/.rustup
           key: ${{ steps.cache-deps-restore.outputs.cache-primary-key }}
 
