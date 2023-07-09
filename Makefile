@@ -107,12 +107,12 @@ libsecp256k1.a: deps/secp256k1/.libs/libsecp256k1.a## libsecp256k1.a
 
 deps/jq/modules/oniguruma.git:
 	@devtools/refresh-submodules.sh $(SUBMODULES)
-	#cd deps/jq/modules/oniguruma && ./autogen.sh && ./configure && make && make install
-deps/jq/.git:#deps/jq/modules/oniguruma.git
+	cd deps/jq/modules/oniguruma && ./autogen.sh && ./configure && make && make install
+deps/jq/.git:deps/jq/modules/oniguruma.git
 #.PHONY:deps/jq/.libs/libjq.a
 deps/jq/.libs/libjq.a:deps/jq/.git
 	cd deps/jq && \
-		autoreconf -fi && ./configure --disable-maintainer-mode && make all install && cd ../..
+		autoreconf -fi && ./configure --disable-maintainer-mode && make install && cd ../..
 ##libjq.a
 ##	cp $< deps/jq/libjq.a .
 libjq.a: deps/jq/.libs/libjq.a## 	libjq.a
