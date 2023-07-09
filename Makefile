@@ -113,7 +113,6 @@ deps/jq/.git:#deps/jq/modules/oniguruma.git
 deps/jq/.libs/libjq.a:deps/jq/.git
 	cd deps/jq && \
 		autoreconf -fi && ./configure --disable-maintainer-mode && make all install && cd ../..
-	pushd deps/jq && autoreconf -fi && ./configure  --disable-maintainer-mode  && make all install && pushd
 ##libjq.a
 ##	cp $< deps/jq/libjq.a .
 libjq.a: deps/jq/.libs/libjq.a## 	libjq.a
