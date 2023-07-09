@@ -152,10 +152,10 @@ help:##
 docker-start:
 ##docker-start
 ##	start docker on Linux or Darwin
-	@touch requirements.txt
+	@touch requirements.txt && $(PYTHON3) -m pip install -q -r requirements.txt
 	@test -d .venv || $(PYTHON3) -m virtualenv .venv
 	@( \
-	   source .venv/bin/activate; pip install -q -r requirements.txt; \
+	   . .venv/bin/activate; pip install -q -r requirements.txt; \
 	   python3 -m pip install -q pipenv \
 	   pip install -q --upgrade pip; \
 	);
@@ -198,6 +198,14 @@ report:##
 	@echo 'OS=${OS}'
 	@echo 'OS_VERSION=${OS_VERSION}'
 	@echo 'ARCH=${ARCH}'
+	@echo ''
+	@echo 'PYTHON=${PYTHON}'
+	@echo 'PYTHON2=${PYTHON2}'
+	@echo 'PYTHON3=${PYTHON3}'
+	@echo ''
+	@echo 'PIP=${PIP}'
+	@echo 'PIP2=${PIP2}'
+	@echo 'PIP3=${PIP3}'
 	@echo ''
 	@echo 'PYTHON_VENV=${PYTHON_VENV}'
 	@echo 'PYTHON3_VENV=${PYTHON3_VENV}'

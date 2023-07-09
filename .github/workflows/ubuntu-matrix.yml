@@ -51,22 +51,31 @@ jobs:
             /root/.rustup
           key: ${{ runner.os }}-deps
 
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: '0'
+          submodules: 'true'
+          set-safe-directory: 'true'
+
       - uses: actions-rs/toolchain@v1
         with:
           toolchain: stable
       - name: rustup
         run: |
           sudo apt-get update
-          sudo apt-get install -y python3 make autoconf automake libtool build-essential tclsh gettext libcurl4-openssl-dev bash util-linux
+          sudo apt-get install -y autoconf automake bash build-essential gettext libcurl4-openssl-dev libtool make python3 python3-pip util-linux zlib1g-dev
           touch ~/GITHUB_TOKEN.txt
 
-      - name: sudo make libsecp256k1.a
-        run: |
-          sudo make libsecp256k1.a
-
-      - name: make gnostr
-        run: |
-          make gnostr
+      #- name: git submodule update --init --recursive
+      #  run: |
+      #    git submodule update --init --recursive
+      ## post-checkout sequence
+      - run: make
+      - run: make help
+      - run: make docker-start
+      - run: make report
+      - run: make libsecp256k1.a
+      - run: make gnostr
 
       - name: Save deps
         id: cache-deps-save

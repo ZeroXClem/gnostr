@@ -19,7 +19,8 @@ else
 endif
 #export PREFIX
 
-ARS                                     = libsecp256k1.a libgit.a libjq.a libtclstub.a
+ARS                                    := libsecp256k1.a
+LIB_ARS                                := libsecp256k1.a libgit.a libjq.a libtclstub.a
 
 SUBMODULES                              = deps/secp256k1 deps/git deps/jq deps/nostcat deps/hyper-nostr deps/tcl deps/hyper-sdk
 
@@ -31,7 +32,7 @@ TAR                                    :=$(shell which tar)
 export TAR
 
 ##all:
-all: gnostr gnostr-git gnostr-relay gnostr-xor docs## 	make gnostr gnostr-git gnostr-relay gnostr-xor docs
+all: libsecp256k1.a libgit.a gnostr gnostr-git gnostr-relay gnostr-xor docs## 	make gnostr gnostr-git gnostr-relay gnostr-xor docs
 
 ##docs:
 ##	doc/gnostr.1 docker-start
@@ -106,7 +107,7 @@ libsecp256k1.a: deps/secp256k1/.libs/libsecp256k1.a## libsecp256k1.a
 
 
 deps/jq/modules/oniguruma.git:
-	@devtools/refresh-submodules.sh $(SUBMODULES)
+	devtools/refresh-submodules.sh deps/jq
 	cd deps/jq/modules/oniguruma && ./autogen.sh && ./configure && make && make install
 deps/jq/.git:deps/jq/modules/oniguruma.git
 #.PHONY:deps/jq/.libs/libjq.a
@@ -122,7 +123,9 @@ deps/git/.git:
 	@devtools/refresh-submodules.sh $(SUBMODULES)
 deps/git/libgit.a:deps/git/.git
 	cd deps/git && \
-		make install
+		make
+		#make all && \
+		#make install
 ##libgit.a
 ##	deps/git/libgit.a deps/git/.git
 ##	cd deps/git; \

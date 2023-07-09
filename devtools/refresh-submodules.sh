@@ -39,4 +39,6 @@ if [ "$(git submodule status "$@" | grep -c '^ ')" != $# ]; then
     git submodule sync "$@"
     rm -rf "$@"
     git submodule update --init --recursive "$@"
+else
+	git submodule foreach --recursive "git submodule update --init --recursive;"
 fi
