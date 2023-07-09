@@ -204,3 +204,6 @@ tag:## 	git tag & git push
 #-include nostcat.mk
 -include gnostr.mk
 -include act.mk
+
+# vim: set noexpandtab:
+# vim: set setfiletype make
