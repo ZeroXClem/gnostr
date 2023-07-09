@@ -261,8 +261,4 @@ clean-all:clean clean-hyper-nostr clean-secp clean-git clean-tcl clean-jq##
 ##clean-all
 ##	clean clean-hyper-nostr clean-secp clean-git clean-tcl clean-jq
 
-##tags 	ctags *.c *.h
-tags: fake
-	ctags *.c *.h
-
 .PHONY: fake
