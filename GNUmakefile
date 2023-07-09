@@ -150,6 +150,8 @@ help:##
 
 .ONESHELL:
 docker-start:
+##docker-start
+##	start docker on Linux or Darwin
 	@touch requirements.txt
 	@test -d .venv || $(PYTHON3) -m virtualenv .venv
 	@( \
