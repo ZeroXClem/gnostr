@@ -67,9 +67,9 @@ jobs:
       #  run: |
       #    make clean-all
 
-      - name: make all gnostr
+      - name: sudo make libsecp256k1.a gnostr
         run: |
-          make libsecp256k1.a gnostr
+          sudo make libsecp256k1.a gnostr
 
       - name: Save deps
         id: cache-deps-save
