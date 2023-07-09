@@ -79,7 +79,7 @@ dist: docs version## 	create tar distribution
 .PHONY:submodules
 submodules:deps/secp256k1/.git deps/jq/.git deps/git/.git deps/nostcat/.git deps/tcl/.git deps/hyper-sdk/.git deps/hyper-nostr/.git## 	refresh-submodules
 #	@git submodule update --init --recursive
-	@git submodule foreach --recursive "git submodule update --init --recursive;"
+	git submodule foreach --recursive "git submodule update --init --recursive;"
 	#@git submodule foreach --recursive "git fetch --all;"
 
 #.PHONY:deps/secp256k1/config.log
