@@ -194,6 +194,12 @@ report:##
 	@echo 'GIT_REPO_NAME=${GIT_REPO_NAME}'
 	@echo 'GIT_REPO_PATH=${GIT_REPO_PATH}'
 
+tag:## 	git tag & git push
+##tag
+##	git tag $(OS)-$(OS_VERSION)-$(ARCH)-$(shell date +%s)
+	@git tag $(OS)-$(OS_VERSION)-$(ARCH)-$(shell date +%s)
+	@git push -f --tags || echo "unable to push tags..."
+
 -include Makefile
 #-include nostcat.mk
 -include gnostr.mk
