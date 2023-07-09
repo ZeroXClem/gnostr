@@ -161,7 +161,7 @@ docker-start:
 	    while ! docker system info > /dev/null 2>&1; do\
 	    echo 'Waiting for docker to start...';\
 	    if [[ '$(OS)' == 'Linux' ]]; then\
-	     systemctl restart docker.service;\
+	     type -P systemctl && systemctl restart docker.service || type -P service && service restart docker;\
 	    fi;\
 	    if [[ '$(OS)' == 'Darwin' ]]; then\
 	     type -P docker && open --background -a /./Applications/Docker.app/Contents/MacOS/Docker;\
@@ -169,6 +169,22 @@ docker-start:
 	sleep 1;\
 	done\
 	)
+
+detect:
+##detect
+##	detect uname -s uname -m uname -p
+	@[[ '$(shell uname -s)' == 'Darwin' ]] && \
+		echo "is Darwin" || \
+		echo "not Darwin";
+	@[[ '$(shell uname -s)' == 'Linux'* ]] && \
+		echo "is Linux" || \
+		echo "not Linux";
+	@[[ '$(shell uname -m)' == 'x86_64' ]] && \
+		echo "is x86_64" || \
+		echo "not x86_64";
+	@[[ '$(shell uname -p)' == 'i386' ]]   && \
+		echo "is i386" || \
+		echo "not i386";
 
 .PHONY: report
 report:## 	
