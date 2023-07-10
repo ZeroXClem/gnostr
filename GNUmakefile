@@ -148,8 +148,10 @@ export GIT_REPO_PATH
 help:## 	
 	@sed -n 's/^##//p' ${MAKEFILE_LIST} | column -t -s ':' |  sed -e 's/^/ /'
 
+-include Makefile
+
 .ONESHELL:
-docker-start:
+docker-start:venv
 ##docker-start
 ##	start docker on Linux or Darwin
 	@touch requirements.txt && $(PYTHON3) -m pip install -q -r requirements.txt
@@ -230,9 +232,10 @@ tag:## 	git tag & git push
 	@git tag $(OS)-$(OS_VERSION)-$(ARCH)-$(shell date +%s)
 	@git push -f --tags || echo "unable to push tags..."
 
--include Makefile
+#-include Makefile
 #-include nostcat.mk
 -include gnostr.mk
+-include venv.mk
 -include act.mk
 
 # vim: set noexpandtab:

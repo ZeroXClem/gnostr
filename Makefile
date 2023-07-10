@@ -1,10 +1,10 @@
 CFLAGS                                  = -Wall -O2 -Ideps/secp256k1/include
 CFLAGS                                 += -I/include
 LDFLAGS                                 = -Wl -V
-OBJS                                    = sha256.o gnostr.o       aes.o base64.o
-GNOSTR_GIT_OBJS                         = sha256.o gnostr-git.o   aes.o base64.o
-GNOSTR_RELAY_OBJS                       = sha256.o gnostr-relay.o aes.o base64.o
-GNOSTR_XOR_OBJS                         = gnostr-xor.o
+OBJS                                    = gnostr.o       sha256.o aes.o base64.o libsecp256k1.a
+GNOSTR_GIT_OBJS                         = gnostr-git.o   sha256.o aes.o base64.o libgit.a
+GNOSTR_RELAY_OBJS                       = gnostr-relay.o sha256.o aes.o base64.o
+GNOSTR_XOR_OBJS                         = gnostr-xor.o   sha256.o aes.o base64.o libsecp256k1.a
 HEADER_INCLUDE                          = include
 HEADERS                                 = $(HEADER_INCLUDE)/hex.h \
                                          $(HEADER_INCLUDE)/random.h \
@@ -22,7 +22,8 @@ endif
 ARS                                    := libsecp256k1.a
 LIB_ARS                                := libsecp256k1.a libgit.a libjq.a libtclstub.a
 
-SUBMODULES                              = deps/secp256k1 deps/git deps/jq deps/nostcat deps/hyper-nostr deps/tcl deps/hyper-sdk
+SUBMODULES                              = deps/secp256k1
+SUBMODULES_MORE                         = deps/secp256k1 deps/git deps/jq deps/nostcat deps/hyper-nostr deps/tcl deps/hyper-sdk deps/act
 
 VERSION                                :=$(shell cat version)
 export VERSION
@@ -32,7 +33,8 @@ TAR                                    :=$(shell which tar)
 export TAR
 
 ##all:
-all: libsecp256k1.a libgit.a gnostr gnostr-git gnostr-relay gnostr-xor docs## 	make gnostr gnostr-git gnostr-relay gnostr-xor docs
+all: libsecp256k1.a gnostr gnostr-git gnostr-relay gnostr-xor docs## 	make libsecp256k1.a gnostr gnostr-git gnostr-relay gnostr-xor docs
+##	build gnostr tool and related dependencies
 
 ##docs:
 ##	doc/gnostr.1 docker-start
@@ -83,7 +85,7 @@ submodules:deps/secp256k1/.git deps/jq/.git deps/git/.git deps/nostcat/.git deps
 	git submodule foreach --recursive "git submodule update --init --recursive;"
 	#@git submodule foreach --recursive "git fetch --all;"
 
-#.PHONY:deps/secp256k1/config.log
+.PHONY:deps/secp256k1/config.log
 .ONESHELL:
 deps/secp256k1/.git:
 deps/secp256k1/include/secp256k1.h: deps/secp256k1/.git
@@ -95,8 +97,8 @@ deps/secp256k1/config.log: deps/secp256k1/configure
 		./configure --enable-module-ecdh --enable-module-schnorrsig --enable-module-extrakeys
 deps/secp256k1/.libs/libsecp256k1.a:deps/secp256k1/config.log
 	cd deps/secp256k1 && \
-		make -j && make install #libsecp256k1.a
-#.PHONY:libsecp256k1.a
+		make -j && make install
+.PHONY:libsecp256k1.a
 libsecp256k1.a: deps/secp256k1/.libs/libsecp256k1.a## libsecp256k1.a
 	cp $< $@
 ##libsecp256k1.a
@@ -174,16 +176,16 @@ deps/hyper-nostr/.git:
 ##	git submodule update --init --recursive
 initialize:## 	ensure submodules exist
 	#git submodule update --init --recursive
-gnostr:initialize $(HEADERS) $(OBJS) $(ARS)## 	make gnostr binary
+gnostr:clean $(HEADERS) $(OBJS) $(ARS)## 	make gnostr binary
 ##gnostr initialize
 ##	git submodule update --init --recursive
 ##	$(CC) $(CFLAGS) $(OBJS) $(ARS) -o $@
-	git submodule update --init --recursive
+#	git submodule update --init --recursive
 	$(CC) $(CFLAGS) $(OBJS) $(ARS) -o $@
 
-gnostr-git:initialize $(HEADERS) $(GNOSTR_GIT_OBJS) $(ARS)## 	make gnostr-git
+gnostr-git:$(HEADERS) $(GNOSTR_GIT_OBJS) $(ARS)## 	make gnostr-git
 ##gnostr-git
-	git submodule update --init --recursive
+#	git submodule update --init --recursive
 	$(CC) $(CFLAGS) $(GNOSTR_GIT_OBJS) $(ARS) -o $@
 
 gnostr-relay:initialize $(HEADERS) $(GNOSTR_RELAY_OBJS) $(ARS)## 	make gnostr-relay
