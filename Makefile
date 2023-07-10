@@ -23,7 +23,7 @@ ARS                                    := libsecp256k1.a
 LIB_ARS                                := libsecp256k1.a libgit.a libjq.a libtclstub.a
 
 SUBMODULES                              = deps/secp256k1
-SUBMODULES_MORE                         = deps/secp256k1 deps/git deps/jq deps/nostcat deps/hyper-nostr deps/tcl deps/hyper-sdk deps/act
+SUBMODULES_MORE                         = deps/secp256k1 deps/git deps/jq deps/gnostr-cat deps/hyper-nostr deps/tcl deps/hyper-sdk deps/act
 
 VERSION                                :=$(shell cat version)
 export VERSION
@@ -33,7 +33,7 @@ TAR                                    :=$(shell which tar)
 export TAR
 
 ##all:
-all: gnostr gnostr-git gnostr-relay gnostr-xor docs## 	make gnostr gnostr-git gnostr-relay gnostr-xor docs
+all: gnostr gnostr-git gnostr-relay gnostr-xor docs## 	make gnostr gnostr-cat gnostr-git gnostr-relay gnostr-xor docs
 ##	build gnostr tool and related dependencies
 
 ##docs:
@@ -80,7 +80,7 @@ dist: docs version## 	create tar distribution
 ##rsync -avzP dist/ charon:/www/cdn.jb55.com/tarballs/gnostr/
 
 .PHONY:submodules
-submodules:deps/secp256k1/.git deps/jq/.git deps/git/.git deps/nostcat/.git deps/tcl/.git deps/hyper-sdk/.git deps/hyper-nostr/.git## 	refresh-submodules
+submodules:deps/secp256k1/.git deps/jq/.git deps/git/.git deps/gnostr-cat/.git deps/tcl/.git deps/hyper-sdk/.git deps/hyper-nostr/.git## 	refresh-submodules
 #	@git submodule update --init --recursive
 	git submodule foreach --recursive "git submodule update --init --recursive;"
 	#@git submodule foreach --recursive "git fetch --all;"
@@ -149,20 +149,23 @@ libtclstub.a:deps/tcl/unix/libtclstub.a## 	deps/tcl/unix/libtclstub.a
 ##	./autogen.sh configure && ./configure && make install
 tcl-unix:libtclstub.a## 	deps/tcl/unix/libtclstub.a
 
-deps/nostcat/.git:
-	@devtools/refresh-submodules.sh deps/nostcat
-#.PHONY:deps/nostcat
-deps/nostcat:deps/nostcat/.git
-deps/nostcat/target/release/nostcat:deps/nostcat
-	cd deps/nostcat && \
+deps/gnostr-cat/.git:
+	@devtools/refresh-submodules.sh deps/gnostr-cat
+#.PHONY:deps/gnostr-cat
+deps/gnostr-cat:deps/gnostr-cat/.git
+	cd deps/gnostr-cat && \
 		make cargo-install
-#.PHONY:deps/nostcat
-##nostcat
-##deps/nostcat deps/nostcat/.git
-##	cd deps/nostcat; \
+.PHONY:deps/gnostr-cat/target/release/gnostr-cat
+deps/gnostr-cat/target/release/gnostr-cat:deps/gnostr-cat
+	cd deps/gnostr-cat && \
+		make cargo-install
+	@cp $@ gnostr-cat || echo "" 2>/dev/null
+.PHONY:gnostr-cat
+##gnostr-cat
+##deps/gnostr-cat deps/gnostr-cat/.git
+##	cd deps/gnostr-cat; \
 ##	make cargo-install
-nostcat:deps/nostcat/target/release/nostcat## 	nostcat
-	@cp $@ nostcat || echo "" 2>/dev/null
+gnostr-cat:deps/gnostr-cat/target/release/gnostr-cat## 	gnostr-cat
 
 deps/hyper-sdk/.git:
 	@devtools/refresh-submodules.sh deps/hyper-sdk
@@ -214,6 +217,7 @@ install: all## 	install docs/gnostr.1 gnostr gnostr-query gnostr-relay gnostr-xo
 	install -m755 -vC gnostr-git   $(PREFIX)/bin/gnostr-git
 	install -m755 -vC gnostr-relay $(PREFIX)/bin/gnostr-relay
 	install -m755 -vC gnostr-xor   $(PREFIX)/bin/gnostr-xor
+	install -m755 -vC gnostr-cat   $(PREFIX)/bin/gnostr-cat
 
 .PHONY:config.h
 config.h: configurator
@@ -254,10 +258,16 @@ clean-secp:## 	remove deps/secp256k1
 clean-git:## 	remove deps/git
 	rm -rf deps/git
 
+##clean-gnostr-cat
+##	remove deps/gnostr-cat
+clean-gnostr-cat:## 	remove deps/gnostr-cat
+	rm -rf deps/gnostr-cat
+
 ##clean-tcl
 ##	remove deps/tcl
 clean-tcl:## 	remove deps/tcl
 	rm -rf deps/tcl
+
 ##clean-jq
 ##	remove deps/jq
 clean-jq:## 	remove deps/jq

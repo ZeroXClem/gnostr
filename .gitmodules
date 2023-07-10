@@ -4,12 +4,6 @@
 	branch = master
 	ignore = dirty
 	shallow = true
-[submodule "deps/nostcat"]
-	path = deps/nostcat
-    url = https://github.com/gnostr-org/nostcat.git
-	branch = master
-	ignore = dirty
-	shallow = true
 [submodule "deps/git"]
 	path = deps/git
 	url = https://github.com/gnostr-org/git.git
@@ -50,5 +44,10 @@
 	path = deps/hyper-sdk
 	url = https://github.com/gnostr-org/hyper-sdk.git
 	branch = 38db824808be1bffae4ca3bc76051aaadc1b6b82
+	ignore = dirty
+	shallow = true
+[submodule "gnostr-cat"]
+	path = deps/gnostr-cat
+	url = git@github.com:gnostr-org/gnostr-cat.git
 	ignore = dirty
 	shallow = true

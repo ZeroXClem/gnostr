@@ -39,6 +39,6 @@ libjq.a
 libtclstub.a
 libsecp256k1.a
 
-nostcat
+gnostr-cat
 
 bin
