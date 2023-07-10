@@ -33,7 +33,7 @@ TAR                                    :=$(shell which tar)
 export TAR
 
 ##all:
-all: libsecp256k1.a gnostr gnostr-git gnostr-relay gnostr-xor docs## 	make libsecp256k1.a gnostr gnostr-git gnostr-relay gnostr-xor docs
+all: gnostr gnostr-git gnostr-relay gnostr-xor docs## 	make gnostr gnostr-git gnostr-relay gnostr-xor docs
 ##	build gnostr tool and related dependencies
 
 ##docs:
