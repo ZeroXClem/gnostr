@@ -51,3 +51,6 @@
 	url = git@github.com:gnostr-org/gnostr-cat.git
 	ignore = dirty
 	shallow = true
+[submodule "deps/gnostr-aio"]
+	path = deps/gnostr-aio
+	url = git@github.com:gnostr-org/gnostr-aio.git
