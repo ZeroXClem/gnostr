@@ -54,3 +54,6 @@
 [submodule "deps/gnostr-aio"]
 	path = deps/gnostr-aio
 	url = git@github.com:gnostr-org/gnostr-aio.git
+[submodule "deps/gnostr-py"]
+	path = deps/gnostr-py
+	url = git@github.com:gnostr-org/gnostr-py.git
