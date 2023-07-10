@@ -70,10 +70,14 @@ jobs:
       #  run: |
       #    git submodule update --init --recursive
       ## post-checkout sequence
+      ## post-checkout sequence
       - run: make
+      #- run: make clean
+      #- run: make clean-secp
       - run: make help
-      - run: make docker-start
+      #- run: make docker-start
       - run: make report
+      #- run: make libjq.a
       - run: make libsecp256k1.a
       - run: make gnostr
 
