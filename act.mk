@@ -29,3 +29,12 @@ alpine-matrix:docker-start## 	run act in .github
 	type -P act && GITHUB_TOKEN=$(shell cat ~/GITHUB_TOKEN.txt) && act $(VERBOSE) $(BIND) $(REUSE) -W $(PWD)/.github/workflows/$@.yml || $(MAKE) act-install
 ##alpine-matrix
 ## 	make alpine-matrix reuse=true bind=true verbose=true
+##	
+linux-matrix:docker-start## 	linux-matrix
+	$(MAKE) alpine-matrix ubuntu-matrix verbose=true bind=true reuse=true
+##linux-matrix
+## 	make alpine-matrix ubuntu-matrix verbose=true bind=true reuse=true
+##[act.mk developement notes]
+## 	use reuse=false to force a rebuild of the docker image
+##[command example]
+##make alpine-matrix ubuntu-matrix verbose=true bind=true reuse=true
