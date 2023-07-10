@@ -70,14 +70,14 @@ dist: docs version## 	create tar distribution
 	git log $(shell git describe --tags --abbrev=0)..@^1 --oneline | sed '/Merge/d' >> CHANGELOG
 	cp CHANGELOG dist/CHANGELOG.txt
 	git ls-files --recurse-submodules | $(GTAR) --exclude='"deps/tcl/unix/dltest/*.c"' \
-		--transform  's/^/gnostr-$(VERSION)\//' -T- -caf dist/gnostr-$(VERSION).tar.gz
+		--transform  's/^/gnostr-$(VERSION)-$(OS)-$(ARCH)\//' -T- -caf dist/gnostr-$(VERSION)-$(OS)-$(ARCH).tar.gz
 	ls -dt dist/* | head -n1 | xargs echo "tgz "
 	cd dist && \
-		rm SHA256SUMS.txt || echo && \
-		sha256sum *.tar.gz > SHA256SUMS.txt && \
+		rm **SHA256SUMS**.txt** || echo && \
+		sha256sum *-$(VERSION)-$(OS)-$(ARCH).tar.gz > SHA256SUMS-$(VERSION)-$(OS)-$(ARCH).txt && \
 		gpg -u 0xE616FA7221A1613E5B99206297966C06BB06757B \
-		--sign --armor --detach-sig --output SHA256SUMS.txt.asc SHA256SUMS.txt
-	##rsync -avzP dist/ charon:/www/cdn.jb55.com/tarballs/gnostr/
+		--sign --armor --detach-sig --output SHA256SUMS-$(VERSION)-$(OS)-$(ARCH).txt.asc SHA256SUMS-$(VERSION)-$(OS)-$(ARCH).txt
+##rsync -avzP dist/ charon:/www/cdn.jb55.com/tarballs/gnostr/
 
 .PHONY:submodules
 submodules:deps/secp256k1/.git deps/jq/.git deps/git/.git deps/nostcat/.git deps/tcl/.git deps/hyper-sdk/.git deps/hyper-nostr/.git## 	refresh-submodules
