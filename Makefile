@@ -88,6 +88,7 @@ submodules:deps/secp256k1/.git deps/jq/.git deps/git/.git deps/nostcat/.git deps
 .PHONY:deps/secp256k1/config.log
 .ONESHELL:
 deps/secp256k1/.git:
+	devtools/refresh-submodules.sh deps/secp256k1
 deps/secp256k1/include/secp256k1.h: deps/secp256k1/.git
 deps/secp256k1/configure: deps/secp256k1/include/secp256k1.h
 	cd deps/secp256k1 && \
@@ -110,7 +111,7 @@ libsecp256k1.a: deps/secp256k1/.libs/libsecp256k1.a## libsecp256k1.a
 
 deps/jq/modules/oniguruma.git:
 	devtools/refresh-submodules.sh deps/jq
-	cd deps/jq/modules/oniguruma && ./autogen.sh && ./configure && make && make install
+	#cd deps/jq/modules/oniguruma && ./autogen.sh && ./configure && make && make install
 deps/jq/.git:deps/jq/modules/oniguruma.git
 #.PHONY:deps/jq/.libs/libjq.a
 deps/jq/.libs/libjq.a:deps/jq/.git
@@ -122,7 +123,7 @@ libjq.a: deps/jq/.libs/libjq.a## 	libjq.a
 	cp $< $@
 
 deps/git/.git:
-	@devtools/refresh-submodules.sh $(SUBMODULES)
+	@devtools/refresh-submodules.sh deps/git
 deps/git/libgit.a:deps/git/.git
 	cd deps/git && \
 		make
@@ -136,7 +137,7 @@ libgit.a: deps/git/libgit.a## 	libgit.a
 	cp $< $@
 
 deps/tcl/.git:
-	@devtools/refresh-submodules.sh $(SUBMODULES)
+	@devtools/refresh-submodules.sh deps/tcl
 deps/tcl/unix/libtclstub.a:deps/tcl/.git
 	cd deps/tcl/unix && \
 		./autogen.sh configure && ./configure && make install
@@ -149,7 +150,7 @@ libtclstub.a:deps/tcl/unix/libtclstub.a## 	deps/tcl/unix/libtclstub.a
 tcl-unix:libtclstub.a## 	deps/tcl/unix/libtclstub.a
 
 deps/nostcat/.git:
-	@devtools/refresh-submodules.sh $(SUBMODULES)
+	@devtools/refresh-submodules.sh deps/nostcat
 #.PHONY:deps/nostcat
 deps/nostcat:deps/nostcat/.git
 deps/nostcat/target/release/nostcat:deps/nostcat
@@ -164,9 +165,9 @@ nostcat:deps/nostcat/target/release/nostcat## 	nostcat
 	@cp $@ nostcat || echo "" 2>/dev/null
 
 deps/hyper-sdk/.git:
-	@devtools/refresh-submodules.sh $(SUBMODULES)
+	@devtools/refresh-submodules.sh deps/hyper-sdk
 deps/hyper-nostr/.git:
-	@devtools/refresh-submodules.sh $(SUBMODULES)
+	@devtools/refresh-submodules.sh deps/hyper-nostr
 
 %.o: %.c $(HEADERS)
 	@echo "cc $<"
