@@ -73,8 +73,10 @@ dist: docs version## 	create tar distribution
 		--transform  's/^/gnostr-$(VERSION)-$(OS)-$(ARCH)\//' -T- -caf dist/gnostr-$(VERSION)-$(OS)-$(ARCH).tar.gz
 	ls -dt dist/* | head -n1 | xargs echo "tgz "
 	cd dist && \
+		touch SHA256SUMS-$(VERSION)-$(OS)-$(ARCH).txt && \
+		touch gnostr-$(VERSION)-$(OS)-$(ARCH).tar.gz && \
 		rm **SHA256SUMS**.txt** || echo && \
-		sha256sum *-$(VERSION)-$(OS)-$(ARCH).tar.gz > SHA256SUMS-$(VERSION)-$(OS)-$(ARCH).txt && \
+		sha256sum gnostr-$(VERSION)-$(OS)-$(ARCH).tar.gz > SHA256SUMS-$(VERSION)-$(OS)-$(ARCH).txt && \
 		gpg -u 0xE616FA7221A1613E5B99206297966C06BB06757B \
 		--sign --armor --detach-sig --output SHA256SUMS-$(VERSION)-$(OS)-$(ARCH).txt.asc SHA256SUMS-$(VERSION)-$(OS)-$(ARCH).txt
 ##rsync -avzP dist/ charon:/www/cdn.jb55.com/tarballs/gnostr/
