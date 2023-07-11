@@ -43,7 +43,7 @@ jobs:
         with:
           path: |
             deps/jq
-            deps/git
+            deps/gnostr-git
             deps/secp256k1
             deps/hyper-sdk
             deps/hyper-nostr
@@ -88,7 +88,7 @@ jobs:
         with:
           path: |
             deps/jq
-            deps/git
+            deps/gnostr-git
             deps/secp256k1
             deps/hyper-sdk
             deps/hyper-nostr
