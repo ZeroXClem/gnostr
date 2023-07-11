@@ -81,9 +81,6 @@ dist: docs version## 	create tar distribution
 
 .PHONY:submodules
 submodules:deps/secp256k1/.git deps/jq/.git deps/git/.git deps/gnostr-cat/.git deps/tcl/.git deps/hyper-sdk/.git deps/hyper-nostr/.git## 	refresh-submodules
-#	@git submodule update --init --recursive
-	git submodule foreach --recursive "git submodule update --init --recursive;"
-	#@git submodule foreach --recursive "git fetch --all;"
 
 .PHONY:deps/secp256k1/config.log
 .ONESHELL:
@@ -111,7 +108,6 @@ libsecp256k1.a: deps/secp256k1/.libs/libsecp256k1.a## libsecp256k1.a
 
 deps/jq/modules/oniguruma.git:
 	devtools/refresh-submodules.sh deps/jq
-	#cd deps/jq/modules/oniguruma && ./autogen.sh && ./configure && make && make install
 deps/jq/.git:deps/jq/modules/oniguruma.git
 #.PHONY:deps/jq/.libs/libjq.a
 deps/jq/.libs/libjq.a:deps/jq/.git
@@ -122,10 +118,11 @@ deps/jq/.libs/libjq.a:deps/jq/.git
 libjq.a: deps/jq/.libs/libjq.a## 	libjq.a
 	cp $< $@
 
-deps/git/.git:
-	@devtools/refresh-submodules.sh deps/git
-deps/git/libgit.a:deps/git/.git
-	cd deps/git && \
+deps/gnostr-git/.git:
+	@devtools/refresh-submodules.sh deps/gnostr-git
+#.PHONY:deps/gnostr-git/gnostr-git
+deps/gnostr-git/gnostr-git:deps/gnostr-git/.git
+	cd deps/gnostr-git && \
 		make
 		#make all && \
 		#make install
@@ -133,7 +130,7 @@ deps/git/libgit.a:deps/git/.git
 ##	deps/git/libgit.a deps/git/.git
 ##	cd deps/git; \
 ##	make install
-libgit.a: deps/git/libgit.a## 	libgit.a
+gnostr-git:deps/gnostr-git/gnostr-git## 	gnostr-git
 	cp $< $@
 
 deps/tcl/.git:
@@ -187,10 +184,10 @@ gnostr:clean $(HEADERS) $(OBJS) $(ARS)## 	make gnostr binary
 #	git submodule update --init --recursive
 	$(CC) $(CFLAGS) $(OBJS) $(ARS) -o $@
 
-gnostr-git:$(HEADERS) $(GNOSTR_GIT_OBJS) $(ARS)## 	make gnostr-git
-##gnostr-git
-#	git submodule update --init --recursive
-	$(CC) $(CFLAGS) $(GNOSTR_GIT_OBJS) $(ARS) -o $@
+#gnostr-git:$(HEADERS) $(GNOSTR_GIT_OBJS) $(ARS)## 	make gnostr-git
+###gnostr-git
+##	git submodule update --init --recursive
+#	$(CC) $(CFLAGS) $(GNOSTR_GIT_OBJS) $(ARS) -o $@
 
 gnostr-relay:initialize $(HEADERS) $(GNOSTR_RELAY_OBJS) $(ARS)## 	make gnostr-relay
 ##gnostr-relay
@@ -253,10 +250,13 @@ clean-hyper-sdk:## 	remove deps/hyper-sdk
 clean-secp:## 	remove deps/secp256k1
 	rm -rf deps/secp256k1
 
-##clean-git
-##	remove deps/git
-clean-git:## 	remove deps/git
-	rm -rf deps/git
+##clean-gnostr-git
+##	remove deps/gnostr-git/gnostr-git
+##	remove gnostr-git
+clean-gnostr-git:## 	remove deps/gnostr-git gnostr-git
+	#rm -rf deps/gnostr-git
+	rm deps/gnostr-git/gnostr-git
+	rm gnostr-git
 
 ##clean-gnostr-cat
 ##	remove deps/gnostr-cat
