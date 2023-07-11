@@ -37,20 +37,17 @@ all: gnostr gnostr-git gnostr-relay gnostr-xor docs## 	make gnostr gnostr-cat gn
 ##	build gnostr tool and related dependencies
 
 ##docs:
-##	doc/gnostr.1 docker-start
-docs: doc/gnostr.1 docker-start## 	docs: convert README to doc/gnostr.1
+##	docker-statt doc/gnostr.1
+docs:docker-start doc/gnostr.1## 	docs: convert README to doc/gnostr.1
 #@echo docs
 	@bash -c 'if pgrep MacDown; then pkill MacDown; fi; 2>/dev/null'
 	@bash -c 'cat $(PWD)/sources/HEADER.md                >  $(PWD)/README.md 2>/dev/null'
 	@bash -c 'cat $(PWD)/sources/COMMANDS.md              >> $(PWD)/README.md 2>/dev/null'
 	@bash -c 'cat $(PWD)/sources/FOOTER.md                >> $(PWD)/README.md 2>/dev/null'
-	if hash pandoc 2>/dev/null; then \
-		bash -c 'pandoc -s README.md -o index.html' 2>/dev/null; \
-		fi || if hash docker 2>/dev/null; then \
-		docker run --rm --volume "`pwd`:/data" --user `id -u`:`id -g` pandoc/latex:2.6 README.md; \
-		fi
-	@git add --ignore-errors sources/*.md 2>/dev/null
-	@git add --ignore-errors *.md 2>/dev/null
+	@type -P pandoc && pandoc -s README.md -o index.html 2>/dev/null || \
+		type -P docker && docker pull pandoc/latex:2.6 && \
+		docker run --rm --volume "`pwd`:/data" --user `id -u`:`id -g` pandoc/latex:2.6 README.md
+	git add --ignore-errors sources/*.md 2>/dev/null && git add --ignore-errors *.md 2>/dev/null 2>/dev/null
 #@git ls-files -co --exclude-standard | grep '\.md/$\' | xargs git
 
 doc/gnostr.1: README## 	
@@ -211,12 +208,12 @@ install: all## 	install docs/gnostr.1 gnostr gnostr-query gnostr-relay gnostr-xo
 	mkdir -p $(PREFIX)/bin
 	mkdir -p $(PREFIX)/include
 	install -m755 -vC include/*.*  ${PREFIX}/include/
-	install -m644 -vC doc/gnostr.1 $(PREFIX)/share/man/man1/gnostr.1
 	install -m755 -vC gnostr       $(PREFIX)/bin/gnostr
 	install -m755 -vC gnostr-git   $(PREFIX)/bin/gnostr-git
 	install -m755 -vC gnostr-relay $(PREFIX)/bin/gnostr-relay
 	install -m755 -vC gnostr-xor   $(PREFIX)/bin/gnostr-xor
 	install -m755 -vC gnostr-cat   $(PREFIX)/bin/gnostr-cat
+	install -m644 -vC doc/gnostr.1 $(PREFIX)/share/man/man1/gnostr.1 || echo "doc/gnostr.1 failed to install..."
 
 .PHONY:config.h
 config.h: configurator
