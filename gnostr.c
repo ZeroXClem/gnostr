@@ -21,7 +21,12 @@
 #include "include/random.h"
 #include "include/proof.h"
 
+#include "include/constants.h"
+#include "include/struct_key.h"
 #include "include/struct_args.h"
+#include "include/struct_nostr_tag.h"
+#include "include/struct_nostr_event.h"
+
 #include "include/openssl_hash.h"
 
 #define VERSION "0.0.0"
@@ -80,34 +85,6 @@ int is_executable_file(char const * file_path)
         S_ISREG(sb.st_mode) &&
         (access(file_path, X_OK) == 0);
 }
-
-
-struct key {
-	secp256k1_keypair pair;
-	unsigned char secret[32];
-	unsigned char pubkey[32];
-};
-
-struct nostr_tag {
-	const char *strs[MAX_TAG_ELEMS];
-	int num_elems;
-};
-
-struct nostr_event {
-	unsigned char id[32];
-	unsigned char pubkey[32];
-	unsigned char sig[64];
-
-	const char *content;
-
-	uint64_t created_at;
-	int kind;
-
-	const char *explicit_tags;
-
-	struct nostr_tag tags[MAX_TAGS];
-	int num_tags;
-};
 
 void about()
 {
