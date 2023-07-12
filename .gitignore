@@ -29,6 +29,7 @@ scripts/nostr-follows
 scripts/nostr-req
 scripts/subnote
 /dist
+/.dist-*
 
 **.DS_Store
 deps/.DS_Store
