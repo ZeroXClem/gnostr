@@ -107,7 +107,13 @@ void usage()
 	printf("\n");
 	printf("  RELAY OPTIONS\n");
 	printf("\n");
+	printf("  gnostr-relay --initialize [--init] [-i]\n");
 	printf("\n");
+	exit(0);
+}
+void init(int argc, const char *argv, struct args *args)
+{
+	printf("gnostr-relay --init.\n");
 	exit(0);
 }
 
@@ -453,6 +459,8 @@ static int parse_args(int argc, const char *argv[], struct args *args, struct no
 		if (!strcmp(arg, "--version") | !strcmp(arg, "-v")) { version(); }
 
 		if (!strcmp(arg, "--about") | !strcmp(arg, "-a")) { about(); }
+
+		if (!strcmp(arg, "--initialize") | !strcmp(arg, "--init") | !strcmp(arg, "-i")) { init(argc, *argv, args); }
 
 		if (!strcmp(arg, "--hash")){ openssl_hash(argc, *argv, args); }
 
