@@ -1,7 +1,1 @@
 0.0.0
-1caf203 Makefile: use GNOSTR_OBJS = gnostr.o sha256.o aes.o base64.o libsecp256k1.a
-66791bd .gitmodules: deps/git remove
-b12918b make: docs - test for make dist
-7eeff1a make: venv: venv.mk: use python3 not python3.8 specific
-37f4877 Makefile: make: dist: mkdir -p dist && touch dist/.gitkeep
-efe4ad7 deps/gnostr-git:gnostr-git:make all working
