@@ -150,6 +150,11 @@ help:##
 
 -include Makefile
 
+##initialize
+##	git submodule update --init --recursive
+initialize:## 	ensure submodules exist
+	git submodule update --init --recursive
+
 .ONESHELL:
 docker-start:venv
 ##docker-start
@@ -237,6 +242,7 @@ tag:## 	git tag & git push
 -include gnostr.mk
 -include venv.mk
 -include act.mk
+-include clean.mk
 
 # vim: set noexpandtab:
 # vim: set setfiletype make

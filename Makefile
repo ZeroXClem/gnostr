@@ -173,10 +173,6 @@ deps/hyper-nostr/.git:
 	@echo "cc $<"
 	@$(CC) $(CFLAGS) -c $< -o $@
 
-##initialize
-##	git submodule update --init --recursive
-initialize:## 	ensure submodules exist
-	#git submodule update --init --recursive
 gnostr:clean $(HEADERS) $(GNOSTR_OBJS) $(ARS)## 	make gnostr binary
 ##gnostr initialize
 ##	git submodule update --init --recursive
@@ -227,53 +223,5 @@ config.h: configurator
 configurator: configurator.c
 	rm -f configurator
 	$(CC) $< -o $@
-
-##clean
-##	remove gnostr *.o *.a gnostr.1
-clean:## 	remove gnostr *.o *.a gnostr.1
-	rm -rf $(shell which gnostr)
-	rm -rf /usr/local/share/man/man1/gnostr.1
-	rm -f gnostr *.o *.a
-
-##clean-hyper-nostr
-##	remove deps/hyper-nostr
-clean-hyper-nostr:## 	remove deps/hyper-nostr
-	rm -rf deps/hyper-nostr
-
-##clean-hyper-sdk
-##	remove deps/hypersdk
-clean-hyper-sdk:## 	remove deps/hyper-sdk
-	rm -rf deps/hyper-sdk
-
-##clean-secp
-##	remove deps/secp256k1
-clean-secp:## 	remove deps/secp256k1
-	rm -rf deps/secp256k1
-
-##clean-gnostr-git
-##	remove deps/gnostr-git/gnostr-git
-##	remove gnostr-git
-clean-gnostr-git:## 	remove deps/gnostr-git gnostr-git
-	#rm -rf deps/gnostr-git
-	rm deps/gnostr-git/gnostr-git
-	rm gnostr-git
-
-##clean-gnostr-cat
-##	remove deps/gnostr-cat
-clean-gnostr-cat:## 	remove deps/gnostr-cat
-	rm -rf deps/gnostr-cat
-
-##clean-tcl
-##	remove deps/tcl
-clean-tcl:## 	remove deps/tcl
-	rm -rf deps/tcl
-
-##clean-jq
-##	remove deps/jq
-clean-jq:## 	remove deps/jq
-	rm -rf deps/jq
-clean-all:clean clean-hyper-nostr clean-secp clean-git clean-tcl clean-jq## 	
-##clean-all
-##	clean clean-hyper-nostr clean-secp clean-git clean-tcl clean-jq
 
 .PHONY: fake
