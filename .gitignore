@@ -11,6 +11,7 @@ gnostr-relay
 gnostr-xor
 
 a.out
+jsmin
 
 /result
 configurator.out*
