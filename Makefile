@@ -33,7 +33,7 @@ TAR                                    :=$(shell which tar)
 export TAR
 
 ##all:
-all: gnostr gnostr-git gnostr-relay gnostr-xor docs## 	make gnostr gnostr-cat gnostr-git gnostr-relay gnostr-xor docs
+all: submodules gnostr gnostr-git gnostr-relay gnostr-xor docs## 	make gnostr gnostr-cat gnostr-git gnostr-relay gnostr-xor docs
 ##	build gnostr tool and related dependencies
 
 ##docs:
