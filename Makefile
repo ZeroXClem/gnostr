@@ -79,7 +79,7 @@ dist: docs version## 	create tar distribution
 ##rsync -avzP dist/ charon:/www/cdn.jb55.com/tarballs/gnostr/
 
 .PHONY:submodules
-submodules:deps/secp256k1/.git deps/jq/.git deps/gnostr-git/.git deps/gnostr-cat/.git deps/tcl/.git deps/hyper-sdk/.git deps/hyper-nostr/.git## 	refresh-submodules
+submodules:deps/secp256k1/.git deps/jq/.git deps/gnostr-git/.git deps/gnostr-web/.git deps/gnostr-cat/.git deps/tcl/.git deps/hyper-sdk/.git deps/hyper-nostr/.git## 	refresh-submodules
 
 .PHONY:deps/secp256k1/config.log
 .ONESHELL:
