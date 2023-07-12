@@ -1,7 +1,7 @@
 CFLAGS                                  = -Wall -O2 -Ideps/secp256k1/include
 CFLAGS                                 += -I/include
 LDFLAGS                                 = -Wl -V
-OBJS                                    = gnostr.o       sha256.o aes.o base64.o libsecp256k1.a
+GNOSTR_OBJS                             = gnostr.o       sha256.o aes.o base64.o libsecp256k1.a
 GNOSTR_GIT_OBJS                         = gnostr-git.o   sha256.o aes.o base64.o libgit.a
 GNOSTR_RELAY_OBJS                       = gnostr-relay.o sha256.o aes.o base64.o
 GNOSTR_XOR_OBJS                         = gnostr-xor.o   sha256.o aes.o base64.o libsecp256k1.a
@@ -79,7 +79,7 @@ dist: docs version## 	create tar distribution
 ##rsync -avzP dist/ charon:/www/cdn.jb55.com/tarballs/gnostr/
 
 .PHONY:submodules
-submodules:deps/secp256k1/.git deps/jq/.git deps/git/.git deps/gnostr-cat/.git deps/tcl/.git deps/hyper-sdk/.git deps/hyper-nostr/.git## 	refresh-submodules
+submodules:deps/secp256k1/.git deps/jq/.git deps/gnostr-git/.git deps/gnostr-cat/.git deps/tcl/.git deps/hyper-sdk/.git deps/hyper-nostr/.git## 	refresh-submodules
 
 .PHONY:deps/secp256k1/config.log
 .ONESHELL:
@@ -176,12 +176,12 @@ deps/hyper-nostr/.git:
 ##	git submodule update --init --recursive
 initialize:## 	ensure submodules exist
 	#git submodule update --init --recursive
-gnostr:clean $(HEADERS) $(OBJS) $(ARS)## 	make gnostr binary
+gnostr:clean $(HEADERS) $(GNOSTR_OBJS) $(ARS)## 	make gnostr binary
 ##gnostr initialize
 ##	git submodule update --init --recursive
-##	$(CC) $(CFLAGS) $(OBJS) $(ARS) -o $@
+##	$(CC) $(CFLAGS) $(GNOSTR_OBJS) $(ARS) -o $@
 #	git submodule update --init --recursive
-	$(CC) $(CFLAGS) $(OBJS) $(ARS) -o $@
+	$(CC) $(CFLAGS) $(GNOSTR_OBJS) $(ARS) -o $@
 
 #gnostr-git:$(HEADERS) $(GNOSTR_GIT_OBJS) $(ARS)## 	make gnostr-git
 ###gnostr-git
