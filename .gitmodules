@@ -4,12 +4,6 @@
 	branch = master
 	ignore = dirty
 	shallow = true
-[submodule "deps/git"]
-	path = deps/git
-	url = https://github.com/gnostr-org/git.git
-	branch = master
-	ignore = dirty
-	shallow = true
 [submodule "deps/tcl"]
 	path = deps/tcl
 	url = https://github.com/gnostr-org/tcl.git
