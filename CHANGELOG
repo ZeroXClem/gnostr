@@ -1,1 +1,3 @@
 0.0.0.alpha
+7d36915 make: clean-all clean-secp
+471992b make: dist - mv dist dist-$(TIME)

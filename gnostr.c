@@ -21,6 +21,7 @@
 #include "include/random.h"
 #include "include/proof.h"
 
+#include "include/struct_args.h"
 #include "include/openssl_hash.h"
 
 #define VERSION "0.0.0"
@@ -107,28 +108,6 @@ struct nostr_event {
 	struct nostr_tag tags[MAX_TAGS];
 	int num_tags;
 };
-
-//void openssl_hash(int argc, const char *argv){
-//
-//	char command[128];
-//	char target[128];
-//	struct args args = {0};
-//
-//	args.hash = argv++; argc--;
-//	if (args.hash){
-//		strcpy(command, "echo");
-//		strcat(command, " ");
-//		strcat(command, args.hash);
-//		strcat(command, "|");
-//		strcat(command, "openssl dgst -sha256 | sed 's/SHA2-256(stdin)= //g'");
-//		system(command);
-//		exit(0);
-//	}else{
-//		strcpy(command, "0>/dev/null|openssl dgst -sha256 | sed 's/SHA2-256(stdin)= //g'");
-//		system(command);
-//		exit(0);
-//	}
-//}
 
 void about()
 {
