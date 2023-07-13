@@ -118,6 +118,9 @@ deps/jq/.libs/libjq.a:deps/jq/.git
 libjq.a: deps/jq/.libs/libjq.a## 	libjq.a
 	cp $< $@
 
+deps/gnostr-web/.git:
+	@devtools/refresh-submodules.sh deps/gnostr-web
+
 deps/gnostr-git/.git:
 	@devtools/refresh-submodules.sh deps/gnostr-git
 #.PHONY:deps/gnostr-git/gnostr-git
