@@ -93,12 +93,15 @@ dist: docs version## 	create tar distribution
 		sha256sum gnostr-$(VERSION)-$(OS)-$(ARCH).tar.gz > SHA256SUMS-$(VERSION)-$(OS)-$(ARCH).txt && \
 		gpg -u 0xE616FA7221A1613E5B99206297966C06BB06757B \
 		--sign --armor --detach-sig --output SHA256SUMS-$(VERSION)-$(OS)-$(ARCH).txt.asc SHA256SUMS-$(VERSION)-$(OS)-$(ARCH).txt
-##rsync -avzP dist/ charon:/www/cdn.jb55.com/tarballs/gnostr/
-dist-test:dist##dist-test
+#rsync -avzP dist/ charon:/www/cdn.jb55.com/tarballs/gnostr/
+dist-test:dist## 	dist-test
 ##dist-test
 ## 	cd dist and run tests on the distribution
-	cd dist && $(GTAR) -tvf gnostr-$(VERSION)-$(OS)-$(ARCH).tar.gz
-	cd dist && $(GTAR) -xf  gnostr-$(VERSION)-$(OS)-$(ARCH).tar.gz
+	cd dist && \
+		$(GTAR) -tvf gnostr-$(VERSION)-$(OS)-$(ARCH).tar.gz
+	cd dist && \
+		$(GTAR) -xf  gnostr-$(VERSION)-$(OS)-$(ARCH).tar.gz && \
+		cd  gnostr-$(VERSION)-$(OS)-$(ARCH) && make all install
 
 .PHONY:submodules
 submodules:deps/secp256k1/.git deps/jq/.git deps/gnostr-git/.git deps/gnostr-web/.git deps/gnostr-cat/.git deps/tcl/.git deps/hyper-sdk/.git deps/hyper-nostr/.git## 	refresh-submodules
