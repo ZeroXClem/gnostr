@@ -1,5 +1,1 @@
 0.0.0
-82dddb2 CHANGELOG: update
-f7bf779 make: dist-test
-2dc1990 devtools/jsmin.c -> template/gnostr-jsmin.c: mv/rename for namespace
-d144bee template/gnostr-git-log gnostr-git-reflog: add gnostr protocol notes
