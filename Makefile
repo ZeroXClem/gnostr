@@ -23,7 +23,7 @@ ARS                                    := libsecp256k1.a
 LIB_ARS                                := libsecp256k1.a libgit.a libjq.a libtclstub.a
 
 SUBMODULES                              = deps/secp256k1
-SUBMODULES_MORE                         = deps/secp256k1 deps/git deps/jq deps/gnostr-cat deps/hyper-nostr deps/tcl deps/hyper-sdk deps/act deps/openssl
+SUBMODULES_MORE                         = deps/secp256k1 deps/git deps/jq deps/gnostr-cat deps/hyper-nostr deps/tcl deps/hyper-sdk deps/act deps/openssl deps/gnostr-py deps/gnostr-aio deps/act
 
 VERSION                                :=$(shell cat version)
 export VERSION
@@ -110,7 +110,7 @@ dist-test:dist## 	dist-test
 		cd  gnostr-$(VERSION)-$(OS)-$(ARCH) && make chmod all install
 
 .PHONY:submodules
-submodules:deps/secp256k1/.git deps/jq/.git deps/gnostr-git/.git deps/gnostr-web/.git deps/gnostr-cat/.git deps/tcl/.git deps/hyper-sdk/.git deps/hyper-nostr/.git deps/openssl/.git## 	refresh-submodules
+submodules:deps/secp256k1/.git deps/jq/.git deps/gnostr-git/.git deps/gnostr-web/.git deps/gnostr-cat/.git deps/tcl/.git deps/hyper-sdk/.git deps/hyper-nostr/.git deps/openssl/.git deps/gnostr-aio/.git deps/gnostr-py/.git deps/act/.git## 	refresh-submodules
 
 .PHONY:deps/secp256k1/config.log
 .ONESHELL:
@@ -203,6 +203,12 @@ deps/hyper-nostr/.git:
 	@devtools/refresh-submodules.sh deps/hyper-nostr
 deps/openssl/.git:
 	@devtools/refresh-submodules.sh deps/openssl
+deps/gnostr-py/.git:
+	@devtools/refresh-submodules.sh deps/gnostr-py
+deps/gnostr-aio/.git:
+	@devtools/refresh-submodules.sh deps/gnostr-aio
+deps/act/.git:
+	@devtools/refresh-submodules.sh deps/act
 
 %.o: %.c $(HEADERS)
 	@echo "cc $<"
