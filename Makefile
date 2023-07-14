@@ -64,6 +64,16 @@ version: gnostr.c## 	print version
 	@grep '^#define VERSION' $< | sed -En 's,.*"([^"]+)".*,\1,p' > $@
 	@cat $@
 
+chmod:## 	chmod
+##chmod
+## 	-type f chmod 644
+## 	-type f --name *.sh chmod +rwx
+## 	-type d chmod 755
+## 	if isssues or before 'make dist'
+	find . -type f -print0     | xargs -0 chmod 644
+	#find . -type f --name *.sh | xargs -0 chmod +rwx
+	find . -type d ! -name 'deps/**' -print0 | xargs -0 chmod 755
+
 dist: docs version## 	create tar distribution
 	touch deps/tcl/unix/dltest/pkgπ.c
 	touch deps/tcl/unix/dltest/pkg\317\200.c
