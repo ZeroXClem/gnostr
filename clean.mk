@@ -18,37 +18,42 @@ clean-hyper-sdk:## 	remove deps/hyper-sdk
 ##clean-secp
 ##	remove deps/secp256k1/.libs/libsecp256k1.*
 clean-secp:## 	remove deps/secp256k1/.libs/libsecp256k1.* libsecp256k1.a
-	rm -rf deps/secp256k1 || echo
 	rm -rf libsecp256k1.a || echo
+	cd deps/secp256k1 && find . -type f -name '*.o' -print0 | rm -f || echo
 
 ##clean-gnostr-git
 ##	remove deps/gnostr-git/gnostr-git
 ##	remove gnostr-git
 clean-gnostr-git:## 	remove deps/gnostr-git gnostr-git
-	#rm -rf deps/gnostr-git
-	rm deps/gnostr-git/gnostr-git || echo
-	rm gnostr-git || echo
+	rm -rf libgit.a || echo
+	cd deps/gnostr-git && find . -type f -name '*.o' -print0 | rm -f || echo
 
 ##clean-gnostr-cat
 ##	remove deps/gnostr-cat
 clean-gnostr-cat:## 	remove deps/gnostr-cat
-	rm -rf deps/gnostr-cat || echo
+	cd deps/gnostr-cat && find . -type f -name '*.o' -print0 | rm -f || echo
 
 ##clean-gnostr-relay
 ##	remove deps/gnostr-relay
 clean-gnostr-relay:## 	remove deps/gnostr-relay
-	rm -rf deps/gnostr-relay || echo
+	cd deps/gnostr-relay && find . -type f -name '*.o' -print0 | rm -f || echo
 
 ##clean-tcl
 ##	remove deps/tcl
 clean-tcl:## 	remove deps/tcl
-	rm -rf deps/tcl || echo
+	cd deps/tcl&& find . -type f -name '*.o' -print0 | rm -f || echo
 
 ##clean-jq
 ##	remove deps/jq
 clean-jq:## 	remove deps/jq
-	rm -rf deps/jq || echo
-clean-all:clean clean-hyper-nostr clean-secp clean-gnostr-git clean-tcl clean-jq## 	clean clean-*
+	cd deps/jq && find . -type f -name '*.o' -print0 | rm -f || echo
+
+##clean-openssl
+##	remove deps/openssl
+clean-openssl:## 	remove deps/openssl
+	cd deps/openssl && rm -rf gost-engine && rm -rf fuzz && find . -type f -name '*.o' -print0 | rm -f || echo
+
+clean-all:clean clean-hyper-nostr clean-secp clean-gnostr-git clean-tcl clean-jq clean-openssl## 	clean clean-*
 ##clean-all
 ##	clean clean-hyper-nostr clean-secp clean-gnostr-git clean-tcl clean-jq
-
+	find . -type f -name '*.o' -print0 | rm -f
