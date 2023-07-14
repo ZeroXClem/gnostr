@@ -1,13 +1,15 @@
 #!/usr/bin/env bash
 help(){
 	gnostr-git reflog -h | sed -e "s/git/gnostr-git/g"
-	printf "   or: gnostr-git [--hash-list] [-hl]\n"
-	printf "   or: gnostr-git [--format] [-f]\n"
-	printf "   or: gnostr-git [-gd]\n"
+	printf "   or: gnostr-git reflog [--hash-list] [-hl]\n"
+	printf "   or: gnostr-git reflog [--format] [-f]\n"
+	printf "   or: gnostr-git reflog [-gd]\n"
 	printf "   "
-	printf "    gnostr-git reflog show accepts any of the options accepted by gnostr-git log\n"
+	printf "   \n"
+	printf "    gnostr-git reflog accepts any of the options accepted by gnostr-git log\n"
 	echo "  try:"
-	echo "       gnostr-git log --format='%C(auto)%H%<|(17)%gd/commit/%s'"
+	echo "       gnostr-git log    --format='%C(auto)%H%<|(17)%gd/commit:%s'"
+	echo "       gnostr-git reflog --format='%C(auto)%H%<|(17)%gd/commit:%s'"
 	exit
 }
 for ((i=1; i<=$#; i++)); do
@@ -28,7 +30,7 @@ elif [[ ${!i} == *"help" ]] || [[ ${!i} == "-h" ]]; then
 	exit
 else
 	((i++))
-	gnostr-git-reflog-show --format ${!i}
+	gnostr-git-reflog --format ${!i}
 	exit
 fi
 done
