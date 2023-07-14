@@ -66,13 +66,19 @@ version: gnostr.c## 	print version
 
 chmod:## 	chmod
 ##chmod
-## 	-type f chmod 644
-## 	-type f --name *.sh chmod +rwx
-## 	-type d chmod 755
+## 	find . -type f ! -name 'deps/**' -print0     | xargs -0 chmod 644
+## 	find . -type f ! -name 'deps/**' --name *.sh | xargs -0 chmod +rwx
+## 	find . -type d ! -name 'deps/**' -print0     | xargs -0 chmod 755
 ## 	if isssues or before 'make dist'
-	find . -type f -print0     | xargs -0 chmod 644
-	#find . -type f --name *.sh | xargs -0 chmod +rwx
-	find . -type d ! -name 'deps/**' -print0 | xargs -0 chmod 755
+##all files first
+#find . -type f -print0 -maxdepth 2
+	find . -type f -print0 -maxdepth 2 | xargs -0 chmod 644
+##*.sh template/gnostr-* executables
+#find . -type f -name '*.sh' -name 'template/gnostr-*' -maxdepth 2
+	find . -type f -name '*.sh' -name 'template/gnostr-*' -maxdepth 2 | xargs -0 chmod +rwx
+##not deps not configurator* not .venv
+#find . -type d ! -name 'deps' ! -name 'configurator*' ! -name '.venv' -print0 -maxdepth 1
+	find . -type d ! -name 'deps' ! -name 'configurator*' ! -name '.venv' -print0 -maxdepth 1 | xargs -0 chmod 755
 
 dist: docs version## 	create tar distribution
 	touch deps/tcl/unix/dltest/pkgπ.c || echo
@@ -86,8 +92,7 @@ dist: docs version## 	create tar distribution
 	git ls-files --recurse-submodules | $(GTAR) --exclude='"deps/tcl/unix/dltest/*.c"' \
 		--transform  's/^/gnostr-$(VERSION)-$(OS)-$(ARCH)\//' -T- -caf dist/gnostr-$(VERSION)-$(OS)-$(ARCH).tar.gz
 	ls -dt dist/* | head -n1 | xargs echo "tgz "
-	cd dist && \
-		touch SHA256SUMS-$(VERSION)-$(OS)-$(ARCH).txt && \
+	cd dist && \touch SHA256SUMS-$(VERSION)-$(OS)-$(ARCH).txt && \
 		touch gnostr-$(VERSION)-$(OS)-$(ARCH).tar.gz && \
 		rm **SHA256SUMS**.txt** || echo && \
 		sha256sum gnostr-$(VERSION)-$(OS)-$(ARCH).tar.gz > SHA256SUMS-$(VERSION)-$(OS)-$(ARCH).txt && \
