@@ -31,6 +31,12 @@ GTAR                                   :=$(shell which gtar)
 export GTAR
 TAR                                    :=$(shell which tar)
 export TAR
+ifeq ($(GTAR),)
+#we prefer gtar but...
+GTAR                                   :=$(shell which tar)
+endif
+export GTAR
+
 
 ##all:
 all: submodules gnostr gnostr-git gnostr-relay gnostr-xor docs## 	make gnostr gnostr-cat gnostr-git gnostr-relay gnostr-xor docs
