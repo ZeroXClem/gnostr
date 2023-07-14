@@ -205,16 +205,23 @@ gnostr-xor: $(HEADERS) $(GNOSTR_XOR_OBJS) $(ARS)## 	make gnostr-xor
 ##install all
 ##	install docs/gnostr.1 gnostr gnostr-query
 install: all## 	install docs/gnostr.1 gnostr gnostr-query gnostr-relay gnostr-xor
-	mkdir -p $(PREFIX)/bin
-	mkdir -p $(PREFIX)/include
-	install -m755 -vC include/*.*  ${PREFIX}/include/
-	install -m755 -vC gnostr       $(PREFIX)/bin/gnostr
-	install -m755 -vC gnostr-git   $(PREFIX)/bin/gnostr-git
-	install -m755 -vC gnostr-relay $(PREFIX)/bin/gnostr-relay
-	install -m755 -vC gnostr-xor   $(PREFIX)/bin/gnostr-xor
-	install -m755 -vC gnostr-cat   $(PREFIX)/bin/gnostr-cat
-##          -m644?
-	install -m755 -vC doc/gnostr.1 $(PREFIX)/share/man/man1/gnostr.1 || echo "doc/gnostr.1 failed to install..."
+	@mkdir -p $(PREFIX)/bin
+	@mkdir -p $(PREFIX)/include
+	@shopt -s extglob && install -m755 -vC include/*.*           ${PREFIX}/include/
+	@shopt -s extglob && install -m755 -vC gnostr                $(PREFIX)/bin/gnostr
+	@shopt -s extglob && install -m755 -vC gnostr-*              $(PREFIX)/bin/
+	@shopt -s extglob && install -m755 -vC template/gnostr-*     $(PREFIX)/bin/
+	@rm /usr/local/bin/gnostr-*.sh
+	@rm /usr/local/bin/gnostr-*.c
+	@rm /usr/local/bin/gnostr-*.o
+
+.ONESHELL:
+##install-doc
+##	install-doc
+install-doc:## 	install-doc
+##          -m644? TODO:check proper file permissions
+## 	install -m755 -vC dock/gnostr.1 $(PREFIX)/share/man/man1/gnostr.1
+	@install -m755 -vC doc/gnostr.1 $(PREFIX)/share/man/man1/gnostr.1 || echo "doc/gnostr.1 failed to install..."
 
 .PHONY:config.h
 config.h: configurator
