@@ -244,9 +244,8 @@ install: all## 	install docs/gnostr.1 gnostr gnostr-query gnostr-relay gnostr-xo
 ##install-doc
 ##	install-doc
 install-doc:## 	install-doc
-##          -m644? TODO:check proper file permissions
-## 	install -m755 -vC dock/gnostr.1 $(PREFIX)/share/man/man1/gnostr.1
-	@install -m755 -vC doc/gnostr.1 $(PREFIX)/share/man/man1/gnostr.1 || echo "doc/gnostr.1 failed to install..."
+## 	install -m 0644 -vC doc/gnostr.1 $(PREFIX)/share/man/man1/gnostr.1
+	@install -m 0644 -vC doc/gnostr.1 $(PREFIX)/share/man/man1/gnostr.1 || echo "doc/gnostr.1 failed to install..."
 
 .PHONY:config.h
 config.h: configurator
