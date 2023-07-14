@@ -72,13 +72,14 @@ chmod:## 	chmod
 ## 	if isssues or before 'make dist'
 ##all files first
 #find . -type f -print0 -maxdepth 2
-	find . -type f -print0 -maxdepth 2 | xargs -0 chmod 644
+	find . -type f -print0 -maxdepth 2 | xargs -0 chmod 0644
 ##*.sh template/gnostr-* executables
 #find . -type f -name '*.sh' -name 'template/gnostr-*' -maxdepth 2
 	find . -type f -name '*.sh' -name 'template/gnostr-*' -maxdepth 2 | xargs -0 chmod +rwx
 ##not deps not configurator* not .venv
 #find . -type d ! -name 'deps' ! -name 'configurator*' ! -name '.venv' -print0 -maxdepth 1
-	find . -type d ! -name 'deps' ! -name 'configurator*' ! -name '.venv' -print0 -maxdepth 1 | xargs -0 chmod 755
+	find . -type d ! -name 'deps' ! -name 'configurator*' ! -name '.venv' -print0 -maxdepth 1 | xargs -0 chmod 0755
+	chmod +rwx devtools/refresh-submodules.sh
 
 dist: docs version## 	create tar distribution
 	touch deps/tcl/unix/dltest/pkgπ.c || echo
