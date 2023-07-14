@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+help(){
+	gnostr-git reflog -h | sed -e "s/git/gnostr-git/g"
+	printf "   or: gnostr-git [--hash-list] [-hl]\n"
+	printf "   or: gnostr-git [--format] [-f]\n"
+	printf "   or: gnostr-git [-gd]\n"
+	printf "   "
+	printf "    gnostr-git reflog show accepts any of the options accepted by gnostr-git log\n"
+	echo "  try:"
+	echo "       gnostr-git log --format='%C(auto)%H%<|(17)%gd/commit/%s'"
+	exit
+}
+for ((i=1; i<=$#; i++)); do
+if
+[[ ${!i} == "--hash-list" ]] || [[ ${!i} == "-hl" ]]; then
+	gnostr-git reflog show --format='%C(auto)%H'
+	exit
+elif
+[[ ${!i} == "--format" ]] || [[ ${!i} == "-f" ]]; then
+	gnostr-git reflog show --format='%C(auto)%H/%<|(17)%gd/commit:%s'
+	exit
+elif
+[[ ${!i} == "-gd" ]]; then
+	gnostr-git reflog show --format='%C(auto)%H/%<|(17)%gd'
+	exit
+elif [[ ${!i} == *"help" ]] || [[ ${!i} == "-h" ]]; then
+	help
+	exit
+else
+	((i++))
+	gnostr-git-reflog-show --format ${!i}
+	exit
+fi
+done
