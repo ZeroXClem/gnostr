@@ -104,10 +104,10 @@ dist-test:dist## 	dist-test
 ##dist-test
 ## 	cd dist and run tests on the distribution
 	cd dist && \
-		$(GTAR) -tvf gnostr-$(VERSION)-$(OS)-$(ARCH).tar.gz
+		$(GTAR) -tvf gnostr-$(VERSION)-$(OS)-$(ARCH).tar.gz > gnostr-$(VERSION)-$(OS)-$(ARCH).tar.gz.txt
 	cd dist && \
 		$(GTAR) -xf  gnostr-$(VERSION)-$(OS)-$(ARCH).tar.gz && \
-		cd  gnostr-$(VERSION)-$(OS)-$(ARCH) && make all install
+		cd  gnostr-$(VERSION)-$(OS)-$(ARCH) && make chmod all install
 
 .PHONY:submodules
 submodules:deps/secp256k1/.git deps/jq/.git deps/gnostr-git/.git deps/gnostr-web/.git deps/gnostr-cat/.git deps/tcl/.git deps/hyper-sdk/.git deps/hyper-nostr/.git## 	refresh-submodules
