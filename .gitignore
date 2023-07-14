@@ -13,6 +13,9 @@ gnostr-xor
 a.out
 jsmin
 
+gnostr-*.*.*-*-*
+dist/gnostr-*.*.*-*-*
+
 /result
 configurator.out*
 configurator

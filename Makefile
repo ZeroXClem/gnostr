@@ -78,6 +78,11 @@ dist: docs version## 	create tar distribution
 		gpg -u 0xE616FA7221A1613E5B99206297966C06BB06757B \
 		--sign --armor --detach-sig --output SHA256SUMS-$(VERSION)-$(OS)-$(ARCH).txt.asc SHA256SUMS-$(VERSION)-$(OS)-$(ARCH).txt
 ##rsync -avzP dist/ charon:/www/cdn.jb55.com/tarballs/gnostr/
+dist-test:dist##dist-test
+##dist-test
+## 	cd dist and run tests on the distribution
+	cd dist && $(GTAR) -tvf gnostr-$(VERSION)-$(OS)-$(ARCH).tar.gz
+	cd dist && $(GTAR) -xf  gnostr-$(VERSION)-$(OS)-$(ARCH).tar.gz
 
 .PHONY:submodules
 submodules:deps/secp256k1/.git deps/jq/.git deps/gnostr-git/.git deps/gnostr-web/.git deps/gnostr-cat/.git deps/tcl/.git deps/hyper-sdk/.git deps/hyper-nostr/.git## 	refresh-submodules
@@ -209,11 +214,12 @@ install: all## 	install docs/gnostr.1 gnostr gnostr-query gnostr-relay gnostr-xo
 	@mkdir -p $(PREFIX)/include
 	@shopt -s extglob && install -m755 -vC include/*.*           ${PREFIX}/include/
 	@shopt -s extglob && install -m755 -vC gnostr                $(PREFIX)/bin/gnostr
+	##double forward slasshes ok AFAIK
 	@shopt -s extglob && install -m755 -vC gnostr-*              $(PREFIX)/bin/
 	@shopt -s extglob && install -m755 -vC template/gnostr-*     $(PREFIX)/bin/
-	@rm /usr/local/bin/gnostr-*.sh
-	@rm /usr/local/bin/gnostr-*.c
-	@rm /usr/local/bin/gnostr-*.o
+	@rm /usr/local/bin//gnostr-*.sh
+	@rm /usr/local/bin//gnostr-*.c
+	@rm /usr/local/bin//gnostr-*.o
 
 .ONESHELL:
 ##install-doc
