@@ -111,6 +111,10 @@ dist-test:submodules dist## 	dist-test
 diff-log:
 	@mkdir -p tests && diff template/gnostr-git-reflog template/gnostr-git-log > tests/diff.log || \
 		git diff tests/diff.log
+	@gnostr -h > tests/gnostr-h.log
+	@gnostr-git -h > tests/gnostr-git-h.log
+	@gnostr-git-log -h > tests/gnostr-git-log-h.log
+	@gnostr-git-reflog -h > tests/gnostr-git-reflog-h.log
 .PHONY:submodules
 submodules:deps/secp256k1/.git deps/jq/.git deps/gnostr-git/.git deps/gnostr-web/.git deps/gnostr-cat/.git deps/tcl/.git deps/hyper-sdk/.git deps/hyper-nostr/.git deps/openssl/.git deps/gnostr-aio/.git deps/gnostr-py/.git deps/act/.git deps/gnostr-legit/.git## 	refresh-submodules
 
