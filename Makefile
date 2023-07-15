@@ -164,6 +164,7 @@ deps/gnostr-git/gnostr-git:deps/gnostr-git/.git
 ##	cd deps/git; \
 ##	make install
 gnostr-git:deps/gnostr-git/gnostr-git## 	gnostr-git
+	type -P diff && diff template/gnostr-git-log template/gnostr-git-reflog > template/log-reflog.diff
 	cp $< $@
 
 deps/tcl/.git:
