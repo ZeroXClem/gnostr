@@ -27,6 +27,12 @@ clean-secp:## 	remove deps/secp256k1/.libs/libsecp256k1.* libsecp256k1.a
 clean-gnostr-git:## 	remove deps/gnostr-git gnostr-git
 	rm -rf libgit.a || echo
 	cd deps/gnostr-git && find . -type f -name '*.o' -print0 | rm -f || echo
+##clean-gnostr-legit
+##	remove deps/gnostr-git/gnostr-legit
+##	remove gnostr-legit
+clean-gnostr-legit:## 	remove deps/gnostr-legit gnostr-legit
+	rm -rf gnostr-legit || echo
+	cd deps/gnostr-legit && find . -type f -name '*.o' -print0 | rm -f || echo
 
 ##clean-gnostr-cat
 ##	remove deps/gnostr-cat
