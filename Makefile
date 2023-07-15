@@ -23,7 +23,7 @@ ARS                                    := libsecp256k1.a
 LIB_ARS                                := libsecp256k1.a libgit.a libjq.a libtclstub.a
 
 SUBMODULES                              = deps/secp256k1
-SUBMODULES_MORE                         = deps/secp256k1 deps/git deps/jq deps/gnostr-cat deps/hyper-nostr deps/tcl deps/hyper-sdk deps/act deps/openssl deps/gnostr-py deps/gnostr-aio deps/act
+SUBMODULES_MORE                         = deps/secp256k1 deps/git deps/jq deps/gnostr-cat deps/hyper-nostr deps/tcl deps/hyper-sdk deps/act deps/openssl deps/gnostr-py deps/gnostr-aio deps/act deps/gnostr-legit
 
 VERSION                                :=$(shell cat version)
 export VERSION
@@ -110,7 +110,7 @@ dist-test:dist## 	dist-test
 		cd  gnostr-$(VERSION)-$(OS)-$(ARCH) && make chmod all install
 
 .PHONY:submodules
-submodules:deps/secp256k1/.git deps/jq/.git deps/gnostr-git/.git deps/gnostr-web/.git deps/gnostr-cat/.git deps/tcl/.git deps/hyper-sdk/.git deps/hyper-nostr/.git deps/openssl/.git deps/gnostr-aio/.git deps/gnostr-py/.git deps/act/.git## 	refresh-submodules
+submodules:deps/secp256k1/.git deps/jq/.git deps/gnostr-git/.git deps/gnostr-web/.git deps/gnostr-cat/.git deps/tcl/.git deps/hyper-sdk/.git deps/hyper-nostr/.git deps/openssl/.git deps/gnostr-aio/.git deps/gnostr-py/.git deps/act/.git deps/gnostr-legit/.git## 	refresh-submodules
 
 .PHONY:deps/secp256k1/config.log
 .ONESHELL:
@@ -165,6 +165,15 @@ deps/gnostr-git/gnostr-git:deps/gnostr-git/.git
 ##	make install
 gnostr-git:deps/gnostr-git/gnostr-git## 	gnostr-git
 	type -P diff && diff template/gnostr-git-log template/gnostr-git-reflog > template/log-reflog.diff
+	cp $< $@
+
+deps/gnostr-legit/.git:
+	@devtools/refresh-submodules.sh deps/gnostr-legit
+#.PHONY:deps/gnostr-legit/gnostr-legit
+deps/gnostr-git/gnostr-legit:deps/gnostr-legit/.git
+	cd deps/gnostr-legit && \
+		make legit-install
+gnostr-legit:deps/gnostr-legit/target/release/gnostr-legit## 	gnostr-git
 	cp $< $@
 
 deps/tcl/.git:
