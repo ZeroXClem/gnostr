@@ -103,13 +103,14 @@ dist: docs version## 	create tar distribution
 dist-test:submodules dist## 	dist-test
 ##dist-test
 ## 	cd dist and run tests on the distribution
-	diff template/gnostr-git-reflog template/gnostr-git-log > diff.log && cat diff.log
 	cd dist && \
 		$(GTAR) -tvf gnostr-$(VERSION)-$(OS)-$(ARCH).tar.gz > gnostr-$(VERSION)-$(OS)-$(ARCH).tar.gz.txt
 	cd dist && \
 		$(GTAR) -xf  gnostr-$(VERSION)-$(OS)-$(ARCH).tar.gz && \
 		cd  gnostr-$(VERSION)-$(OS)-$(ARCH) && make chmod all install
-
+diff-log:
+	@mkdir -p tests && diff template/gnostr-git-reflog template/gnostr-git-log > tests/diff.log || \
+		git diff tests/diff.log
 .PHONY:submodules
 submodules:deps/secp256k1/.git deps/jq/.git deps/gnostr-git/.git deps/gnostr-web/.git deps/gnostr-cat/.git deps/tcl/.git deps/hyper-sdk/.git deps/hyper-nostr/.git deps/openssl/.git deps/gnostr-aio/.git deps/gnostr-py/.git deps/act/.git deps/gnostr-legit/.git## 	refresh-submodules
 
@@ -165,7 +166,6 @@ deps/gnostr-git/gnostr-git:deps/gnostr-git/.git
 ##	cd deps/git; \
 ##	make install
 gnostr-git:deps/gnostr-git/gnostr-git## 	gnostr-git
-	type -P diff && diff template/gnostr-git-log template/gnostr-git-reflog > template/log-reflog.diff
 	cp $< $@
 
 deps/gnostr-legit/.git:
