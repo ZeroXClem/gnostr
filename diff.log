@@ -1,0 +1,41 @@
+3,6c3,6
+< 	gnostr-git reflog -h | sed -e "s/git/gnostr-git/g"
+< 	printf "   or: gnostr-git reflog [--hash-list] [-hl]\n"
+< 	printf "   or: gnostr-git reflog [--format] [-f]\n"
+< 	printf "   or: gnostr-git reflog [-gd]\n"
+---
+> 	gnostr-git    log -h | sed -e "s/git/gnostr-git/g"
+> 	printf "   or: gnostr-git log [--hash-list] [-hl]\n"
+> 	printf "   or: gnostr-git log [--format] [-f]\n"
+> 	printf "   or: gnostr-git log [-gd]\n"
+9c9
+< 	printf "gnostr-git reflog accepts any of the options accepted by gnostr-git reflog\n"
+---
+> 	printf "gnostr-git log accepts any of the options accepted by gnostr-git    log\n"
+27,30d26
+< 	[[ ${!i} == "-h" ]] || [[ $1 == "--help" ]] || [[ $1 == "help" ]]; then
+< 	help
+< 	exit
+< elif
+32c28
+< 	gnostr-git reflog      --format='wss://${RELAY}/${REPO}/%C(auto)%H'
+---
+> 	gnostr-git    log      --format='wss://${RELAY}/${REPO}/%C(auto)%H'
+36c32
+< 	gnostr-git reflog      --format='wss://${RELAY}/${REPO}/%C(auto)%H/%<|(17)%gdcommit:%s'
+---
+> 	gnostr-git    log      --format='wss://${RELAY}/${REPO}/%C(auto)%H/%<|(17)%gdcommit:%s'
+39,40c35,39
+< [[ ${!i} == "-gd" ]] || [[ ${!i} == "-g" ]]; then
+< 	gnostr-git reflog      --format='wss://${RELAY}/${REPO}/%C(auto)%H%<|(17)%gd:'
+---
+> [[ ${!i} == "-gd" ]]; then
+> 	gnostr-git    log      --format='wss://${RELAY}/${REPO}/%C(auto)%H%<|(17)%gd:'
+> 	exit
+> elif [[ ${!i} == *"help" ]] || [[ ${!i} == "-h" ]]; then
+> 	help
+43c42,43
+< 	##silence is golden
+---
+> 	((i++))
+> 	gnostr-git-log --format ${!i}
