@@ -24,6 +24,10 @@ help(){
 }
 for ((i=1; i<=$#; i++)); do
 if
+	[[ ${!i} == "-h" ]] || [[ $1 == "--help" ]] || [[ $1 == "help" ]]; then
+	help
+	exit
+elif
 [[ ${!i} == "--hash-list" ]] || [[ ${!i} == "-hl" ]]; then
 	gnostr-git    log      --format='wss://${RELAY}/${REPO}/%C(auto)%H'
 	exit
@@ -39,8 +43,7 @@ elif [[ ${!i} == *"help" ]] || [[ ${!i} == "-h" ]]; then
 	help
 	exit
 else
-	((i++))
-	gnostr-git-log --format ${!i}
+	##silence is golden
 	exit
 fi
 done
