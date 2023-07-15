@@ -32,15 +32,11 @@ elif
 	gnostr-git reflog      --format='wss://${RELAY}/${REPO}/%C(auto)%H/%<|(17)%gdcommit:%s'
 	exit
 elif
-[[ ${!i} == "-gd" ]]; then
+[[ ${!i} == "-gd" ]] || [[ ${!i} == "-g" ]]; then
 	gnostr-git reflog      --format='wss://${RELAY}/${REPO}/%C(auto)%H%<|(17)%gd:'
 	exit
-elif [[ ${!i} == *"help" ]] || [[ ${!i} == "-h" ]]; then
-	help
-	exit
 else
-	((i++))
-	gnostr-git-reflog --format ${!i}
+	gnostr-git reflog      --format='wss://${RELAY}/${REPO}/%C(auto)%H/%<|(17)%gdcommit:%s'
 	exit
 fi
 done
