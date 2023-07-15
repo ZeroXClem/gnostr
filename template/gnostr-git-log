@@ -36,11 +36,8 @@ elif
 	gnostr-git    log      --format='wss://${RELAY}/${REPO}/%C(auto)%H/%<|(17)%gdcommit:%s'
 	exit
 elif
-[[ ${!i} == "-gd" ]]; then
+[[ ${!i} == "-gd" ]] || [[ ${!i} == "-g" ]]; then
 	gnostr-git    log      --format='wss://${RELAY}/${REPO}/%C(auto)%H%<|(17)%gd:'
-	exit
-elif [[ ${!i} == *"help" ]] || [[ ${!i} == "-h" ]]; then
-	help
 	exit
 else
 	##silence is golden
