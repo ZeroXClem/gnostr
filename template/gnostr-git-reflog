@@ -24,6 +24,10 @@ help(){
 }
 for ((i=1; i<=$#; i++)); do
 if
+	[[ ${!i} == "-h" ]] || [[ $1 == "--help" ]] || [[ $1 == "help" ]]; then
+	help
+	exit
+elif
 [[ ${!i} == "--hash-list" ]] || [[ ${!i} == "-hl" ]]; then
 	gnostr-git reflog      --format='wss://${RELAY}/${REPO}/%C(auto)%H'
 	exit
@@ -36,7 +40,7 @@ elif
 	gnostr-git reflog      --format='wss://${RELAY}/${REPO}/%C(auto)%H%<|(17)%gd:'
 	exit
 else
-	gnostr-git reflog      --format='wss://${RELAY}/${REPO}/%C(auto)%H/%<|(17)%gdcommit:%s'
+	##silence is golden
 	exit
 fi
 done
