@@ -100,9 +100,10 @@ dist: docs version## 	create tar distribution
 		gpg -u 0xE616FA7221A1613E5B99206297966C06BB06757B \
 		--sign --armor --detach-sig --output SHA256SUMS-$(VERSION)-$(OS)-$(ARCH).txt.asc SHA256SUMS-$(VERSION)-$(OS)-$(ARCH).txt
 #rsync -avzP dist/ charon:/www/cdn.jb55.com/tarballs/gnostr/
-dist-test:dist## 	dist-test
+dist-test:submodules dist## 	dist-test
 ##dist-test
 ## 	cd dist and run tests on the distribution
+	diff template/gnostr-git-reflog template/gnostr-git-log > diff.log && cat diff.log
 	cd dist && \
 		$(GTAR) -tvf gnostr-$(VERSION)-$(OS)-$(ARCH).tar.gz > gnostr-$(VERSION)-$(OS)-$(ARCH).tar.gz.txt
 	cd dist && \
