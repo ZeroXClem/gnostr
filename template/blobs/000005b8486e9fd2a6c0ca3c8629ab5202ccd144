@@ -1,0 +1,5 @@
+commit 000005b8486e9fd2a6c0ca3c8629ab5202ccd144
+Author: @RandyMcMillan <randy.lee.mcmillan@gmail.com>
+Date:   Sun Jul 16 14:30:29 2023 -0400
+
+    00:00119c35:Makefile: gnostr-relay: bypass fir now: TODO write gnostr-relay.c as docker interface?
