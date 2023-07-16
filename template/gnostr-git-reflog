@@ -29,15 +29,15 @@ if
 	exit
 elif
 [[ ${!i} == "--hash-list" ]] || [[ ${!i} == "-hl" ]]; then
-	gnostr-git reflog      --format='wss://${RELAY}/${REPO}/%C(auto)%H'
+	gnostr-git reflog      --format='wss://{RELAY}/{REPO}/%C(auto)%H'
 	exit
 elif
 [[ ${!i} == "--format" ]] || [[ ${!i} == "-f" ]]; then
-	gnostr-git reflog      --format='wss://${RELAY}/${REPO}/%C(auto)%H/%<|(17)%gd:commit:%s'
+	gnostr-git reflog      --format='wss://{RELAY}/{REPO}/%C(auto)%H/%<|(17)%gd:commit:%s'
 	exit
 elif
 [[ ${!i} == "-gd" ]] || [[ ${!i} == "-g" ]]; then
-	gnostr-git reflog      --format='wss://${RELAY}/${REPO}/%C(auto)%H%<|(17)%gd'
+	gnostr-git reflog      --format='wss://{RELAY}/{REPO}/%C(auto)%H%<|(17)%gd'
 	exit
 else
 	##silence is golden
