@@ -783,8 +783,8 @@ static void try_subcommand(int argc, const char *argv[])
 {
 	static char buf[128] = {0};
 	const char *sub = argv[1];
-	if (strlen(sub) >= 1 && sub[0] != '-') {
-		snprintf(buf, sizeof(buf)-1, "gnostr-%s", sub);
+	if (strlen(sub) >= 7 && sub[0] != '-') {
+		snprintf(buf, sizeof(buf)-1, "gnostr-relay-%s", sub);
 		execvp(buf, (char * const *)argv+1);
 	}
 }
