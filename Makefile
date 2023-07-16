@@ -23,7 +23,7 @@ ARS                                    := libsecp256k1.a
 LIB_ARS                                := libsecp256k1.a libgit.a libjq.a libtclstub.a
 
 SUBMODULES                              = deps/secp256k1
-SUBMODULES_MORE                         = deps/secp256k1 deps/git deps/jq deps/gnostr-cat deps/hyper-nostr deps/tcl deps/hyper-sdk deps/act deps/openssl deps/gnostr-py deps/gnostr-aio deps/act deps/gnostr-legit
+SUBMODULES_MORE                         = deps/secp256k1 deps/git deps/jq deps/gnostr-cat deps/hyper-nostr deps/tcl deps/hyper-sdk deps/act deps/openssl deps/gnostr-py deps/gnostr-aio deps/act deps/gnostr-legit deps/gnostr-relay
 
 VERSION                                :=$(shell cat version)
 export VERSION
@@ -115,6 +115,7 @@ diff-log:
 	@gnostr-git -h > tests/gnostr-git-h.log
 	@gnostr-git-log -h > tests/gnostr-git-log-h.log
 	@gnostr-git-reflog -h > tests/gnostr-git-reflog-h.log
+	@gnostr-relay -h > tests/gnostr-relay-h.log
 .PHONY:submodules
 submodules:deps/secp256k1/.git deps/jq/.git deps/gnostr-git/.git deps/gnostr-web/.git deps/gnostr-cat/.git deps/tcl/.git deps/hyper-sdk/.git deps/hyper-nostr/.git deps/openssl/.git deps/gnostr-aio/.git deps/gnostr-py/.git deps/act/.git deps/gnostr-legit/.git## 	refresh-submodules
 
@@ -178,7 +179,16 @@ deps/gnostr-legit/.git:
 deps/gnostr-git/gnostr-legit:deps/gnostr-legit/.git
 	cd deps/gnostr-legit && \
 		make legit-install
-gnostr-legit:deps/gnostr-legit/target/release/gnostr-legit## 	gnostr-git
+gnostr-legit:deps/gnostr-legit/target/release/gnostr-legit## 	gnostr-legit
+	cp $< $@
+
+deps/gnostr-relay/.git:
+	@devtools/refresh-submodules.sh deps/gnostr-relay
+#.PHONY:deps/gnostr-relay/gnostr-relay
+deps/gnostr-git/gnostr-relay:deps/gnostr-relay/.git
+	cd deps/gnostr-relay && \
+		make
+gnostr-relay:deps/gnostr-relay/target/release/gnostr-relay## 	gnostr-relay
 	cp $< $@
 
 deps/tcl/.git:
@@ -261,7 +271,8 @@ install: all## 	install docs/gnostr.1 gnostr gnostr-query gnostr-relay gnostr-xo
 	@mkdir -p $(PREFIX)/bin
 	@mkdir -p $(PREFIX)/include
 	@shopt -s extglob && install -m755 -vC include/*.*           ${PREFIX}/include/
-	@shopt -s extglob && install -m755 -vC gnostr                $(PREFIX)/bin/gnostr
+	@shopt -s extglob && install -m755 -vC gnostr                $(PREFIX)/bin/
+	@shopt -s extglob && install -m755 -vC gnostr-relay          $(PREFIX)/bin/
 	##double forward slasshes ok AFAIK
 	@shopt -s extglob && install -m755 -vC gnostr-*              $(PREFIX)/bin/
 	@shopt -s extglob && install -m755 -vC template/gnostr-*     $(PREFIX)/bin/
