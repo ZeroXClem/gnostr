@@ -1,0 +1,26 @@
+commit 0000018333d19c58a43bcfa81eb04fe01fbf1249
+Author: @RandyMcMillan <randy.lee.mcmillan@gmail.com>
+Date:   Sun Jul 16 15:08:36 2023 -0400
+
+    03:0002e443:define VERSION 0.0.0_21
+
+diff --git a/gnostr.c b/gnostr.c
+index ab6b652..a15e396 100644
+--- a/gnostr.c
++++ b/gnostr.c
+@@ -29,7 +29,7 @@
+ 
+ #include "include/openssl_hash.h"
+ 
+-#define VERSION "0.0.0"
++#define VERSION "0.0.0_21"
+ 
+ #define MAX_TAGS 32
+ #define MAX_TAG_ELEMS 16
+diff --git a/version b/version
+index 77d6f4c..1e2458d 100644
+--- a/version
++++ b/version
+@@ -1 +1 @@
+-0.0.0
++0.0.0_21
