@@ -1,0 +1,416 @@
+wss://{RELAY}/{REPO}/00000d855e3952bdf859ef785c5e79cade8f44bc/HEAD@{0}:commit:01:000280f5:
+wss://{RELAY}/{REPO}/0000023a65fa7b9b521ac0ae0fdca7c1f75e5227/HEAD@{1}:commit:00:000ae969:
+wss://{RELAY}/{REPO}/e6e2e47ee09d9145246dfad7ed2ba4766301f6d5/HEAD@{2}:commit:deps/gnostr-legit: update
+wss://{RELAY}/{REPO}/000005b8486e9fd2a6c0ca3c8629ab5202ccd144/HEAD@{3}:commit:00:00119c35:Makefile: gnostr-relay: bypass fir now: TODO write gnostr-relay.c as docker interface?
+wss://{RELAY}/{REPO}/000000d828f6fc8e6bed027d3fc6558385d50ccc/HEAD@{4}:commit:01:00001b07:Makefile: gnostr-relay: bypass fir now: TODO write gnostr-relay.c as docker interface?
+wss://{RELAY}/{REPO}/00000af95aac476eb5c379d5e74dd8501fc2c96c/HEAD@{5}:commit:02:00017ac1:Makefile: gnostr-relay: bypass fir now: TODO write gnostr-relay.c as docker interface?
+wss://{RELAY}/{REPO}/00000d336a9b0a58c5da3ac09db5935d0c8aa984/HEAD@{6}:commit:01:0000ae42:deps/gnostr-legit/src/gitminer.rs:write the reflog: conform to the 'gnostr' protocol
+wss://{RELAY}/{REPO}/000000a937f4579642b2d33d53df2bb095434bfc/HEAD@{7}:commit:02:00000d0e:deps/gnostr-legit/src/gitminer.rs:write the reflog: conform to the 'gnostr' protocol
+wss://{RELAY}/{REPO}/0000096be18fd14145d013f3ece2e7a84cd5d056/HEAD@{8}:commit:02:0001684f:template/blobs: add blobs
+wss://{RELAY}/{REPO}/000009614cb5c9c766ab8f35b370c6b1c19b5f1e/HEAD@{9}:commit:03:00016309:.gnostr: add symlink
+wss://{RELAY}/{REPO}/00000a6bb87dd45d252778f1387c02188f3fa3ae/HEAD@{10}:commit:03:00029745:gnostr-relay.c -> devtools/.gnostr-relay.c
+wss://{RELAY}/{REPO}/6bbb0571eaf101c39b8ca302f7dc20a6aa6cdf10/HEAD@{11}:commit:make:gnostr-relay:.gitmodules: update deps/gnostr-legit gnostr-relay
+wss://{RELAY}/{REPO}/90b9b7a7bda739082f5ddbc16dbd0da685a2a5f5/HEAD@{12}:commit:make:gnostr-relay:.gitmodules: update deps/gnostr-legit
+wss://{RELAY}/{REPO}/868cdd3adc57b66a1a09cd5a6a3cf3418a938354/HEAD@{13}:commit:make:gnostr-relay:.gitmodules: update deps/gnostr-legit
+wss://{RELAY}/{REPO}/4d1cdebcb7ebe9844be1ccb2dc9b64b6ea2853b6/HEAD@{14}:commit:.gitmodules: deps/gnostr-relay: add templates/gnostr-relays
+wss://{RELAY}/{REPO}/a764685ac8fd8c89b64820252c4fd58b0e412b51/HEAD@{15}:commit:.gitmodules: deps/gnostr-relay: add templates/gnostr-relays
+wss://{RELAY}/{REPO}/eef180a1c591eac6739c08e0ab1c68b7e6a802da/HEAD@{16}:commit:make: diff-log: more logs
+wss://{RELAY}/{REPO}/eef180a1c591eac6739c08e0ab1c68b7e6a802da/HEAD@{17}:commit:make: diff-log: more logs
+wss://{RELAY}/{REPO}/7f0248f0b14d65ad70a0faa1b0bddcaddd479e52/HEAD@{18}:commit:make: diff-log: tests/diff.log
+wss://{RELAY}/{REPO}/7f0248f0b14d65ad70a0faa1b0bddcaddd479e52/HEAD@{19}:commit:make: diff-log: tests/diff.log
+wss://{RELAY}/{REPO}/52f4f6ba8ce95d54836d0fc7d6c13bd877feed73/HEAD@{20}:commit:CHANGELOG: update
+wss://{RELAY}/{REPO}/77982543310181076bc31be8136094aad5bc6d16/HEAD@{21}:commit:template/gnostr-git-log: sync with reflog
+wss://{RELAY}/{REPO}/b284bfa371026e6a01a33c04d88df64e7e450951/HEAD@{22}:commit:template/gnostr-git-log: sync with reflog
+wss://{RELAY}/{REPO}/b284bfa371026e6a01a33c04d88df64e7e450951/HEAD@{23}:commit:template/gnostr-git-log: sync with reflog
+wss://{RELAY}/{REPO}/596885bd163234fc0b238cb5bea5fd160bfa7248/HEAD@{24}:commit:make:clean-gnostr-legit
+wss://{RELAY}/{REPO}/f26fadc6ed547eaeae6b41f354978de2634289c7/HEAD@{25}:commit:make: dist-test: create diff.log
+wss://{RELAY}/{REPO}/fdfb462045cebdb4c2f2b6455c2c641c63538cf5/HEAD@{26}:commit:template/gnostr-git-log: sync with reflog
+wss://{RELAY}/{REPO}/fedbac865d0e05c5198b6ba0e5074a9b53c179eb/HEAD@{27}:commit:CHANGELOG: update
+wss://{RELAY}/{REPO}/a75a0706b94f905835179c6c89866dfb0e87d1b4/HEAD@{28}:commit:CHANGELOG: update
+wss://{RELAY}/{REPO}/d49aaaf993575250874324306c2273b95f46fe06/HEAD@{29}:commit:template/gnostr-git-reflog:
+wss://{RELAY}/{REPO}/00000204cce3094c861e579c57903f25eb281534/HEAD@{30}:commit:00:0003bbda:gnostr-legit test...
+wss://{RELAY}/{REPO}/000002e3aaf8cf0588a43f73c45d29e02aee382e/HEAD@{31}:commit:03:000116da:On branch master Your branch is ahead of 'origin/master' by 1 commit.   (use "git push" to publish your local commits)
+wss://{RELAY}/{REPO}/000002867a95ecb314dc6e7f1c2130047c26a729/HEAD@{32}:commit:03:000320e4:On branch master Your branch is up to date with 'origin/master'.
+wss://{RELAY}/{REPO}/00000c0e05d95a9fa390c59e1a3f1f466ee236f6/HEAD@{33}:commit:02:0007bd17:gnostr-legit working as sub command
+wss://{RELAY}/{REPO}/00000c0e05d95a9fa390c59e1a3f1f466ee236f6/HEAD@{34}:commit:02:0007bd17:gnostr-legit working as sub command
+wss://{RELAY}/{REPO}/00000c0e05d95a9fa390c59e1a3f1f466ee236f6/HEAD@{35}:commit:02:0007bd17:gnostr-legit working as sub command
+wss://{RELAY}/{REPO}/00000c0e05d95a9fa390c59e1a3f1f466ee236f6/HEAD@{36}:commit:02:0007bd17:gnostr-legit working as sub command
+wss://{RELAY}/{REPO}/dbb70feb39138b0f5347da1bf1e21db0aa05710b/HEAD@{37}:commit:.gitmodules: deps/gnostr-legit
+wss://{RELAY}/{REPO}/00000c26b71d8e5f8e41cf37e2a6b425f9365bb3/HEAD@{38}:commit:02:0001694e:gnostr-legit working as sub command
+wss://{RELAY}/{REPO}/0000031613d3bd133a5674920db72c1373d64704/HEAD@{39}:commit:02:0000a51d:On branch master Your branch is ahead of 'origin/master' by 6 commits.   (use "git push" to publish your local commits)
+wss://{RELAY}/{REPO}/0000005246dd06bc41d45e3676c1086bded34beb/HEAD@{40}:commit:01:00095801:this is another gnostr commit with some PoW!
+wss://{RELAY}/{REPO}/000f93b0683c9cbc307b469442b8ac63a5f12b1e/HEAD@{41}:commit:00:0000030d:this is another gnostr commit with some PoW!
+wss://{RELAY}/{REPO}/0003beeda6ebaf5b79def3a60bc51d8e4eaf247e/HEAD@{42}:commit:00:0000011f:this is another gnostr commit with some PoW!
+wss://{RELAY}/{REPO}/000345d7d650a9f45a24722f1ca75f483891fe9f/HEAD@{43}:commit:02:000000a5:this is another gnostr commit with some PoW!
+wss://{RELAY}/{REPO}/000a46b3ca62ba30e30184d13b010e3d58a0f310/HEAD@{44}:commit:00:0000068e:this is another gnostr commit with some PoWgnostr git log!
+wss://{RELAY}/{REPO}/0000540f8d2ebe91705f5f0941954c3e85a0174d/HEAD@{45}:commit:01:00000448:this is another gnostr commit with some PoWgnostr git log!
+wss://{RELAY}/{REPO}/0000063bc9d11d987632faa0f126a8b3e5e588a0/HEAD@{46}:commit:03:00015365:this is a gnostr commit with some proof of work
+wss://{RELAY}/{REPO}/000001459c94566556634dd43d4e99d06d3e26b9/HEAD@{47}:commit:00:0003b464:gnostr
+wss://{RELAY}/{REPO}/000002a113a18b42c5769cf549043a1d9052b997/HEAD@{48}:commit:02:00101b3f:gnostr
+wss://{RELAY}/{REPO}/00004ef7d9f68d347608f4e5ae64d9d521b3a864/HEAD@{49}:commit:03:000019d7:gnostr
+wss://{RELAY}/{REPO}/0007690d556ceefc2f3b5c969e6994c4686de987/HEAD@{50}:commit:01:00000201:gnostr
+wss://{RELAY}/{REPO}/0c94055c8686905aae8c556e089356a93ae9eb3e/HEAD@{51}:commit:03:00000001:gnostr
+wss://{RELAY}/{REPO}/00008a30877b407b228bdc9ab0758165cb2805ad/HEAD@{52}:commit:03:000000a6:gnostr
+wss://{RELAY}/{REPO}/0003b86c887f1d7b76d191400054459b7e8d9139/HEAD@{53}:commit:01:00000090:gnostr
+wss://{RELAY}/{REPO}/dbb70feb39138b0f5347da1bf1e21db0aa05710b/HEAD@{54}:commit:.gitmodules: deps/gnostr-legit
+wss://{RELAY}/{REPO}/9e37ca24cfdc77e8e888eba92e9fa290b0a1c817/HEAD@{55}:commit:make: gnostr-git: add template/log-reflog.diff
+wss://{RELAY}/{REPO}/9e37ca24cfdc77e8e888eba92e9fa290b0a1c817/HEAD@{56}:commit:make: gnostr-git: add template/log-reflog.diff
+wss://{RELAY}/{REPO}/a9bcb49fa6a77bfe9f1534cff2d05f7c23fd5479/HEAD@{57}:commit:template/gnostr-git-reflog: initial config
+wss://{RELAY}/{REPO}/19d8b748d6b3e80d51834f7392d3ed03a36008f0/HEAD@{58}:commit:template/gnostr-git-log: initial config
+wss://{RELAY}/{REPO}/1f915a8440371140592db88b9a41a1fcb2cd906f/HEAD@{59}:commit:template/gnostr-git-log: initiali config
+wss://{RELAY}/{REPO}/e25c332633897bd403edd50d2c91971339a4ae01/HEAD@{60}:commit:template/gnostr-git-reflog: initial config
+wss://{RELAY}/{REPO}/364c9140e410c0da3a9ab7e112caf7d837d336fc/HEAD@{61}:commit:make: gnostr-git: add template/log-reflog.diff
+wss://{RELAY}/{REPO}/ace778bfc996999cd9e5757187e77567d4a1fc07/HEAD@{62}:commit:template/gnostr-git-reflog: initial config
+wss://{RELAY}/{REPO}/1f915a8440371140592db88b9a41a1fcb2cd906f/HEAD@{63}:commit:template/gnostr-git-log: initiali config
+wss://{RELAY}/{REPO}/e25c332633897bd403edd50d2c91971339a4ae01/HEAD@{64}:commit:template/gnostr-git-reflog: initial config
+wss://{RELAY}/{REPO}/2033fe742b465cb501210e4e726d77c9be25fdc3/HEAD@{65}:commit:make: submodules: add deps/gnostr-py/.git gnostr-aio/.git act/.git
+wss://{RELAY}/{REPO}/9a1e89c11dba00d90de0bffe3046f9f1f2bd6b86/HEAD@{66}:commit:make: all - deps/openssl deps/openssl/.git working
+wss://{RELAY}/{REPO}/03e79ef5963389b0fa4adb45daa17e41af0eb26e/HEAD@{67}:commit:make: clean-all: handle sub submodules in deps/openssl
+wss://{RELAY}/{REPO}/c822f190a8a9e579047889993aba0c4db5b55e9b/HEAD@{68}:commit:make: dist: git add ... || echo
+wss://{RELAY}/{REPO}/ed9501dfb7c627415efc98baf12fa3408548e387/HEAD@{69}:commit:make: dist-test: make chmod all install
+wss://{RELAY}/{REPO}/e20d0eed794c7e1a60974748d5483e18467a811f/HEAD@{70}:commit:CHANGELOG: update
+wss://{RELAY}/{REPO}/a9aea76312bf6dc9470cc109a04913e736424cc7/HEAD@{71}:commit:make: chmod: +rwx devtools/refresh-submodules.sh
+wss://{RELAY}/{REPO}/85cef51b1411ae58575a077cce19df008ced9aae/HEAD@{72}:commit:chmod: 0644 CHANGELOG requirements.txt sources/awesome.html
+wss://{RELAY}/{REPO}/dd37483ffefedd7f12d69462be29973ebe5c19e8/HEAD@{73}:commit:.github/workflows/alpine-matrix.yml: chmod 0644
+wss://{RELAY}/{REPO}/15c0e32ea678df66cda45141a923d91501a9f431/HEAD@{74}:commit:Makefile: act.mk: venv.mk: chmod 0644
+wss://{RELAY}/{REPO}/4b28f53a421bd3cf54d8605612dc62ce9cf5c9c0/HEAD@{75}:commit:Makefile: act.mk: chmod 0644
+wss://{RELAY}/{REPO}/0119e7c018a682270332be7d88db16db210a6232/HEAD@{76}:commit:include/*.js -> template/*.js
+wss://{RELAY}/{REPO}/48e3494f0a85465b8e4dcfca36205631689e7934/HEAD@{77}:commit:include/*.*.h include/tests/*.*.h: chmod 0644
+wss://{RELAY}/{REPO}/df8fa7e8bc4940101bf4c94d1cdebc7f7246ca55/HEAD@{78}:commit:template/*.js: chmod 0644
+wss://{RELAY}/{REPO}/ed6a51fa9f5220fb65b9706ebc2ea3bb26ca5cb0/HEAD@{79}:commit:gnostr.js -> template/gnostr.js: renamed
+wss://{RELAY}/{REPO}/346e05cdd1ccc070c77ad6bb6a1459dcfa4ed231/HEAD@{80}:commit:chmod: 0644 template/gnostr-*
+wss://{RELAY}/{REPO}/346e05cdd1ccc070c77ad6bb6a1459dcfa4ed231/HEAD@{81}:commit:chmod: 0644 template/gnostr-*
+wss://{RELAY}/{REPO}/2041ded0b2f741078f48300af30b1abcfbe73c5c/HEAD@{82}:commit:chmod: 0644 *.sh template/*.sh
+wss://{RELAY}/{REPO}/fce393d47f62073ce646d702cf29ed4fed7ad8fa/HEAD@{83}:commit:make: install-docs: 0644 file perms
+wss://{RELAY}/{REPO}/b681c8710c6241a8b8672a977f7c1701dcef8279/HEAD@{84}:commit:make: install-docs: 0644 file perms
+wss://{RELAY}/{REPO}/f596d260008dc6f95cd3430b0867433b962c1ab0/HEAD@{85}:commit:make:dist: touch ... || echo
+wss://{RELAY}/{REPO}/15f049bed999f836ff424ab1078f802dd14f37b9/HEAD@{86}:commit:chmod: 0644 template/gnostr-*
+wss://{RELAY}/{REPO}/15f049bed999f836ff424ab1078f802dd14f37b9/HEAD@{87}:commit:chmod: 0644 template/gnostr-*
+wss://{RELAY}/{REPO}/15f049bed999f836ff424ab1078f802dd14f37b9/HEAD@{88}:commit:chmod: 0644 template/gnostr-*
+wss://{RELAY}/{REPO}/122766f37f7ced602a60d075dd0682e5b6f47e34/HEAD@{89}:commit:chmod: 0644 *.sh template/*.sh
+wss://{RELAY}/{REPO}/7a57940c26a816312e7e43e2a7e5d82597ff96fb/HEAD@{90}:commit:chmod: 644 *.sh template/*.sh
+wss://{RELAY}/{REPO}/b681c8710c6241a8b8672a977f7c1701dcef8279/HEAD@{91}:commit:make: install-docs: 0644 file perms
+wss://{RELAY}/{REPO}/8db69c3c1448e2684d4d3871af3000d351d1e550/HEAD@{92}:commit:make: install-docs: 644 file perms
+wss://{RELAY}/{REPO}/f596d260008dc6f95cd3430b0867433b962c1ab0/HEAD@{93}:commit:make:dist: touch ... || echo
+wss://{RELAY}/{REPO}/88740a6e9b72cbc340a76e598148c5eead2e9be8/HEAD@{94}:commit:chmod: 0644 template/gnostr-*
+wss://{RELAY}/{REPO}/88740a6e9b72cbc340a76e598148c5eead2e9be8/HEAD@{95}:commit:chmod: 0644 template/gnostr-*
+wss://{RELAY}/{REPO}/36ed11dee8b5c6ce5b2bf00fb7ca46f0b258c685/HEAD@{96}:commit:chmod: template/gnostr-* 0644
+wss://{RELAY}/{REPO}/1b00f2c3a24d538b8484f4380a51afe9ab8db5a1/HEAD@{97}:commit:chmod: 644 *.sh template/*.sh
+wss://{RELAY}/{REPO}/8db69c3c1448e2684d4d3871af3000d351d1e550/HEAD@{98}:commit:make: install-docs: 644 file perms
+wss://{RELAY}/{REPO}/f596d260008dc6f95cd3430b0867433b962c1ab0/HEAD@{99}:commit:make:dist: touch ... || echo
+wss://{RELAY}/{REPO}/66878cb7a832cb904eabc3cd7cdc0986708a2da4/HEAD@{100}:commit:make: dist-test: initial config
+wss://{RELAY}/{REPO}/1606ae1ebde751cb9ebb526dc10c21c36e4efa30/HEAD@{101}:commit:make: chmod: init config
+wss://{RELAY}/{REPO}/b3dc88c58bbadfb317bc6d8ad4cb28e408b49307/HEAD@{102}:commit:make: docs: remove extra 2>/dev/null
+wss://{RELAY}/{REPO}/f235509a3491818787540ab8124bf0cc664a3d8c/HEAD@{103}:commit:Makefile: ifeq ($(GTAR),): prefer gtar
+wss://{RELAY}/{REPO}/a7046b154d507e36dd812d46e474d0c815813485/HEAD@{104}:commit:Makefile:
+wss://{RELAY}/{REPO}/f171c50acff0e9efd2bd75b4d466a8ef8ef5bb27/HEAD@{105}:commit:.gitmodules:deps/gnostr-web
+wss://{RELAY}/{REPO}/c2e4391fe320defd916e204e5496979fe47e7b6c/HEAD@{106}:commit:CHANGELOG: update
+wss://{RELAY}/{REPO}/82dddb2fcdc5e389b2bee01a6f0f97137017b501/HEAD@{107}:commit:CHANGELOG: update
+wss://{RELAY}/{REPO}/f7bf779a36c6b1a6b0411bdb9c3cec13011ae99a/HEAD@{108}:commit:make: dist-test
+wss://{RELAY}/{REPO}/2dc1990d643425a676810878a52f4eaebf2f311f/HEAD@{109}:commit:devtools/jsmin.c -> template/gnostr-jsmin.c: mv/rename for namespace
+wss://{RELAY}/{REPO}/d144bee8d1544092355ef79232d69fa9919929ef/HEAD@{110}:commit:template/gnostr-git-log gnostr-git-reflog: add gnostr protocol notes
+wss://{RELAY}/{REPO}/78e19c757a43b2d853f496e6253625a77f6072c1/HEAD@{111}:commit:CHANGELOG: update
+wss://{RELAY}/{REPO}/d144bee8d1544092355ef79232d69fa9919929ef/HEAD@{112}:commit:template/gnostr-git-log gnostr-git-reflog: add gnostr protocol notes
+wss://{RELAY}/{REPO}/f49e3f14722c89465426b530e2f9b24f9b051868/HEAD@{113}:commit:make: install rm /usr/local/bin/gnostr-*.c/.a/.o
+wss://{RELAY}/{REPO}/1b79d92087ec7ad3dd2f18783c82014beda1c9b3/HEAD@{114}:commit:template/gnostr-git-reflog-show: arg handling and help
+wss://{RELAY}/{REPO}/6f2a474dc3e15d1a292f14698f1b75b67624dbbc/HEAD@{115}:commit:template/get_block_height.sh -> template/gnostr-blockheight
+wss://{RELAY}/{REPO}/c83173572cfe59dba2bb376bfbc113762530228c/HEAD@{116}:commit:CHANGELOG: update
+wss://{RELAY}/{REPO}/53027f727544a4554acefa333a0d1e10843ab3ec/HEAD@{117}:commit:deps/gnostr-web/.git: add config
+wss://{RELAY}/{REPO}/680aa948956771e12a67c79d2622131aef56ebaf/HEAD@{118}:commit:gnostr-relay --initialize --init -i
+wss://{RELAY}/{REPO}/321dd48983253ec01225dd48a4d814e5166e4a0f/HEAD@{119}:commit:gnostr-relay --initialize --init -i
+wss://{RELAY}/{REPO}/f907c012ff8c3973a64ff5c0f55c8899f2522aca/HEAD@{120}:commit:gnostr-relay --initialize --init -i
+wss://{RELAY}/{REPO}/f907c012ff8c3973a64ff5c0f55c8899f2522aca/HEAD@{121}:commit:gnostr-relay --initialize --init -i
+wss://{RELAY}/{REPO}/68420c55ad6f6d7dbb46fc6e67cca9e6d78bdf8d/HEAD@{122}:commit:gnostr-relay --initialize --init -i
+wss://{RELAY}/{REPO}/df2860919c075de486c0d47b1a8aad9b0f24a6a8/HEAD@{123}:commit:..
+wss://{RELAY}/{REPO}/df2860919c075de486c0d47b1a8aad9b0f24a6a8/HEAD@{124}:commit:..
+wss://{RELAY}/{REPO}/68420c55ad6f6d7dbb46fc6e67cca9e6d78bdf8d/HEAD@{125}:commit:gnostr-relay --initialize --init -i
+wss://{RELAY}/{REPO}/68420c55ad6f6d7dbb46fc6e67cca9e6d78bdf8d/HEAD@{126}:commit:gnostr-relay --initialize --init -i
+wss://{RELAY}/{REPO}/b2b5b1967c73224b23bf0ff809a73fafe24c428e/HEAD@{127}:commit:make:all: submodules
+wss://{RELAY}/{REPO}/dc25625e1e9303c4cd9db832848e4a6137fc9c03/HEAD@{128}:commit:make: submodules
+wss://{RELAY}/{REPO}/6b912e68a8284a677d1cc5435ce754767d337bf1/HEAD@{129}:commit:devtools/jsmin.c: for include/*.js.h creation
+wss://{RELAY}/{REPO}/118f5fe97e9e489ad520cc948c8ade9702eff867/HEAD@{130}:commit:devtools/jsmin.c: for include/*.js.h creation
+wss://{RELAY}/{REPO}/59910764f1dd2c23d34ea76ecb7f647bbe640edc/HEAD@{131}:commit:make: clean: clean-secp: fix
+wss://{RELAY}/{REPO}/59910764f1dd2c23d34ea76ecb7f647bbe640edc/HEAD@{132}:commit:make: clean: clean-secp: fix
+wss://{RELAY}/{REPO}/59910764f1dd2c23d34ea76ecb7f647bbe640edc/HEAD@{133}:commit:make: clean: clean-secp: fix
+wss://{RELAY}/{REPO}/59910764f1dd2c23d34ea76ecb7f647bbe640edc/HEAD@{134}:commit:make: clean: clean-secp: fix
+wss://{RELAY}/{REPO}/59910764f1dd2c23d34ea76ecb7f647bbe640edc/HEAD@{135}:commit:make: clean: clean-secp: fix
+wss://{RELAY}/{REPO}/855b8c95e34fa31f68c885c161eaa90c37845b71/HEAD@{136}:commit:make: dist use install -m755 for gnostr.1 man
+wss://{RELAY}/{REPO}/bb2b05ffe3d997d3b9ff42b2e61a8ef60a10bda7/HEAD@{137}:commit:CHANGELOG: update
+wss://{RELAY}/{REPO}/a6b6ddd0e4fd13ab100a14a7491712728d8c0745/HEAD@{138}:commit:gnostr.c: gnostr-relay.c: include: headers js
+wss://{RELAY}/{REPO}/0fe727c9a7ea72ad7836600adc1b46e040a88c73/HEAD@{139}:commit:include: hyper-nostr files
+wss://{RELAY}/{REPO}/ee3bce135a34c7d4b766b0c6ba735a1f24803201/HEAD@{140}:commit:gnostr.c gnostr-relay.c: use include/struct_args.h
+wss://{RELAY}/{REPO}/ee3bce135a34c7d4b766b0c6ba735a1f24803201/HEAD@{141}:commit:gnostr.c gnostr-relay.c: use include/struct_args.h
+wss://{RELAY}/{REPO}/69bd043f1ab4289e235ebffe537fe2a9189f0ce6/HEAD@{142}:commit:CHANGELOG: update
+wss://{RELAY}/{REPO}/7d36915ed9bfebb752923cecbd0a86806045a865/HEAD@{143}:commit:make: clean-all clean-secp
+wss://{RELAY}/{REPO}/471992bbb131e0a1605060c118824a9cdd3385fd/HEAD@{144}:commit:make: dist - mv dist dist-$(TIME)
+wss://{RELAY}/{REPO}/8f22e84b2878341dbf03f5f2aa86ad0ed5b88447/HEAD@{145}:commit:make: dist - mv dist dist-$(TIME)
+wss://{RELAY}/{REPO}/4e9120481282f34f7a66e57f1c8f8d0c3cbf4063/HEAD@{146}:commit:deps/gnostr-cat: use gnostr-cat namespace
+wss://{RELAY}/{REPO}/4e9120481282f34f7a66e57f1c8f8d0c3cbf4063/HEAD@{147}:commit:deps/gnostr-cat: use gnostr-cat namespace
+wss://{RELAY}/{REPO}/ce56987c5ac3c1044bb0dae14b2ad11500d5d7b9/HEAD@{148}:commit:CHANGELOG: update
+wss://{RELAY}/{REPO}/ce56987c5ac3c1044bb0dae14b2ad11500d5d7b9/HEAD@{149}:commit:CHANGELOG: update
+wss://{RELAY}/{REPO}/5e7ec125b1b2f5e58b69f42efcbeebf546194eb8/HEAD@{150}:commit:.gitmodules: deps/gnostr-web
+wss://{RELAY}/{REPO}/f77e98c7550534b399c63bd9f0c6bafba9e27d31/HEAD@{151}:commit:.gitmodules: deps/gnostr-web
+wss://{RELAY}/{REPO}/f77e98c7550534b399c63bd9f0c6bafba9e27d31/HEAD@{152}:commit:.gitmodules: deps/gnostr-web
+wss://{RELAY}/{REPO}/261513fef70f8f3a4586ecb983941a4f76069712/HEAD@{153}:commit:Makefile: use GNOSTR_OBJS = gnostr.o sha256.o aes.o base64.o libsecp256k1.a
+wss://{RELAY}/{REPO}/1caf20300673ae8e4ae804b96f2226eb807b30f4/HEAD@{154}:commit:Makefile: use GNOSTR_OBJS = gnostr.o sha256.o aes.o base64.o libsecp256k1.a
+wss://{RELAY}/{REPO}/66791bd371c9b1dbcd2b79b34d74faa06eba3361/HEAD@{155}:commit:.gitmodules: deps/git remove
+wss://{RELAY}/{REPO}/17cd50451bf54b60167cc017aff93ca496c4929d/HEAD@{156}:commit:.gitmodules: deps/gnostr-web
+wss://{RELAY}/{REPO}/17cd50451bf54b60167cc017aff93ca496c4929d/HEAD@{157}:commit:.gitmodules: deps/gnostr-web
+wss://{RELAY}/{REPO}/1caf20300673ae8e4ae804b96f2226eb807b30f4/HEAD@{158}:commit:Makefile: use GNOSTR_OBJS = gnostr.o sha256.o aes.o base64.o libsecp256k1.a
+wss://{RELAY}/{REPO}/add59f055498d93af2fbfe335619a76d4ea0895a/HEAD@{159}:commit:.gitmodules: deps/gitweb
+wss://{RELAY}/{REPO}/add59f055498d93af2fbfe335619a76d4ea0895a/HEAD@{160}:commit:.gitmodules: deps/gitweb
+wss://{RELAY}/{REPO}/1caf20300673ae8e4ae804b96f2226eb807b30f4/HEAD@{161}:commit:Makefile: use GNOSTR_OBJS = gnostr.o sha256.o aes.o base64.o libsecp256k1.a
+wss://{RELAY}/{REPO}/66791bd371c9b1dbcd2b79b34d74faa06eba3361/HEAD@{162}:commit:.gitmodules: deps/git remove
+wss://{RELAY}/{REPO}/b12918ba8073b7af71c975199f8181be3fd51d31/HEAD@{163}:commit:make: docs - test for make dist
+wss://{RELAY}/{REPO}/76789df84b36a14c391e4db30d055b43227d4fd1/HEAD@{164}:commit:Makefile: use GNOSTR_OBJS = gnostr.o sha256.o aes.o base64.o libsecp256k1.a
+wss://{RELAY}/{REPO}/76789df84b36a14c391e4db30d055b43227d4fd1/HEAD@{165}:commit:Makefile: use GNOSTR_OBJS = gnostr.o sha256.o aes.o base64.o libsecp256k1.a
+wss://{RELAY}/{REPO}/c1efd9097447a6d663b4dae0ffad434b3bf2e684/HEAD@{166}:commit:.gitmodules: deps/git remove
+wss://{RELAY}/{REPO}/70c77bb025bab2cd046276ddc23747bc2a2f2940/HEAD@{167}:commit:.gitmodules: deps/gitweb
+wss://{RELAY}/{REPO}/b12918ba8073b7af71c975199f8181be3fd51d31/HEAD@{168}:commit:make: docs - test for make dist
+wss://{RELAY}/{REPO}/eb103eae1d697c4f39aa6b7fb4cb34ccc5aa8c14/HEAD@{169}:commit:make: docs - test for make dist
+wss://{RELAY}/{REPO}/e1711191ecaf1d32945c7a25412e2a8e44934abc/HEAD@{170}:commit:make: docs - test for make dist
+wss://{RELAY}/{REPO}/0875138e29e29dc24e1c7ed7b5ec295e50807c7a/HEAD@{171}:commit:make: docs - test for make dist
+wss://{RELAY}/{REPO}/70af5af970d281efc47a1fafe2d7a99189756d79/HEAD@{172}:commit:make: docs - test for make dist
+wss://{RELAY}/{REPO}/7eeff1abca9a521ad485d7a5176ee8ba002d9db4/HEAD@{173}:commit:make: venv: venv.mk: use python3 not python3.8 specific
+wss://{RELAY}/{REPO}/37f4877dea64ec713201e44b2d5291231c0bdd35/HEAD@{174}:commit:Makefile: make: dist: mkdir -p dist && touch dist/.gitkeep
+wss://{RELAY}/{REPO}/efe4ad7762928c94fb145cdc0a60032929b80acd/HEAD@{175}:commit:deps/gnostr-git:gnostr-git:make all working
+wss://{RELAY}/{REPO}/cf71c5ac9c812664111933198ad5f4e8639bf0ec/HEAD@{176}:commit:make: dist
+wss://{RELAY}/{REPO}/afdd565f6cb71d9afedf26e1a8162a7ac7bcfa9f/HEAD@{177}:commit:make: dist
+wss://{RELAY}/{REPO}/d675550d31e2d92392e7134fca8c0f46742ef240/HEAD@{178}:commit:.github/workflows/ubuntu-matrix.yml: deps/gnostr-git
+wss://{RELAY}/{REPO}/679495afdb36b0338c4de8e086e7f776e6dfb85a/HEAD@{179}:commit:devtools/refresh-submodules.sh: submodule --force update
+wss://{RELAY}/{REPO}/679495afdb36b0338c4de8e086e7f776e6dfb85a/HEAD@{180}:commit:devtools/refresh-submodules.sh: submodule --force update
+wss://{RELAY}/{REPO}/a85efe54c3ccba1cd6219651979202b3d630103c/HEAD@{181}:commit:make: gnostr-git clean-gnostr-git
+wss://{RELAY}/{REPO}/e52bccedf583445b4ec6eea640a8b794f6b32351/HEAD@{182}:commit:make: gnostr-git clean-gnostr-git
+wss://{RELAY}/{REPO}/7c5e04c978be69f8e88d1ac91dd6986f2fe51789/HEAD@{183}:commit:.gitmodules: deps/gnostr-py
+wss://{RELAY}/{REPO}/d051aebc91f47ca05695efad38a9a52b817ff0ac/HEAD@{184}:commit:devtools/refresh-submodules.sh: submodule --force update
+wss://{RELAY}/{REPO}/d051aebc91f47ca05695efad38a9a52b817ff0ac/HEAD@{185}:commit:devtools/refresh-submodules.sh: submodule --force update
+wss://{RELAY}/{REPO}/acdd0e402c0f6696eb795b5adba66888c1c4ea6f/HEAD@{186}:commit:.gitmodules: deps/gnostr-git
+wss://{RELAY}/{REPO}/293142a138e2c3b5045877c87a01ed96b9f098f4/HEAD@{187}:commit:.gitmodules: deps/gnostr-git
+wss://{RELAY}/{REPO}/3a75da2e57cf396e49006799f501041e7cac7bcb/HEAD@{188}:commit:.gitmodules:
+wss://{RELAY}/{REPO}/d051aebc91f47ca05695efad38a9a52b817ff0ac/HEAD@{189}:commit:devtools/refresh-submodules.sh: submodule --force update
+wss://{RELAY}/{REPO}/e52bccedf583445b4ec6eea640a8b794f6b32351/HEAD@{190}:commit:make: gnostr-git clean-gnostr-git
+wss://{RELAY}/{REPO}/7c5e04c978be69f8e88d1ac91dd6986f2fe51789/HEAD@{191}:commit:.gitmodules: deps/gnostr-py
+wss://{RELAY}/{REPO}/ee674db36fba0ded37fefc29e7fc101dbdbff5d2/HEAD@{192}:commit:make: ubuntu-gnostr-cat
+wss://{RELAY}/{REPO}/91d711c3d5259363fa8847effd66f0e8c2fe541c/HEAD@{193}:commit:.gitmodules: deps/gnostr-aio
+wss://{RELAY}/{REPO}/83a538d9871063001bca0c5d4ff7b538e44ee533/HEAD@{194}:commit:.gitmodules: use deps/gnostr-cat namespace
+wss://{RELAY}/{REPO}/e8eab93ba716d607b8ff4b54c2797a60040591d6/HEAD@{195}:commit:.gitmodules: use deps/gnostr-cat namespace
+wss://{RELAY}/{REPO}/e455e0425fc36b9f5bc0eb57e7ff12a1b8b6259e/HEAD@{196}:commit:.gitmodules: use deps/gnostr-cat namespace
+wss://{RELAY}/{REPO}/9a4340f4678c390e360f9edfd341f8bf2bf996fa/HEAD@{197}:commit:make: all install fix libsecp256k1.a config
+wss://{RELAY}/{REPO}/b02f8eff92ebb96e377693740031987ca6a86933/HEAD@{198}:commit:make: dist - support $(VERSION)-$(OS)-$(ARCH)
+wss://{RELAY}/{REPO}/eed3f3dcf3399ab41b1ffcedb95502db1ce2dbf3/HEAD@{199}:commit:make: dist - support $(VERSION)-$(OS)-$(ARCH)
+wss://{RELAY}/{REPO}/bef29ca4c51e5637aca5c139e9b584cbca944db1/HEAD@{200}:commit:make: dist - support $(VERSION)-$(OS)-$(ARCH)
+wss://{RELAY}/{REPO}/a4aef76a4594c0d0c80a33da3db589e85c5d53ff/HEAD@{201}:commit:make: linux-matrix with help
+wss://{RELAY}/{REPO}/290675466479ad53760e9b604aa17be4cde2bfdd/HEAD@{202}:commit:Makefile: use @devtools/refresh-submodules.sh deps/(repo) per deps
+wss://{RELAY}/{REPO}/597e6bdb0af022a3ebbc6a730dc2a4b9151f33fa/HEAD@{203}:commit:.github/workflows/ubuntu-matrix.yml:working
+wss://{RELAY}/{REPO}/ea714899ad2e7f79d3fd6e1d33b2899e82b1af1a/HEAD@{204}:commit:make: alpine-matrix bind=true working macos x86_64
+wss://{RELAY}/{REPO}/388b9be55a22a347ac48a91955730d52f8ba9e0e/HEAD@{205}:commit:make: alpine-matrix ubuntu-matrix reuse=true bind=true verbose=true
+wss://{RELAY}/{REPO}/802bf690a8a1c63376ea78411e9567b3fcb92efb/HEAD@{206}:commit:make: report: print OS OS_VERSION ARCH
+wss://{RELAY}/{REPO}/5cbec42e9b6bda0fb837e9d279a27b60c44e33a4/HEAD@{207}:commit:make: docker-start: add help
+wss://{RELAY}/{REPO}/5cbec42e9b6bda0fb837e9d279a27b60c44e33a4/HEAD@{208}:commit:make: docker-start: add help
+wss://{RELAY}/{REPO}/8781c22ac11dd75e63119e6a0afdacc353e09a4c/HEAD@{209}:commit:make: detect
+wss://{RELAY}/{REPO}/953965f54b6f12c4478d4ee67981e2e522c53c5e/HEAD@{210}:commit:# This is a combination of 2 commits. # This is the 1st commit message:
+wss://{RELAY}/{REPO}/cd462a624ebe6df2a80af264498a3f3f4762dfc5/HEAD@{211}:commit:make: detect
+wss://{RELAY}/{REPO}/92c3e9caf63ec8ffc64fe1b3d4557c407b1df434/HEAD@{212}:commit:make: docker-start: add help
+wss://{RELAY}/{REPO}/67eaa2b7b0c81ebd16f417c70b7c6b66dac70a5d/HEAD@{213}:commit:make: detect
+wss://{RELAY}/{REPO}/11e3c345597ef4a79504fb8e11b37d106e6af760/HEAD@{214}:commit:make: detect
+wss://{RELAY}/{REPO}/cd462a624ebe6df2a80af264498a3f3f4762dfc5/HEAD@{215}:commit:make: detect
+wss://{RELAY}/{REPO}/dd655c35c0a3f9182119175ddca5b1c8fcf8480b/HEAD@{216}:commit:make: libjq.a - use make install
+wss://{RELAY}/{REPO}/156346299ca1b4c442b0c2ee5cf170c9eba8a3ef/HEAD@{217}:commit:make: libjq.a - use make install
+wss://{RELAY}/{REPO}/c6845723ad1518bdddbbb2f2b76d03cbd05cf872/HEAD@{218}:commit:.github/workflows/ubuntu-matrix.yml: make gnostr - keep it simple!
+wss://{RELAY}/{REPO}/15ae34f19e11b18a232bbd310bbc2b8293fa0e1e/HEAD@{219}:commit:.github/workflows/ubuntu-matrix.yml: make gnostr - keep it simple!
+wss://{RELAY}/{REPO}/ed325963f4a0b7eced0a8a904e9b7657631c4b79/HEAD@{220}:commit:.github/workflows/ubuntu-jq.yml:
+wss://{RELAY}/{REPO}/8e755addca62431b35e46a515235175b40fe2696/HEAD@{221}:commit:.github/workflows/ubuntu-jq.yml:
+wss://{RELAY}/{REPO}/8e755addca62431b35e46a515235175b40fe2696/HEAD@{222}:commit:.github/workflows/ubuntu-jq.yml:
+wss://{RELAY}/{REPO}/5713039ba7c945cb7cb170a488552fc970a6683c/HEAD@{223}:commit:Makefile: remove use of pushd
+wss://{RELAY}/{REPO}/1b909ee0bce92ecf34df60889cd9315f1a816d4e/HEAD@{224}:commit:.github/workflows/ubuntu-matrix.yml: use sudo make libsecp256k1.a gnostr
+wss://{RELAY}/{REPO}/ebcde16cbadea8b6b84ebb1ae51a6290b436f425/HEAD@{225}:commit:.github/workflows/ubuntu-matrix.yml: use sudo make libsecp256k1.a
+wss://{RELAY}/{REPO}/8bdd232c78b71b6259908a21aa35498f8a4a852a/HEAD@{226}:commit:.github/workflows/ubuntu-jq.yml: install bash for pushd command
+wss://{RELAY}/{REPO}/53ec02d7668ec37a087c1816a9a2d3b88095446b/HEAD@{227}:commit:.github/workflows/ubuntu-jq.yml: install util-linux for pushd command
+wss://{RELAY}/{REPO}/5f22c5ce8516a214546760f455356f601e3661fc/HEAD@{228}:commit:make: tags - remove
+wss://{RELAY}/{REPO}/d27a14a6d17bfdeabd1815193073f41af65c3b0a/HEAD@{229}:commit:GNUmakefile: add vim inline config
+wss://{RELAY}/{REPO}/45390d2fb907b405d1b3d3341657043f2dd96851/HEAD@{230}:commit:make: tag with additional help format
+wss://{RELAY}/{REPO}/2604aea7a3ce1df5667e32af7923ac99b15deea4/HEAD@{231}:commit:make: ubuntu-matrix working
+wss://{RELAY}/{REPO}/2604aea7a3ce1df5667e32af7923ac99b15deea4/HEAD@{232}:commit:make: ubuntu-matrix working
+wss://{RELAY}/{REPO}/275ea993d2dca4b93849657e72487b91eca1c62a/HEAD@{233}:commit:.github/workflows/ubuntu-jq.yml: sudo apt-get install...
+wss://{RELAY}/{REPO}/962016b00287b2022168dcb4aebc1db577cb275c/HEAD@{234}:commit:template: add keys
+wss://{RELAY}/{REPO}/b26992f68315d5471f3121c2e8798ddc9f48b6fa/HEAD@{235}:commit:.dockerignore:
+wss://{RELAY}/{REPO}/cc570a43866347d1b8ab4c8fe1dd65d3c1e5e51d/HEAD@{236}:commit:make: submodules: for each - git fetch --all
+wss://{RELAY}/{REPO}/2d9c41c08f392e17da585da446b6c2338f17309c/HEAD@{237}:commit:.gitmodules: hyper-sdk: branch = 38db824808be1bffae4ca3bc76051aaadc1b6b82
+wss://{RELAY}/{REPO}/0d27d2f7bf5f4c686cd7c4e2981a90a36522ecba/HEAD@{238}:commit:.gitmodules: hyper-sdk: branch = 38db824808be1bffae4ca3bc76051aaadc1b6b82
+wss://{RELAY}/{REPO}/9f95c5bfa6e2e40e386f201b16156eef5103ceac/HEAD@{239}:commit:.github/workflows/ubuntu-pre-release.yml:
+wss://{RELAY}/{REPO}/d66b5dc95f5d4b8f18155552068917b911c53067/HEAD@{240}:commit: .github/workflows/ubuntu-pre-release.yml:
+wss://{RELAY}/{REPO}/5cbb79220f3b18fc186afe7e77d0b9f649f9f5a2/HEAD@{241}:commit:make: nostcat cleanup
+wss://{RELAY}/{REPO}/e6818592fa732d32fdd954e825360eb91c0fc97c/HEAD@{242}:commit:act.mk: use @type -P act && GITHUB_TOKEN=$(c...
+wss://{RELAY}/{REPO}/6d1ee33f7420d0ad4a5162b46465a24dafffc39b/HEAD@{243}:commit:make: libsecp256k1.a
+wss://{RELAY}/{REPO}/e3415758f48da4988db77e28684e38c9ade8cd13/HEAD@{244}:commit:make: PREFIX
+wss://{RELAY}/{REPO}/0d032c97f0a4814cbd1187968bb64100a5429ea4/HEAD@{245}:commit:make: libjq.a
+wss://{RELAY}/{REPO}/11022e7ee7c4427b2326625cbf98d4bc248affa8/HEAD@{246}:commit:act.mk: use GITHUB_TOKEN in make ubuntu-matrix
+wss://{RELAY}/{REPO}/4b822d82e6fa8c39bd546ea8c05453ebd9c3c8d2/HEAD@{247}:commit:act.mk: use GITHU_TOKEN in make ubuntu-matrix
+wss://{RELAY}/{REPO}/39da2bd6bc65a68a9d8298561cb6aa10e6449c76/HEAD@{248}:commit:act.mk: use GITHU_TOKEN in make push
+wss://{RELAY}/{REPO}/65e2fd61ed066358eed84b749cea2458c7549239/HEAD@{249}:commit:make: weeble_wobble: ./template/$@
+wss://{RELAY}/{REPO}/b2c6e32e03abbb204b5c9150aface569604ab77c/HEAD@{250}:commit:make: weeble_wobble: ./template/$@
+wss://{RELAY}/{REPO}/d5d3b8ab4f72e4ae34bf5953af2907cc74a75553/HEAD@{251}:commit:make: weeble_wobble: ./template/$@
+wss://{RELAY}/{REPO}/8ac46ac61f7af554a3556d03c8f77337016c6044/HEAD@{252}:commit:make: weeble-wobble: ./template/$@
+wss://{RELAY}/{REPO}/e39f3f5bf43e0efae35343500f702b27beadc32e/HEAD@{253}:commit:gnostr/master: RELAYS.md
+wss://{RELAY}/{REPO}/322a8dadd97ca91cb738ec53f994a54241f25b5d/HEAD@{254}:commit:act.mk:
+wss://{RELAY}/{REPO}/a3db467bb14ddcff12d105520ae6362882e01bbe/HEAD@{255}:commit:gnostr/master: RELAYS.md
+wss://{RELAY}/{REPO}/b35957975c8a94e810d81060add8df8ccfd8827a/HEAD@{256}:commit:make: submodules - add deps/hyper-sdk
+wss://{RELAY}/{REPO}/050b33e18b79c03f900714a95eee96712c2abb9b/HEAD@{257}:commit:.gitmodules: deps/hyper-sdk
+wss://{RELAY}/{REPO}/a0f5ced542113e1d91c2be4441d33b6c94b64684/HEAD@{258}:commit:.gitignore: bin
+wss://{RELAY}/{REPO}/a41268062d3f93587264418ce3b3d088b5081b0b/HEAD@{259}:commit:gnostr/master: RELAYS.md
+wss://{RELAY}/{REPO}/3bd3b7c3e08fb4c2954504b3729bf4276c23b9f1/HEAD@{260}:commit:gnostr/master: RELAYS.md
+wss://{RELAY}/{REPO}/b2008056fd287a9353213c94d22d4b726881e24c/HEAD@{261}:commit:gnostr/master: RELAYS.md
+wss://{RELAY}/{REPO}/71d8e13c88e29e69e7130d1763a7e4ab9a5f1bd1/HEAD@{262}:commit:gnostr/master: RELAYS.md
+wss://{RELAY}/{REPO}/39ee131dbdafe45764f5e75d9dd961ee09c66e90/HEAD@{263}:commit:gnostr/master: RELAYS.md
+wss://{RELAY}/{REPO}/f357e50189b5f34d05358b8b8f6d74afb45a5ff4/HEAD@{264}:commit:.github/workflows/ubuntu-matrix.yml: libcurl...
+wss://{RELAY}/{REPO}/b0e67afe0071e86a212f4a97d1dd7297eeef4fb1/HEAD@{265}:commit:make: ubuntu-jq
+wss://{RELAY}/{REPO}/179a178a5d5b9da1e08468a1403840ad73018712/HEAD@{266}:commit:make: ubuntu-jq
+wss://{RELAY}/{REPO}/4de41871d65d5fad6acadd13e96379215d7475de/HEAD@{267}:commit:make: ubuntu-jq
+wss://{RELAY}/{REPO}/8b3bd7bee58345a7075b32ebc8bcf846add5f244/HEAD@{268}:commit: .github/workflows/ubuntu-nostcat.yml: install rustup
+wss://{RELAY}/{REPO}/8b3bd7bee58345a7075b32ebc8bcf846add5f244/HEAD@{269}:commit: .github/workflows/ubuntu-nostcat.yml: install rustup
+wss://{RELAY}/{REPO}/ece274c099482b55cec8c5f82f55865eecda9783/HEAD@{270}:commit: .github/workflows/ubuntu-nostcat.yml: fix checkout
+wss://{RELAY}/{REPO}/9636f053848f3241f6e38b3305b2c2debfd18b19/HEAD@{271}:commit:.github/workflows/ubuntu-matrix.yml: sudo make install
+wss://{RELAY}/{REPO}/3d8639c68ca1b4db5168a885fb096df45cae53e5/HEAD@{272}:commit:make: libjq.a use make clean all in sub repo
+wss://{RELAY}/{REPO}/e5d2f7b5a323198059a4adfe32fc23207cb039a7/HEAD@{273}:commit:make: libjq.a use make clean all in sub repo
+wss://{RELAY}/{REPO}/2e81d4474a7ab0de283eda438cdb4a126c99cb64/HEAD@{274}:commit:make: act-install type -P act && ... || $(MAKE) act-install
+wss://{RELAY}/{REPO}/266a76c1359f2ee092582ab5805375686c228e9c/HEAD@{275}:commit: .github/workflows/ubuntu-nostcat.yml: install rustup
+wss://{RELAY}/{REPO}/266a76c1359f2ee092582ab5805375686c228e9c/HEAD@{276}:commit: .github/workflows/ubuntu-nostcat.yml: install rustup
+wss://{RELAY}/{REPO}/a829f981f3c349737e687ccb0c293bb00b7fcd51/HEAD@{277}:commit: .github/workflows/ubuntu-nostcat.yml: install rustup
+wss://{RELAY}/{REPO}/f2652c41c7c8e2537d87247b3f8b4b6a8c4d8e28/HEAD@{278}:commit: .github/workflows/ubuntu-nostcat.yml: install rustup
+wss://{RELAY}/{REPO}/5bfdffabbbf43a8c8a5d5c2f3c91157db2b7b665/HEAD@{279}:commit: .github/workflows/ubuntu-nostcat.yml: install rustup
+wss://{RELAY}/{REPO}/9d1feb07f54db169a502307fe99085e9cee03e51/HEAD@{280}:commit: .github/workflows/ubuntu-nostcat.yml: fix checkout
+wss://{RELAY}/{REPO}/45506db5fd617c5e95a740250bf016a79644a714/HEAD@{281}:commit:.github/workflows/ubuntu-matrix.yml: sudo make install
+wss://{RELAY}/{REPO}/45506db5fd617c5e95a740250bf016a79644a714/HEAD@{282}:commit:.github/workflows/ubuntu-matrix.yml: sudo make install
+wss://{RELAY}/{REPO}/e5d2f7b5a323198059a4adfe32fc23207cb039a7/HEAD@{283}:commit:make: libjq.a use make clean all in sub repo
+wss://{RELAY}/{REPO}/4f57a879de95f664d9a5ca5e7e4edbd53bd70a79/HEAD@{284}:commit:make: libjq.a use make clean all in sub repo
+wss://{RELAY}/{REPO}/2e81d4474a7ab0de283eda438cdb4a126c99cb64/HEAD@{285}:commit:make: act-install type -P act && ... || $(MAKE) act-install
+wss://{RELAY}/{REPO}/dbd21198e0178091b29081890d8aa52a54c6d60e/HEAD@{286}:commit:.github/workflows/ubuntu-matrix.yml: sudo make install
+wss://{RELAY}/{REPO}/dbd21198e0178091b29081890d8aa52a54c6d60e/HEAD@{287}:commit:.github/workflows/ubuntu-matrix.yml: sudo make install
+wss://{RELAY}/{REPO}/93a26381ac8607638b8b641131319d6d31b8b1cd/HEAD@{288}:commit:.github/workflows/ubuntu-matrix.yml: sudo make gnostr
+wss://{RELAY}/{REPO}/4f57a879de95f664d9a5ca5e7e4edbd53bd70a79/HEAD@{289}:commit:make: libjq.a use make clean all in sub repo
+wss://{RELAY}/{REPO}/a586d2039bb39f76688bdd7af71eed02bfcb7699/HEAD@{290}:commit:make: libjq.a use make clean all in sub repo
+wss://{RELAY}/{REPO}/2e81d4474a7ab0de283eda438cdb4a126c99cb64/HEAD@{291}:commit:make: act-install type -P act && ... || $(MAKE) act-install
+wss://{RELAY}/{REPO}/2ae0da38b7087dae3cc3c6ef4682ed04563ddab9/HEAD@{292}:commit:.github/workflows/ubuntu-jq.yml: act.mk: make ubuntu-jq
+wss://{RELAY}/{REPO}/0243890500a5cec6352d1699b359fc73f9d9d2cc/HEAD@{293}:commit:.github/workflows/ubuntu-jq.yml: act.mk: make ubuntu-jq
+wss://{RELAY}/{REPO}/daa82475942cee7551f60a84b43bfb31dccdbed4/HEAD@{294}:commit:.github/workflows/ubuntu-jq.yml: act.mk: make ubuntu-jq
+wss://{RELAY}/{REPO}/6f436b6eac59d679d5c97bd4ca4150058062f555/HEAD@{295}:commit:.github/workflows/ubuntu-jq.yml: act.mk: make ubuntu-jq
+wss://{RELAY}/{REPO}/8289fd52c83fe747b24dfe276b76a3ec0a1a5560/HEAD@{296}:commit: .github/workflows/ubuntu-pre-release.yml: gnostr-*
+wss://{RELAY}/{REPO}/9d41d7e55142044abf14b17dd0630aed724a5e52/HEAD@{297}:commit: .github/workflows/ubuntu-pre-release.yml: gnostr-*
+wss://{RELAY}/{REPO}/e24e75534d7457783240b5449441d2c1f729cd4e/HEAD@{298}:commit:.github/workflows/ubuntu-matrix.yml: make act-install
+wss://{RELAY}/{REPO}/e24e75534d7457783240b5449441d2c1f729cd4e/HEAD@{299}:commit:.github/workflows/ubuntu-matrix.yml: make act-install
+wss://{RELAY}/{REPO}/02d4e1581e4ea8df4b0ad9bf7e6931cb1b15d16d/HEAD@{300}:commit:...
+wss://{RELAY}/{REPO}/02d4e1581e4ea8df4b0ad9bf7e6931cb1b15d16d/HEAD@{301}:commit:...
+wss://{RELAY}/{REPO}/e24e75534d7457783240b5449441d2c1f729cd4e/HEAD@{302}:commit:.github/workflows/ubuntu-matrix.yml: make act-install
+wss://{RELAY}/{REPO}/2ab8ed58795f265de46f2b3c4d1c3f8b131b36a8/HEAD@{303}:commit:.gitmodules:deps/act: add submodule
+wss://{RELAY}/{REPO}/304ee6ff7e0e0c596600b8de34dccf6d7ee6847b/HEAD@{304}:commit:make: ubuntu-matrix working
+wss://{RELAY}/{REPO}/9a9ef24c35247897470d7d46d2164d20cc758449/HEAD@{305}:commit:.github/workflows/ubuntu-git/matrix.yml: apt-get install libcurl-dev
+wss://{RELAY}/{REPO}/32a36bb5473585a620b073cfae1dea61d0a87a79/HEAD@{306}:commit:.github/workflows/ubuntu-git.yml: apt-get install libcurl-dev
+wss://{RELAY}/{REPO}/a17e540f151c9fddf83538425ab8eb4ab1d69fb2/HEAD@{307}:commit:.github/workflows/ubuntu-matrix.yml: apt-get install libcurl-dev
+wss://{RELAY}/{REPO}/32a36bb5473585a620b073cfae1dea61d0a87a79/HEAD@{308}:commit:.github/workflows/ubuntu-git.yml: apt-get install libcurl-dev
+wss://{RELAY}/{REPO}/ba80f9f8383305a5eca44f0ab599d1d8f2c3d62d/HEAD@{309}:commit:.github/workflows/ubuntu-git.yml: apt-get install libcurl-dev
+wss://{RELAY}/{REPO}/b083fb67c29666f93b70a3069fe9e2666f707000/HEAD@{310}:commit:.gitmodules: fix deps/tcl url
+wss://{RELAY}/{REPO}/d94a27e96a162018bad7005ce2f4589d88e977e0/HEAD@{311}:commit:.github/workflows/ubuntu-matrix.yml: fix checkout fetch-depth
+wss://{RELAY}/{REPO}/bee4108799615df99040e52fb108ced34d8ee9cd/HEAD@{312}:commit:.github/workflows/ubuntu-matrix.yml: fix checkout fetch-depth
+wss://{RELAY}/{REPO}/06fbbec2650db8d53126a0685ae55b2c5887fe02/HEAD@{313}:commit:.github/workflows/ubuntu-matrix.yml: fix checkout fetch-depth
+wss://{RELAY}/{REPO}/c22fd579ef1cf2c281470db99de93caa4eb7b500/HEAD@{314}:commit:.github/workflows/ubuntu-*.yml: apt-get install libcurl4-openssl-dev
+wss://{RELAY}/{REPO}/d77e6ec269b4f57239c01ee83f41f7dcaee23d95/HEAD@{315}:commit:.github/workflows/ubuntu-git.yml: apt-get install libcurl4-openssl-dev
+wss://{RELAY}/{REPO}/2d6dd19ae7d2fcec52de1145e0126dda2fb24ec8/HEAD@{316}:commit:.github/workflows/ubuntu-git.yml: apt-get install
+wss://{RELAY}/{REPO}/e3cfeea3e496c83b570f55a2b24ade5c88352bb7/HEAD@{317}:commit:.github/workflows/ubuntu-matrix.yml: apt-get install libcurl4-openssl-dev
+wss://{RELAY}/{REPO}/4a4c5c2d7562c12bebe6eddd7a4f992831f502bc/HEAD@{318}:commit:.github/workflows/ubuntu-matrix.yml:
+wss://{RELAY}/{REPO}/445b52b6c1aaee7afe0db3958cb522a3fe691ddc/HEAD@{319}:commit:.gitmodules: shallow = true
+wss://{RELAY}/{REPO}/c7f864388df8b57b8eedecff3aa12a05cfb1a919/HEAD@{320}:commit:intermediate commit: move headers to include and install
+wss://{RELAY}/{REPO}/2810e698f1981cff5ef6fa980404ec7ced7f9588/HEAD@{321}:commit:gnostr-xor.c: argc argv logic
+wss://{RELAY}/{REPO}/9055212ffc5f67ff88b65f01361a0553c304fd20/HEAD@{322}:commit:make: install gnostr-xor
+wss://{RELAY}/{REPO}/7d26ba7768ffe790841ce8563778d02c46dab09c/HEAD@{323}:commit:gnostr-xor.c: not working here
+wss://{RELAY}/{REPO}/7d26ba7768ffe790841ce8563778d02c46dab09c/HEAD@{324}:commit:gnostr-xor.c: not working here
+wss://{RELAY}/{REPO}/d4d868d163a2ee4b11802215461b4d1bc59d543e/HEAD@{325}:commit:gnostr-xor.c: xor_mix...
+wss://{RELAY}/{REPO}/c6113f9686f9b92a997b8f31f463742230d4ea12/HEAD@{326}:commit:.gitignore: add gnostr-xor a.out
+wss://{RELAY}/{REPO}/adac69beebe5e1646291889337e15a9d8d60cb9d/HEAD@{327}:commit:gnostr-git.c: help
+wss://{RELAY}/{REPO}/eaece06fade4d783569ad42a6dfd1d7bddb56bbf/HEAD@{328}:commit:.gitignore: add gnostr-xor a.out
+wss://{RELAY}/{REPO}/eaece06fade4d783569ad42a6dfd1d7bddb56bbf/HEAD@{329}:commit:.gitignore: add gnostr-xor a.out
+wss://{RELAY}/{REPO}/b1528caae06f8c6c086b6c3dd4f44473d39ac3ef/HEAD@{330}:commit:gnostr-xor.c: not working here
+wss://{RELAY}/{REPO}/b1528caae06f8c6c086b6c3dd4f44473d39ac3ef/HEAD@{331}:commit:gnostr-xor.c: not working here
+wss://{RELAY}/{REPO}/b1528caae06f8c6c086b6c3dd4f44473d39ac3ef/HEAD@{332}:commit:gnostr-xor.c: not working here
+wss://{RELAY}/{REPO}/b1528caae06f8c6c086b6c3dd4f44473d39ac3ef/HEAD@{333}:commit:gnostr-xor.c: not working here
+wss://{RELAY}/{REPO}/3e19990ebd1c0674914f45fa6e5aec1c869f5f32/HEAD@{334}:commit:gnostr-xor.c: xor_mix...
+wss://{RELAY}/{REPO}/adac69beebe5e1646291889337e15a9d8d60cb9d/HEAD@{335}:commit:gnostr-git.c: help
+wss://{RELAY}/{REPO}/92ca78858b681ccb7ddee44cbc48f7ca2b842eff/HEAD@{336}:commit:gnostr-xor.c: move xor_mix
+wss://{RELAY}/{REPO}/adac69beebe5e1646291889337e15a9d8d60cb9d/HEAD@{337}:commit:gnostr-git.c: help
+wss://{RELAY}/{REPO}/adac69beebe5e1646291889337e15a9d8d60cb9d/HEAD@{338}:commit:gnostr-git.c: help
+wss://{RELAY}/{REPO}/adac69beebe5e1646291889337e15a9d8d60cb9d/HEAD@{339}:commit:gnostr-git.c: help
+wss://{RELAY}/{REPO}/e04dfde6e6f8a71ccb15c1b301986c415954671f/HEAD@{340}:commit: make libsecp256k1.a fix .ONESHELL
+wss://{RELAY}/{REPO}/7cc571ae8bc5124530e05abdcdb597140f101c5c/HEAD@{341}:commit:make: gnostr-relay: initial commit
+wss://{RELAY}/{REPO}/7cc571ae8bc5124530e05abdcdb597140f101c5c/HEAD@{342}:commit:make: gnostr-relay: initial commit
+wss://{RELAY}/{REPO}/93e040ff2acb13ba132069b159c373957223f964/HEAD@{343}:commit: make: gnostr-relay: initial commit
+wss://{RELAY}/{REPO}/5007c6194c496aded8742cba85646c34eb75e5e7/HEAD@{344}:commit:make: gnsotr-relay more init commit
+wss://{RELAY}/{REPO}/5007c6194c496aded8742cba85646c34eb75e5e7/HEAD@{345}:commit:make: gnsotr-relay more init commit
+wss://{RELAY}/{REPO}/93e040ff2acb13ba132069b159c373957223f964/HEAD@{346}:commit: make: gnostr-relay: initial commit
+wss://{RELAY}/{REPO}/c309dea9105382bd69a904d247e8df2e238c9795/HEAD@{347}:commit: make: gnostr-relay: initial commit
+wss://{RELAY}/{REPO}/3793ffabe4de716c2e160b6d0af856a732ea3289/HEAD@{348}:commit:gnostr-relay.c: init commit
+wss://{RELAY}/{REPO}/4e666feaecbd9dab202ff1f11a24c53cc25856ef/HEAD@{349}:commit:make: gnostr-git: initial commit
+wss://{RELAY}/{REPO}/4e666feaecbd9dab202ff1f11a24c53cc25856ef/HEAD@{350}:commit:make: gnostr-git: initial commit
+wss://{RELAY}/{REPO}/06b338c2d744c294cbfe6b6206c76d56b7e5167a/HEAD@{351}:commit:CHANGELOG: update
+wss://{RELAY}/{REPO}/4e666feaecbd9dab202ff1f11a24c53cc25856ef/HEAD@{352}:commit:make: gnostr-git: initial commit
+wss://{RELAY}/{REPO}/ee6d84bec014749fe3909be4b3812ab058af7b86/HEAD@{353}:commit:make: #.PHONY some PHONYs
+wss://{RELAY}/{REPO}/ee6d84bec014749fe3909be4b3812ab058af7b86/HEAD@{354}:commit:make: #.PHONY some PHONYs
+wss://{RELAY}/{REPO}/06b338c2d744c294cbfe6b6206c76d56b7e5167a/HEAD@{355}:commit:CHANGELOG: update
+wss://{RELAY}/{REPO}/d9cc736c863fedb71ec35daa4eb072395bf72bfc/HEAD@{356}:commit:make: #.PHONY some PHONYs
+wss://{RELAY}/{REPO}/d9cc736c863fedb71ec35daa4eb072395bf72bfc/HEAD@{357}:commit:make: #.PHONY some PHONYs
+wss://{RELAY}/{REPO}/d9cc736c863fedb71ec35daa4eb072395bf72bfc/HEAD@{358}:commit:make: #.PHONY some PHONYs
+wss://{RELAY}/{REPO}/d9cc736c863fedb71ec35daa4eb072395bf72bfc/HEAD@{359}:commit:make: #.PHONY some PHONYs
+wss://{RELAY}/{REPO}/d9cc736c863fedb71ec35daa4eb072395bf72bfc/HEAD@{360}:commit:make: #.PHONY some PHONYs
+wss://{RELAY}/{REPO}/06b338c2d744c294cbfe6b6206c76d56b7e5167a/HEAD@{361}:commit:CHANGELOG: update
+wss://{RELAY}/{REPO}/06b338c2d744c294cbfe6b6206c76d56b7e5167a/HEAD@{362}:commit:CHANGELOG: update
+wss://{RELAY}/{REPO}/d9cc736c863fedb71ec35daa4eb072395bf72bfc/HEAD@{363}:commit:make: #.PHONY some PHONYs
+wss://{RELAY}/{REPO}/d9cc736c863fedb71ec35daa4eb072395bf72bfc/HEAD@{364}:commit:make: #.PHONY some PHONYs
+wss://{RELAY}/{REPO}/3a6e09698beaa7b1b2e3f845961f1857003a1c5d/HEAD@{365}:commit:make: shell
+wss://{RELAY}/{REPO}/a35df3661cc90e9607266e2748c207c4a83386f4/HEAD@{366}:commit:Makefile: shell shell.c: add file
+wss://{RELAY}/{REPO}/06b338c2d744c294cbfe6b6206c76d56b7e5167a/HEAD@{367}:commit:CHANGELOG: update
+wss://{RELAY}/{REPO}/06b338c2d744c294cbfe6b6206c76d56b7e5167a/HEAD@{368}:commit:CHANGELOG: update
+wss://{RELAY}/{REPO}/06b338c2d744c294cbfe6b6206c76d56b7e5167a/HEAD@{369}:commit:CHANGELOG: update
+wss://{RELAY}/{REPO}/9a0a151442c125926c81b950bfcfd3b396eed9ac/HEAD@{370}:commit:CHANGELOG: update
+wss://{RELAY}/{REPO}/5209741e7313c34bde7b404c940e0cdd7ec5e711/HEAD@{371}:commit:gnostr: initial commit
+wss://{RELAY}/{REPO}/35463570ce5ea5a109b24f545d51c17e95c026e4/HEAD@{372}:commit:gnostr: initial commit
+wss://{RELAY}/{REPO}/2fd2256815ec69f87cd2c57d9edb18fb6b989a0e/HEAD@{373}:commit:gnostr: initial commit
+wss://{RELAY}/{REPO}/66141ef1114ad2f80afa9763a6f029cf1f49bfd5/HEAD@{374}:commit:gnostr: initial commit
+wss://{RELAY}/{REPO}/b2a808ab9028af6c8cc62ff73e2e210175c34eef/HEAD@{375}:commit:gnostr: initial commit
+wss://{RELAY}/{REPO}/de0bf8a303ef919cfead02fecb052e9363915548/HEAD@{376}:commit:gnostr: initial commit
+wss://{RELAY}/{REPO}/7b5452bb65a78d8e62625b894b482aa0b59b3f71/HEAD@{377}:commit:gnostr: initial commit
+wss://{RELAY}/{REPO}/fee787d9610fb0a37dcd4aa30dc78bf321e666f6/HEAD@{378}:commit:gnostr: initial commit
+wss://{RELAY}/{REPO}/fee787d9610fb0a37dcd4aa30dc78bf321e666f6/HEAD@{379}:commit:gnostr: initial commit
+wss://{RELAY}/{REPO}/091f6fff20357f6e912ce27d81553f90604e87eb/HEAD@{380}:commit:# This is a combination of 2 commits. # This is the 1st commit message:
+wss://{RELAY}/{REPO}/a7986e170e269f50551950653342793042948556/HEAD@{381}:commit:gnostr: initial commit
+wss://{RELAY}/{REPO}/ad46b4d1ff98faf1087dcd280036bdeecc5d53f6/HEAD@{382}:commit:
+wss://{RELAY}/{REPO}/16dffc36f5ac46b7acea3330d23863a60e68554f/HEAD@{383}:commit:gnostr: initial commit
+wss://{RELAY}/{REPO}/16dffc36f5ac46b7acea3330d23863a60e68554f/HEAD@{384}:commit:gnostr: initial commit
+wss://{RELAY}/{REPO}/ea4793b4b11b6e848a3f35e9873b67989489ad25/HEAD@{385}:commit:gnostr: initial commit
+wss://{RELAY}/{REPO}/a7986e170e269f50551950653342793042948556/HEAD@{386}:commit:gnostr: initial commit
+wss://{RELAY}/{REPO}/fcdfe63ede054df3f9172a6e7bcf1dba5379a398/HEAD@{387}:commit:
+wss://{RELAY}/{REPO}/0931432a71b9ba3076443c4c4b6b32d773d43b59/HEAD@{388}:commit:gnostr: initial commit
+wss://{RELAY}/{REPO}/0931432a71b9ba3076443c4c4b6b32d773d43b59/HEAD@{389}:commit:gnostr: initial commit
+wss://{RELAY}/{REPO}/ba45fa9465c21cc837a79d31ffc7897f5e3935f8/HEAD@{390}:commit:gnostr: initial commit
+wss://{RELAY}/{REPO}/0931432a71b9ba3076443c4c4b6b32d773d43b59/HEAD@{391}:commit:gnostr: initial commit
+wss://{RELAY}/{REPO}/872e4a267b7e108a7fd36d61812ec360afe02025/HEAD@{392}:commit:gnostr: initial commit
+wss://{RELAY}/{REPO}/ba45fa9465c21cc837a79d31ffc7897f5e3935f8/HEAD@{393}:commit:gnostr: initial commit
+wss://{RELAY}/{REPO}/ba45fa9465c21cc837a79d31ffc7897f5e3935f8/HEAD@{394}:commit:gnostr: initial commit
+wss://{RELAY}/{REPO}/ba45fa9465c21cc837a79d31ffc7897f5e3935f8/HEAD@{395}:commit:gnostr: initial commit
+wss://{RELAY}/{REPO}/b63b5afffd3ff419168934cd4c2bae20e68599ce/HEAD@{396}:commit:
+wss://{RELAY}/{REPO}/ba45fa9465c21cc837a79d31ffc7897f5e3935f8/HEAD@{397}:commit:gnostr: initial commit
+wss://{RELAY}/{REPO}/799ebc2f2961f63f9b02a9f1acbdf0ff3835f894/HEAD@{398}:commit:gnostr: initial commit
+wss://{RELAY}/{REPO}/009af9ed5b873d8d5c702d5e013105d26e655d8b/HEAD@{399}:commit:initial commit
+wss://{RELAY}/{REPO}/e0e03f0ef66d0d37a1bb43849c43bfb0972aa5b8/HEAD@{400}:commit:make: gnostr
+wss://{RELAY}/{REPO}/009af9ed5b873d8d5c702d5e013105d26e655d8b/HEAD@{401}:commit:initial commit
+wss://{RELAY}/{REPO}/e0e03f0ef66d0d37a1bb43849c43bfb0972aa5b8/HEAD@{402}:commit:make: gnostr
+wss://{RELAY}/{REPO}/e0e03f0ef66d0d37a1bb43849c43bfb0972aa5b8/HEAD@{403}:commit:make: gnostr
+wss://{RELAY}/{REPO}/e0e03f0ef66d0d37a1bb43849c43bfb0972aa5b8/HEAD@{404}:commit:make: gnostr
+wss://{RELAY}/{REPO}/ee7fe7175ba4976da46b92266a5bd1653279bb10/HEAD@{405}:commit:v0.2.5-end-nostril
+wss://{RELAY}/{REPO}/24383a1528ae85c95322b03bee7c416c7e1f1eda/HEAD@{406}:commit:.PHONY:submodules
+wss://{RELAY}/{REPO}/b3d3f1f981913f54bb73dd83d8700619fca135c7/HEAD@{407}:commit:make: nostcat clean up command
+wss://{RELAY}/{REPO}/18d070b2919f91c0843eeb8212680c90faeb5818/HEAD@{408}:commit:make: tcl-unix clean up commands
+wss://{RELAY}/{REPO}/859311eed1967ed2c58dcf613b7d4d5c6d4e81e2/HEAD@{409}:commit:make: libgit.a clean up commands
+wss://{RELAY}/{REPO}/3df2d6a3a720ace31dc9802732e26f61f7942b8f/HEAD@{410}:commit:make: libjq.a clean up commands
+wss://{RELAY}/{REPO}/81d1d74c8ed14c48becdc0505dc89a826215b41c/HEAD@{411}:commit:make: dist clean up commands
+wss://{RELAY}/{REPO}/aeaa418ec354350e077b109103bbbe01d5dafa70/HEAD@{412}:commit:make: libsecp256k1.a fix commands
+wss://{RELAY}/{REPO}/76e91727d9b53de8cbc356e9dc7796e5e3cb1eee/HEAD@{413}:commit:.gitmodules: use git@github.com:gnostr-org/nostcat.git
+wss://{RELAY}/{REPO}/e0e1c9b0c3e04009593a6635c398fb1455d42773/HEAD@{414}:commit:.gitmodules:
+wss://{RELAY}/{REPO}/56258d65f607b45e7e30213d1fd42575aa2deb87/HEAD@{415}:commit: .github/workflows/ubuntu-git.yml: make libgit.a
