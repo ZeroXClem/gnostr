@@ -1,0 +1,14 @@
+commit 000009614cb5c9c766ab8f35b370c6b1c19b5f1e
+Author: @RandyMcMillan <randy.lee.mcmillan@gmail.com>
+Date:   Sun Jul 16 12:15:07 2023 -0400
+
+    03:00016309:.gnostr: add symlink
+
+diff --git a/.gnostr b/.gnostr
+new file mode 120000
+index 0000000..8f91b47
+--- /dev/null
++++ b/.gnostr
+@@ -0,0 +1 @@
++template
+\ No newline at end of file

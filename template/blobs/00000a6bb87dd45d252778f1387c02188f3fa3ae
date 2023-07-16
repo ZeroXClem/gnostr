@@ -1,0 +1,24 @@
+commit 00000a6bb87dd45d252778f1387c02188f3fa3ae
+Author: @RandyMcMillan <randy.lee.mcmillan@gmail.com>
+Date:   Sun Jul 16 12:13:33 2023 -0400
+
+    03:00029745:gnostr-relay.c -> devtools/.gnostr-relay.c
+
+diff --git a/gnostr-relay.c b/devtools/.gnostr-relay.c
+similarity index 99%
+rename from gnostr-relay.c
+rename to devtools/.gnostr-relay.c
+index 763ef13..5751ff7 100644
+--- a/gnostr-relay.c
++++ b/devtools/.gnostr-relay.c
+@@ -783,8 +783,8 @@ static void try_subcommand(int argc, const char *argv[])
+ {
+ 	static char buf[128] = {0};
+ 	const char *sub = argv[1];
+-	if (strlen(sub) >= 1 && sub[0] != '-') {
+-		snprintf(buf, sizeof(buf)-1, "gnostr-%s", sub);
++	if (strlen(sub) >= 7 && sub[0] != '-') {
++		snprintf(buf, sizeof(buf)-1, "gnostr-relay-%s", sub);
+ 		execvp(buf, (char * const *)argv+1);
+ 	}
+ }
