@@ -1,0 +1,128 @@
+commit 000000a937f4579642b2d33d53df2bb095434bfc
+Author: @RandyMcMillan <randy.lee.mcmillan@gmail.com>
+Date:   Sun Jul 16 14:13:20 2023 -0400
+
+    02:00000d0e:deps/gnostr-legit/src/gitminer.rs:write the reflog: conform to the 'gnostr' protocol
+
+diff --git a/deps/gnostr-legit b/deps/gnostr-legit
+index 8cff827..00000e7 160000
+--- a/deps/gnostr-legit
++++ b/deps/gnostr-legit
+@@ -1 +1 @@
+-Subproject commit 8cff82781ce6985e8b134ce7f085ff96fdd4a259
++Subproject commit 00000e7a1b24812fd570ed6ecbeac827c09a066b
+diff --git a/deps/gnostr-relay b/deps/gnostr-relay
+index c50e10a..e6b6ff5 160000
+--- a/deps/gnostr-relay
++++ b/deps/gnostr-relay
+@@ -1 +1 @@
+-Subproject commit c50e10aa21798f1c85bf7718109d3939c119b854
++Subproject commit e6b6ff52e58442f8e3c76c93ff587ce1288f0d6b
+diff --git a/template/blobs/0000096be18fd14145d013f3ece2e7a84cd5d056 b/template/blobs/0000096be18fd14145d013f3ece2e7a84cd5d056
+new file mode 100644
+index 0000000..ddc5ede
+--- /dev/null
++++ b/template/blobs/0000096be18fd14145d013f3ece2e7a84cd5d056
+@@ -0,0 +1,56 @@
++commit 0000096be18fd14145d013f3ece2e7a84cd5d056
++Author: @RandyMcMillan <randy.lee.mcmillan@gmail.com>
++Date:   Sun Jul 16 12:16:08 2023 -0400
++
++    02:0001684f:template/blobs: add blobs
++
++diff --git a/template/blobs/000009614cb5c9c766ab8f35b370c6b1c19b5f1e b/template/blobs/000009614cb5c9c766ab8f35b370c6b1c19b5f1e
++new file mode 100644
++index 0000000..275662f
++--- /dev/null
+++++ b/template/blobs/000009614cb5c9c766ab8f35b370c6b1c19b5f1e
++@@ -0,0 +1,14 @@
+++commit 000009614cb5c9c766ab8f35b370c6b1c19b5f1e
+++Author: @RandyMcMillan <randy.lee.mcmillan@gmail.com>
+++Date:   Sun Jul 16 12:15:07 2023 -0400
+++
+++    03:00016309:.gnostr: add symlink
+++
+++diff --git a/.gnostr b/.gnostr
+++new file mode 120000
+++index 0000000..8f91b47
+++--- /dev/null
++++++ b/.gnostr
+++@@ -0,0 +1 @@
++++template
+++\ No newline at end of file
++diff --git a/template/blobs/00000a6bb87dd45d252778f1387c02188f3fa3ae b/template/blobs/00000a6bb87dd45d252778f1387c02188f3fa3ae
++new file mode 100644
++index 0000000..501f51b
++--- /dev/null
+++++ b/template/blobs/00000a6bb87dd45d252778f1387c02188f3fa3ae
++@@ -0,0 +1,24 @@
+++commit 00000a6bb87dd45d252778f1387c02188f3fa3ae
+++Author: @RandyMcMillan <randy.lee.mcmillan@gmail.com>
+++Date:   Sun Jul 16 12:13:33 2023 -0400
+++
+++    03:00029745:gnostr-relay.c -> devtools/.gnostr-relay.c
+++
+++diff --git a/gnostr-relay.c b/devtools/.gnostr-relay.c
+++similarity index 99%
+++rename from gnostr-relay.c
+++rename to devtools/.gnostr-relay.c
+++index 763ef13..5751ff7 100644
+++--- a/gnostr-relay.c
++++++ b/devtools/.gnostr-relay.c
+++@@ -783,8 +783,8 @@ static void try_subcommand(int argc, const char *argv[])
+++ {
+++ 	static char buf[128] = {0};
+++ 	const char *sub = argv[1];
+++-	if (strlen(sub) >= 1 && sub[0] != '-') {
+++-		snprintf(buf, sizeof(buf)-1, "gnostr-%s", sub);
++++	if (strlen(sub) >= 7 && sub[0] != '-') {
++++		snprintf(buf, sizeof(buf)-1, "gnostr-relay-%s", sub);
+++ 		execvp(buf, (char * const *)argv+1);
+++ 	}
+++ }
+diff --git a/template/gnostr-git-log b/template/gnostr-git-log
+index 31c49cb..2f93d64 100644
+--- a/template/gnostr-git-log
++++ b/template/gnostr-git-log
+@@ -29,15 +29,15 @@ if
+ 	exit
+ elif
+ [[ ${!i} == "--hash-list" ]] || [[ ${!i} == "-hl" ]]; then
+-	gnostr-git    log      --format='wss://${RELAY}/${REPO}/%C(auto)%H'
++	gnostr-git    log      --format='wss://{RELAY}/{REPO}/%C(auto)%H'
+ 	exit
+ elif
+ [[ ${!i} == "--format" ]] || [[ ${!i} == "-f" ]]; then
+-	gnostr-git    log      --format='wss://${RELAY}/${REPO}/%C(auto)%H/%<|(17)%gd:commit:%s'
++	gnostr-git    log      --format='wss://{RELAY}/{REPO}/%C(auto)%H/%<|(17)%gd:commit:%s'
+ 	exit
+ elif
+ [[ ${!i} == "-gd" ]] || [[ ${!i} == "-g" ]]; then
+-	gnostr-git    log      --format='wss://${RELAY}/${REPO}/%C(auto)%H%<|(17)%gd'
++	gnostr-git    log      --format='wss://{RELAY}/{REPO}/%C(auto)%H%<|(17)%gd'
+ 	exit
+ else
+ 	##silence is golden
+diff --git a/template/gnostr-git-reflog b/template/gnostr-git-reflog
+index 291ab86..6dcccc9 100755
+--- a/template/gnostr-git-reflog
++++ b/template/gnostr-git-reflog
+@@ -29,15 +29,15 @@ if
+ 	exit
+ elif
+ [[ ${!i} == "--hash-list" ]] || [[ ${!i} == "-hl" ]]; then
+-	gnostr-git reflog      --format='wss://${RELAY}/${REPO}/%C(auto)%H'
++	gnostr-git reflog      --format='wss://{RELAY}/{REPO}/%C(auto)%H'
+ 	exit
+ elif
+ [[ ${!i} == "--format" ]] || [[ ${!i} == "-f" ]]; then
+-	gnostr-git reflog      --format='wss://${RELAY}/${REPO}/%C(auto)%H/%<|(17)%gd:commit:%s'
++	gnostr-git reflog      --format='wss://{RELAY}/{REPO}/%C(auto)%H/%<|(17)%gd:commit:%s'
+ 	exit
+ elif
+ [[ ${!i} == "-gd" ]] || [[ ${!i} == "-g" ]]; then
+-	gnostr-git reflog      --format='wss://${RELAY}/${REPO}/%C(auto)%H%<|(17)%gd'
++	gnostr-git reflog      --format='wss://{RELAY}/{REPO}/%C(auto)%H%<|(17)%gd'
+ 	exit
+ else
+ 	##silence is golden
