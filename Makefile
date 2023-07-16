@@ -3,7 +3,7 @@ CFLAGS                                 += -I/include
 LDFLAGS                                 = -Wl -V
 GNOSTR_OBJS                             = gnostr.o       sha256.o aes.o base64.o libsecp256k1.a
 GNOSTR_GIT_OBJS                         = gnostr-git.o   sha256.o aes.o base64.o libgit.a
-GNOSTR_RELAY_OBJS                       = gnostr-relay.o sha256.o aes.o base64.o
+#GNOSTR_RELAY_OBJS                       = gnostr-relay.o sha256.o aes.o base64.o
 GNOSTR_XOR_OBJS                         = gnostr-xor.o   sha256.o aes.o base64.o libsecp256k1.a
 HEADER_INCLUDE                          = include
 HEADERS                                 = $(HEADER_INCLUDE)/hex.h \
@@ -39,7 +39,8 @@ export GTAR
 
 
 ##all:
-all: submodules gnostr gnostr-git gnostr-relay gnostr-xor docs## 	make gnostr gnostr-cat gnostr-git gnostr-relay gnostr-xor docs
+#all: submodules gnostr gnostr-git gnostr-relay gnostr-xor docs## 	make gnostr gnostr-cat gnostr-git gnostr-relay gnostr-xor docs
+all: submodules gnostr gnostr-git gnostr-xor docs## 	make gnostr gnostr-cat gnostr-git gnostr-relay gnostr-xor docs
 ##	build gnostr tool and related dependencies
 
 ##docs:
@@ -182,14 +183,17 @@ deps/gnostr-git/gnostr-legit:deps/gnostr-legit/.git
 gnostr-legit:deps/gnostr-legit/target/release/gnostr-legit## 	gnostr-legit
 	cp $< $@
 
-deps/gnostr-relay/.git:
-	@devtools/refresh-submodules.sh deps/gnostr-relay
-#.PHONY:deps/gnostr-relay/gnostr-relay
-deps/gnostr-git/gnostr-relay:deps/gnostr-relay/.git
-	cd deps/gnostr-relay && \
-		make
-gnostr-relay:deps/gnostr-relay/target/release/gnostr-relay## 	gnostr-relay
-	cp $< $@
+#deps/gnostr-relay/.git:
+#	@devtools/refresh-submodules.sh deps/gnostr-relay
+##.PHONY:deps/gnostr-relay/gnostr-relay
+#deps/gnostr-relay:deps/gnostr-relay/.git
+#	cd deps/gnostr-relay && \
+#		make
+##gnostr-relay:deps/gnostr-relay/target/release/gnostr-relay## 	gnostr-relay
+#.PHONY:deps/gnostr-relay
+##PHONY for now...
+#gnostr-relay:deps/gnostr-relay## 	gnostr-relay
+#	cp $< $@
 
 deps/tcl/.git:
 	@devtools/refresh-submodules.sh deps/tcl
@@ -251,10 +255,10 @@ gnostr:clean $(HEADERS) $(GNOSTR_OBJS) $(ARS)## 	make gnostr binary
 ##	git submodule update --init --recursive
 #	$(CC) $(CFLAGS) $(GNOSTR_GIT_OBJS) $(ARS) -o $@
 
-gnostr-relay:initialize $(HEADERS) $(GNOSTR_RELAY_OBJS) $(ARS)## 	make gnostr-relay
-##gnostr-relay
-	git submodule update --init --recursive
-	$(CC) $(CFLAGS) $(GNOSTR_RELAY_OBJS) $(ARS) -o $@
+#gnostr-relay:initialize $(HEADERS) $(GNOSTR_RELAY_OBJS) $(ARS)## 	make gnostr-relay
+###gnostr-relay
+#	git submodule update --init --recursive
+#	$(CC) $(CFLAGS) $(GNOSTR_RELAY_OBJS) $(ARS) -o $@
 
 #.PHONY:gnostr-xor
 gnostr-xor: $(HEADERS) $(GNOSTR_XOR_OBJS) $(ARS)## 	make gnostr-xor
@@ -267,12 +271,12 @@ gnostr-xor: $(HEADERS) $(GNOSTR_XOR_OBJS) $(ARS)## 	make gnostr-xor
 .ONESHELL:
 ##install all
 ##	install docs/gnostr.1 gnostr gnostr-query
-install: all## 	install docs/gnostr.1 gnostr gnostr-query gnostr-relay gnostr-xor
+install: all## 	install docs/gnostr.1 gnostr gnostr-query *gnostr-relay* gnostr-xor
 	@mkdir -p $(PREFIX)/bin
 	@mkdir -p $(PREFIX)/include
 	@shopt -s extglob && install -m755 -vC include/*.*           ${PREFIX}/include/
 	@shopt -s extglob && install -m755 -vC gnostr                $(PREFIX)/bin/
-	@shopt -s extglob && install -m755 -vC gnostr-relay          $(PREFIX)/bin/
+	#@shopt -s extglob && install -m755 -vC gnostr-relay          $(PREFIX)/bin/
 	##double forward slasshes ok AFAIK
 	@shopt -s extglob && install -m755 -vC gnostr-*              $(PREFIX)/bin/
 	@shopt -s extglob && install -m755 -vC template/gnostr-*     $(PREFIX)/bin/
