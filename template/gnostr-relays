@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+gnostr_relays=${GNOSTR_RELAYS:-$(git config gnostr.relays)}
+gnostr_relayer=${GNOSTR_RELAYER:-gnostr-cat}
+to_stdout=0
+
+if ! command -v $gnostr_relayer; then
+	printf "gnostr-cat '%s' not found. Please install or set GNOSTR_RELAYER to your preferred relayer.\n" "$gnostr_relayer"
+	exit 1
+fi
+
+if [ "$gnostr_relays" == "" ]; then
+	printf 'no relays set. set\n\n    export GNOSTR_RELAYS="wss://relay.damus.io wss://relay.gnostr.org" or\n\n    gnostr-git config --global --add gnostr.relays "wss://relay.damus.io wss://relay.gnostr.org"\n' >&2
+	exit 1
+fi
+
+$gnostr_relayer $gnostr_relays
