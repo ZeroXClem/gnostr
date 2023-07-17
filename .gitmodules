@@ -81,3 +81,6 @@
 	branch = master
 	ignore = dirty
 	shallow = true
+[submodule "deps/gnostr-proxy"]
+	path = deps/gnostr-proxy
+	url = git@github.com:gnostr-org/gnostr-proxy.git
