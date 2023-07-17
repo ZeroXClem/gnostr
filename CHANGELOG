@@ -1,1 +1,5 @@
 0.0.0_21
+00000e4 02:0003b0a1:template/blobs /reflogs: add
+000003a 03:0005f99d:ed481f9 deps/.gitignore: ignore gnostr-*-test*
+057f596 make: dist: mv dist dist-$(VERSION)-$(OS)-$(ARCH)-$(TIME)
+ed481f9 deps/.gitignore: ignore gnostr-*-test*
