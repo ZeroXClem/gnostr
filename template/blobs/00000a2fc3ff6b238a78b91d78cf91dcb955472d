@@ -1,0 +1,24 @@
+commit 00000a2fc3ff6b238a78b91d78cf91dcb955472d
+Author: @RandyMcMillan <randy.lee.mcmillan@gmail.com>
+Date:   Sun Jul 16 23:02:23 2023 -0400
+
+    03:00082359:.gitmodules:deps/gnostr-proxy
+
+diff --git a/.gitmodules b/.gitmodules
+index bc1bee6..01285f9 100644
+--- a/.gitmodules
++++ b/.gitmodules
+@@ -81,3 +81,6 @@
+ 	branch = master
+ 	ignore = dirty
+ 	shallow = true
++[submodule "deps/gnostr-proxy"]
++	path = deps/gnostr-proxy
++	url = git@github.com:gnostr-org/gnostr-proxy.git
+diff --git a/deps/gnostr-proxy b/deps/gnostr-proxy
+new file mode 160000
+index 0000000..07c458b
+--- /dev/null
++++ b/deps/gnostr-proxy
+@@ -0,0 +1 @@
++Subproject commit 07c458bddf2865cebc2a9d30b539e72f32953324

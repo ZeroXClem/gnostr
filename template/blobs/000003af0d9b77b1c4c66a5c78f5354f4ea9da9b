@@ -1,0 +1,13 @@
+commit 000003af0d9b77b1c4c66a5c78f5354f4ea9da9b
+Author: @RandyMcMillan <randy.lee.mcmillan@gmail.com>
+Date:   Mon Jul 17 12:38:24 2023 -0400
+
+    03:0005f99d:ed481f9 deps/.gitignore: ignore gnostr-*-test*
+
+diff --git a/CHANGELOG b/CHANGELOG
+index 1e2458d..2557a42 100644
+--- a/CHANGELOG
++++ b/CHANGELOG
+@@ -1 +1,2 @@
+ 0.0.0_21
++ed481f9 deps/.gitignore: ignore gnostr-*-test*
