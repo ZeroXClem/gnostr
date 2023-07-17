@@ -1,0 +1,23 @@
+commit 00000dcedcab2019ab8e7b3e55dc9d53b3682a7c
+Author: @RandyMcMillan <randy.lee.mcmillan@gmail.com>
+Date:   Mon Jul 17 13:57:56 2023 -0400
+
+    00:00018982:
+
+diff --git a/CHANGELOG b/CHANGELOG
+index 1e2458d..ea197f9 100644
+--- a/CHANGELOG
++++ b/CHANGELOG
+@@ -1 +1,5 @@
+ 0.0.0_21
++00000e4 02:0003b0a1:template/blobs /reflogs: add
++000003a 03:0005f99d:ed481f9 deps/.gitignore: ignore gnostr-*-test*
++057f596 make: dist: mv dist dist-$(VERSION)-$(OS)-$(ARCH)-$(TIME)
++ed481f9 deps/.gitignore: ignore gnostr-*-test*
+diff --git a/deps/gnostr-legit b/deps/gnostr-legit
+index bfb5a05..0000013 160000
+--- a/deps/gnostr-legit
++++ b/deps/gnostr-legit
+@@ -1 +1 @@
+-Subproject commit bfb5a0551ead773f94bf3b61d250cf38c2bc7b20
++Subproject commit 0000013d66e5768fcf23535f544c4aa206e6b6ee
