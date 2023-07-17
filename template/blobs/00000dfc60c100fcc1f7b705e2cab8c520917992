@@ -1,0 +1,13 @@
+commit 00000dfc60c100fcc1f7b705e2cab8c520917992
+Author: @RandyMcMillan <randy.lee.mcmillan@gmail.com>
+Date:   Mon Jul 17 18:41:28 2023 -0400
+
+    00:0006a98e:GIT_VERSION = 0.0.0-gnostr
+
+diff --git a/deps/gnostr-git b/deps/gnostr-git
+index 852f04c..e21083b 160000
+--- a/deps/gnostr-git
++++ b/deps/gnostr-git
+@@ -1 +1 @@
+-Subproject commit 852f04c1bf339eb74d802d851b349a98ad1e7e56
++Subproject commit e21083be2064701989ed2a5c64fb5eb123234c65
