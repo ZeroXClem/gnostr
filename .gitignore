@@ -16,7 +16,7 @@ jsmin
 
 gnostr-*.*.*-*-*
 dist/gnostr-*.*.*-*-*
-
+dist-*
 /result
 configurator.out*
 configurator
