@@ -190,6 +190,7 @@ deps/gnostr-proxy:deps/gnostr-proxy/.git
 	cd deps/gnostr-proxy && \
 		make run
 gnostr-proxy:deps/gnostr-proxy
+	cat deps/gnostr-proxy/public/assets/entrypoints.json
 
 #deps/gnostr-relay/.git:
 #	@devtools/refresh-submodules.sh deps/gnostr-relay
