@@ -1,0 +1,13 @@
+commit 0000015ab635e5aaecddc78e63e3e5311d8f2425
+Author: @RandyMcMillan <randy.lee.mcmillan@gmail.com>
+Date:   Tue Jul 18 08:54:30 2023 -0400
+
+    02:0002ea82:deps/gnostr-legit:make gnostr-event
+
+diff --git a/deps/gnostr-legit b/deps/gnostr-legit
+index 0000016..00000f9 160000
+--- a/deps/gnostr-legit
++++ b/deps/gnostr-legit
+@@ -1 +1 @@
+-Subproject commit 0000016645c910ef1d26765556cfee55200e8a4d
++Subproject commit 00000f97f05e364642c1462d615178812ef5b788

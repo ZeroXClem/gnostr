@@ -1,0 +1,74 @@
+commit 0000058305fbf6cf3b88e696291a1b7978a0a92a
+Author: @RandyMcMillan <randy.lee.mcmillan@gmail.com>
+Date:   Tue Jul 18 10:38:01 2023 -0400
+
+    03:0000059a:deps/gnostr-legit: updpate && template/gnostr-relays: add -t -c args: gnostr_tests curl_tests
+
+diff --git a/deps/gnostr-legit b/deps/gnostr-legit
+index 00000f9..00000c4 160000
+--- a/deps/gnostr-legit
++++ b/deps/gnostr-legit
+@@ -1 +1 @@
+-Subproject commit 00000f97f05e364642c1462d615178812ef5b788
++Subproject commit 00000c4be38f3c15792423883cc534177e538b1e
+diff --git a/template/gnostr-relays b/template/gnostr-relays
+index 960afb2..19ff8c0 100755
+--- a/template/gnostr-relays
++++ b/template/gnostr-relays
+@@ -1,8 +1,47 @@
+ #!/usr/bin/env bash
++gnostr_relays=${GNOSTR_RELAYS:-$(gnostr git config gnostr.relays)}
++export gnostr_relays
++gnostr_relayer=${GNOSTR_RELAYER:-$(which gnostr-cat)} -u
++export gnostr_relayer
++#to_stdout=0
++#echo ${!#}
++echo $0 $1
++if [[ $1 = "-c" ]]; then
++curl_test(){
++echo "curl test"
++	curl --include \
++     --no-buffer \
++     --header "Connection: Upgrade" \
++     --header "Upgrade: websocket" \
++     --header "Host: example.com:80" \
++     --header "Origin: http://example.com:80" \
++     --header "Sec-WebSocket-Key: SGVsbG8sIHdvcmxkIQ==" \
++     --header "Sec-WebSocket-Version: 13" \
++     http://example.com:80/
++ }
++curl_test
++exit;
++fi
++
++if [[ $1 = "-t" ]]; then
++gnostr_tests(){
++GNOSTR=$(which gnostr)
++echo "$GNOSTR tests"
++echo "$GNOSTR test 1"
++$GNOSTR --sec $(gnostr --hash 0) --envelope --content "test 1"
++echo "$GNOSTR test 2"
++$GNOSTR --sec $(gnostr --hash 0) --envelope --content "test 2" | $(which gnostr-cat) -u wss://relay.damus.io
+ 
+-gnostr_relays=${GNOSTR_RELAYS:-$(git config gnostr.relays)}
+-gnostr_relayer=${GNOSTR_RELAYER:-gnostr-cat}
+-to_stdout=0
++GNOSTR_QUERY=$(which gnostr-query)
++echo "$GNOSTR_QUERY tests"
++echo "$GNOSTR_QUERY test 1"
++$GNOSTR_QUERY -i 184ba32823ecb0e38d195c6484aace10edb7a4948c5e52434a8833e115c3e5f6 | gnostr-cat -u wss://relay.damus.io
++echo "$GNOSTR_QUERY test 2"
++#$GNOSTR_QUERY -i 184ba32823ecb0e38d195c6484aace10edb7a4948c5e52434a8833e115c3e5f6 | $gnostr_relayer $gnostr_relay
++}
++gnostr_tests
++exit;
++fi
+ 
+ if ! command -v $gnostr_relayer; then
+ 	printf "gnostr-cat '%s' not found. Please install or set GNOSTR_RELAYER to your preferred relayer.\n" "$gnostr_relayer"
+@@ -14,4 +53,5 @@ if [ "$gnostr_relays" == "" ]; then
+ 	exit 1
+ fi
+ 
++#echo $gnostr_relayer $gnostr_relays
+ $gnostr_relayer $gnostr_relays
