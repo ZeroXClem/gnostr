@@ -178,8 +178,7 @@ deps/gnostr-relay/.git:
 	@devtools/refresh-submodules.sh deps/gnostr-relay
 .PHONY:deps/gnostr-relay
 deps/gnostr-relay:deps/gnostr-relay/.git
-	cd deps/gnostr-relay && \
-		cmake && make all
+	cd deps/gnostr-relay && make cmake && make all
 .PHONY:gnostr-relay
 gnostr-relay:deps/gnostr-relay
 
