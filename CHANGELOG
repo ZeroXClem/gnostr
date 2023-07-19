@@ -1,1 +1,9 @@
 0.0.0_21
+bb6c600 .gitmodules:deps/gnostr-relay
+c4d0af2 template/gnostr-query: update gnostr namespace
+ab06154 03:0000059a:deps/gnostr-legit: updpate && template/gnostr-relays: add -t -c args: gnostr_tests curl_tests
+00000f7 01:00051e44:
+0000076 01:00018f96:
+000005a 00:000078e7:
+0000015 02:0002ea82:deps/gnostr-legit:make gnostr-event
+da7340b make: gnostr-proxy
