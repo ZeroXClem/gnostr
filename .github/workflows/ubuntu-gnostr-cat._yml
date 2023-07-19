@@ -1,4 +1,4 @@
-name: ubuntu-nostcat
+name: ubuntu-gnostr-cat
 
 # Controls when the action will run.
 on:

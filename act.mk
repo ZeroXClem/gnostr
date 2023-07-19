@@ -23,15 +23,24 @@ ubuntu-matrix:docker-start## 	run act in .github
 ##ubuntu-matrix
 ## 	make ubuntu-matrix reuse=true bind=true verbose=true
 	@bash -c "export GITHUB_TOKEN=$(shell cat ~/GITHUB_TOKEN.txt) && echo $(GITHUB_TOKEN)"
-	type -P act && GITHUB_TOKEN=$(shell cat ~/GITHUB_TOKEN.txt) && act $(VERBOSE) $(BIND) $(REUSE) -W $(PWD)/.github/workflows/$@.yml || $(MAKE) act-install
+	type -P act && GITHUB_TOKEN=$(shell cat ~/GITHUB_TOKEN.txt) && act -v         -b      $(REUSE) -W $(PWD)/.github/workflows/$@.yml || $(MAKE) act-install
 alpine-matrix:docker-start## 	run act in .github
 	@bash -c "export GITHUB_TOKEN=$(shell cat ~/GITHUB_TOKEN.txt) && echo $(GITHUB_TOKEN)"
 	type -P act && GITHUB_TOKEN=$(shell cat ~/GITHUB_TOKEN.txt) && act $(VERBOSE) $(BIND) $(REUSE) -W $(PWD)/.github/workflows/$@.yml || $(MAKE) act-install
 ##alpine-matrix
 ## 	make alpine-matrix reuse=true bind=true verbose=true
 ##	
-linux-matrix:docker-start## 	linux-matrix
-	$(MAKE) alpine-matrix ubuntu-matrix verbose=true bind=true reuse=true
+linux-matrix:docker-start ubuntu-matrix## 	linux-matrix
+	$(MAKE) alpine-matrix ubuntu-secp ubuntu-gnostr ubuntu-gnostr-relay verbose=true bind=true reuse=true
+ubuntu-secp:docker-start## 	ubuntu-secp
+	@bash -c "export GITHUB_TOKEN=$(shell cat ~/GITHUB_TOKEN.txt) && echo $(GITHUB_TOKEN)"
+	type -P act && GITHUB_TOKEN=$(shell cat ~/GITHUB_TOKEN.txt) && act $(VERBOSE) $(BIND) $(REUSE) -W $(PWD)/.github/workflows/$@.yml || $(MAKE) act-install
+ubuntu-gnostr:docker-start## 	ubuntu-gnostr
+	@bash -c "export GITHUB_TOKEN=$(shell cat ~/GITHUB_TOKEN.txt) && echo $(GITHUB_TOKEN)"
+	type -P act && GITHUB_TOKEN=$(shell cat ~/GITHUB_TOKEN.txt) && act $(VERBOSE) $(BIND) $(REUSE) -W $(PWD)/.github/workflows/$@.yml || $(MAKE) act-install
+ubuntu-gnostr-relay:docker-start## 	ubuntu-gnostr-relay
+	@bash -c "export GITHUB_TOKEN=$(shell cat ~/GITHUB_TOKEN.txt) && echo $(GITHUB_TOKEN)"
+	type -P act && GITHUB_TOKEN=$(shell cat ~/GITHUB_TOKEN.txt) && act $(VERBOSE) $(BIND) $(REUSE) -W $(PWD)/.github/workflows/$@.yml || $(MAKE) act-install
 ##linux-matrix
 ## 	make alpine-matrix ubuntu-matrix verbose=true bind=true reuse=true
 ##[act.mk developement notes]
