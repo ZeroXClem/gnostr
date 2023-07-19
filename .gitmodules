@@ -60,7 +60,7 @@
 [submodule "deps/gnostr-git"]
 	path = deps/gnostr-git
 	url = https://github.com/gnostr-org/gnostr-git.git
-	branch = master
+	branch = v0.0.0_21
 	ignore = dirty
 	shallow = true
 [submodule "deps/gnostr-web"]
