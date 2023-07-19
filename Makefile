@@ -2,7 +2,7 @@ CFLAGS                                  = -Wall -O2 -Ideps/secp256k1/include
 CFLAGS                                 += -I/include
 LDFLAGS                                 = -Wl -V
 GNOSTR_OBJS                             = gnostr.o       sha256.o aes.o base64.o libsecp256k1.a
-GNOSTR_GIT_OBJS                         = gnostr-git.o   sha256.o aes.o base64.o libgit.a
+#GNOSTR_GIT_OBJS                         = gnostr-git.o   sha256.o aes.o base64.o libgit.a
 #GNOSTR_RELAY_OBJS                       = gnostr-relay.o sha256.o aes.o base64.o
 GNOSTR_XOR_OBJS                         = gnostr-xor.o   sha256.o aes.o base64.o libsecp256k1.a
 HEADER_INCLUDE                          = include
@@ -267,11 +267,6 @@ gnostr:clean $(HEADERS) $(GNOSTR_OBJS) $(ARS)## 	make gnostr binary
 ##	$(CC) $(CFLAGS) $(GNOSTR_OBJS) $(ARS) -o $@
 #	git submodule update --init --recursive
 	$(CC) $(CFLAGS) $(GNOSTR_OBJS) $(ARS) -o $@
-
-#gnostr-git:$(HEADERS) $(GNOSTR_GIT_OBJS) $(ARS)## 	make gnostr-git
-###gnostr-git
-##	git submodule update --init --recursive
-#	$(CC) $(CFLAGS) $(GNOSTR_GIT_OBJS) $(ARS) -o $@
 
 #gnostr-relay:initialize $(HEADERS) $(GNOSTR_RELAY_OBJS) $(ARS)## 	make gnostr-relay
 ###gnostr-relay
