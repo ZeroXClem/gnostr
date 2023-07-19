@@ -23,7 +23,7 @@ ARS                                    := libsecp256k1.a
 LIB_ARS                                := libsecp256k1.a libgit.a libjq.a libtclstub.a
 
 SUBMODULES                              = deps/secp256k1
-SUBMODULES_MORE                         = deps/secp256k1 deps/git deps/jq deps/gnostr-cat deps/hyper-nostr deps/tcl deps/hyper-sdk deps/act deps/openssl deps/gnostr-py deps/gnostr-aio deps/act deps/gnostr-legit deps/gnostr-relay deps/gnostr-proxy
+SUBMODULES_MORE                         = deps/secp256k1 deps/git deps/jq deps/gnostr-cat deps/hyper-nostr deps/tcl deps/hyper-sdk deps/act deps/openssl deps/gnostr-py deps/gnostr-aio deps/act deps/gnostr-legit deps/gnostr-relay deps/gnostr-proxy deps/gnostr-relay
 
 VERSION                                :=$(shell cat version)
 export VERSION
@@ -39,8 +39,8 @@ export GTAR
 
 
 ##all:
-#all: submodules gnostr gnostr-git gnostr-relay gnostr-xor docs## 	make gnostr gnostr-cat gnostr-git gnostr-relay gnostr-xor docs
-all: submodules gnostr gnostr-git gnostr-xor docs## 	make gnostr gnostr-cat gnostr-git gnostr-relay gnostr-xor docs
+#all: submodules gnostr gnostr-cat gnostr-git gnostr-relay gnostr-xor docs## 	make gnostr gnostr-cat gnostr-git gnostr-relay gnostr-xor docs
+all: submodules gnostr gnostr-cat gnostr-git gnostr-relay gnostr-xor docs## 	make gnostr gnostr-cat gnostr-git gnostr-relay gnostr-xor docs
 ##	build gnostr tool and related dependencies
 
 ##docs:
@@ -174,6 +174,15 @@ deps/gnostr-git/gnostr-git:deps/gnostr-git/.git
 gnostr-git:deps/gnostr-git/gnostr-git## 	gnostr-git
 	cp $< $@
 
+deps/gnostr-relay/.git:
+	@devtools/refresh-submodules.sh deps/gnostr-relay
+.PHONY:deps/gnostr-relay
+deps/gnostr-relay:deps/gnostr-relay/.git
+	cd deps/gnostr-relay && \
+		cmake && make all
+.PHONY:gnostr-relay
+gnostr-relay:deps/gnostr-relay
+
 deps/gnostr-legit/.git:
 	@devtools/refresh-submodules.sh deps/gnostr-legit
 #.PHONY:deps/gnostr-legit/gnostr-legit
@@ -181,7 +190,7 @@ deps/gnostr-git/gnostr-legit:deps/gnostr-legit/.git
 	cd deps/gnostr-legit && \
 		make legit-install
 gnostr-legit:deps/gnostr-legit/target/release/gnostr-legit## 	gnostr-legit
-	cp $< $@
+	cp $< $@ && exit;
 
 deps/gnostr-proxy/.git:
 	@devtools/refresh-submodules.sh deps/gnostr-proxy
