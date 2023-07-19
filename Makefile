@@ -40,7 +40,7 @@ export GTAR
 
 ##all:
 #all: submodules gnostr gnostr-cat gnostr-git gnostr-relay gnostr-xor docs## 	make gnostr gnostr-cat gnostr-git gnostr-relay gnostr-xor docs
-all: submodules gnostr gnostr-cat gnostr-git gnostr-relay gnostr-xor docs## 	make gnostr gnostr-cat gnostr-git gnostr-relay gnostr-xor docs
+all: submodules gnostr gnostr-git gnostr-relay gnostr-xor docs## 	make gnostr gnostr-cat gnostr-git gnostr-relay gnostr-xor docs
 ##	build gnostr tool and related dependencies
 
 ##docs:
@@ -64,6 +64,14 @@ doc/gnostr.1: README##
 version: gnostr.c## 	print version
 	@grep '^#define VERSION' $< | sed -En 's,.*"([^"]+)".*,\1,p' > $@
 	@cat $@
+.PHONY:GIT-VERSION-FILE git-version
+git-version:GIT-VERSION-FILE
+GIT-VERSION-FILE:deps/gnostr-git/GIT-VERSION-FILE
+	@. deps/gnostr-git/GIT-VERSION-GEN
+	@grep '^GIT_VERSION' <GIT-VERSION-FILE | sed -En 's,..............([^"]+).*,\1,p' > git-version
+	@cat git-version #&& rm GIT-VERSION-FILE
+.PHONY:versions
+versions:version git-version
 
 chmod:## 	chmod
 ##chmod
@@ -86,7 +94,7 @@ dist: docs version## 	create tar distribution
 	touch deps/tcl/unix/dltest/pkgπ.c || echo
 	touch deps/tcl/unix/dltest/pkg\317\200.c || echo
 	cp deps/tcl/unix/dltest/pkgπ.c deps/tcl/unix/dltest/pkg\317\200.c || echo
-	mv dist dist-$(VERSION)-$(OS)-$(ARCH)-$(TIME)
+	mv dist dist-$(VERSION)-$(OS)-$(ARCH)-$(TIME) || echo
 	mkdir -p dist && touch dist/.gitkeep
 	cat version > CHANGELOG && git add -f CHANGELOG && git commit -m "CHANGELOG: update" 2>/dev/null || echo
 	git log $(shell git describe --tags --abbrev=0)..@^1 --oneline | sed '/Merge/d' >> CHANGELOG
@@ -161,18 +169,10 @@ deps/gnostr-web/.git:
 
 deps/gnostr-git/.git:
 	@devtools/refresh-submodules.sh deps/gnostr-git
-#.PHONY:deps/gnostr-git/gnostr-git
+.PHONY:deps/gnostr-git/gnostr-git
 deps/gnostr-git/gnostr-git:deps/gnostr-git/.git
-	cd deps/gnostr-git && \
-		make
-		#make all && \
-		#make install
-##libgit.a
-##	deps/git/libgit.a deps/git/.git
-##	cd deps/git; \
-##	make install
+	cd deps/gnostr-git && make && make install
 gnostr-git:deps/gnostr-git/gnostr-git## 	gnostr-git
-	cp $< $@
 
 deps/gnostr-relay/.git:
 	@devtools/refresh-submodules.sh deps/gnostr-relay
@@ -186,7 +186,7 @@ gnostr-relay:deps/gnostr-relay
 deps/gnostr-legit/.git:
 	@devtools/refresh-submodules.sh deps/gnostr-legit
 #.PHONY:deps/gnostr-legit/gnostr-legit
-deps/gnostr-git/gnostr-legit:deps/gnostr-legit/.git
+deps/gnostr-legit/gnostr-legit:deps/gnostr-legit/.git
 	cd deps/gnostr-legit && \
 		make legit-install
 gnostr-legit:deps/gnostr-legit/target/release/gnostr-legit## 	gnostr-legit

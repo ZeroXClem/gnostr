@@ -1,5 +1,6 @@
 CHANGELOG
 KEYS
+GIT-VERSION-FILE
 !deps/git/config.*
 *.o
 /.direnv/
