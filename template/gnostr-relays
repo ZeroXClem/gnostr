@@ -57,6 +57,9 @@ gnostr query -i 184ba32823ecb0e38d195c6484aace10edb7a4948c5e52434a8833e115c3e5f6
 echo "TEST4:$GNOSTR_QUERY"
 gnostr-query -i 2cafcbbf54b1b0b17f46ff7c8192d572ff1480757d32254bee3cc02f535e41a7 | gnostr-relays
 
+echo "TEST5:$GNOSTR_QUERY"
+gnostr-query -t gnostr | gnostr-relays
+
 gnostr git config -l | grep "gnostr.relays"
 echo "$GNOSTR_QUERY:TESTS complete"
 
