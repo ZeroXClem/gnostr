@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 gnostr_relays=${GNOSTR_RELAYS:-$(gnostr git config gnostr.relays)}
-export gnostr_relays
-gnostr_relayer=${GNOSTR_RELAYER:-$(which gnostr-cat)}
-export gnostr_relayer
+#export gnostr_relays
+gnostr_relayer=${GNOSTR_RELAYER:-gnostr-cat}
+#export gnostr_relayer
 #to_stdout=0
 #echo ${!#}
-echo $0 $1
+#echo $0 $1
 if [[ $1 = "-c" ]]; then
 curl_test(){
 echo "curl test"
@@ -33,7 +33,7 @@ echo "TESTS:$GNOSTR"
 echo "TEST1:$GNOSTR"
 $GNOSTR --sec $(gnostr --hash 0) -t "gnostr" --envelope --content "test 1"
 echo "TEST2:$GNOSTR"
-$GNOSTR --sec $(gnostr --hash 0) -t "gnostr" --envelope --content "test 2" | $(which gnostr-cat) -u wss://relay.damus.io
+$GNOSTR --sec $(gnostr --hash 0) -t "gnostr" --envelope --content "test 2" | gnostr-cat -u wss://relay.damus.io
 echo "TEST3:$GNOSTR"
 $GNOSTR --sec $(gnostr --hash 0) -t "gnostr" --envelope --content "test 33" | gnostr-relays
 echo "TEST4:$GNOSTR"
@@ -45,6 +45,12 @@ echo "$GNOSTR:TESTS complete"
 
 GNOSTR_QUERY=$(which gnostr-query)
 echo "TESTS:$GNOSTR_QUERY"
+
+
+echo "TEST0:$GNOSTR_QUERY"
+$GNOSTR_QUERY -i fbf73a17a4e0fe390aba1808a8d55f1b50717d5dd765b2904bf39eba18c51f7c | gnostr-cat -u ws://localhost:7001 > ./test/first-gnostr-commit.txt && gnostr --sec $(gnostr --hash) --envelope --content "$(cat ./test/first-gnostr-commit.txt)"
+
+exit;
 echo "TEST1:$GNOSTR_QUERY"
 $GNOSTR_QUERY -i 184ba32823ecb0e38d195c6484aace10edb7a4948c5e52434a8833e115c3e5f6 -t "gnostr" | gnostr-cat -u wss://relay.damus.io
 echo "TEST2:$GNOSTR_QUERY"
@@ -83,6 +89,6 @@ fi
 #REF:quick config
 #gnostr-git config --global --replace-all gnostr.relays "wss://relay.damus.io ws://127.0.0.1:7001"
 #git config -l | grep gnostr.relays
-gnostr-git config --global --replace-all gnostr.relays "ws://127.0.0.1:7001" && git config -l | grep gnostr.relays
+#gnostr-git config --global --replace-all gnostr.relays "ws://127.0.0.1:7001" && git config -l | grep gnostr.relays
 #echo $gnostr_relayer $gnostr_relays
 $gnostr_relayer $gnostr_relays
