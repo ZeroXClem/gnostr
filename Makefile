@@ -178,8 +178,9 @@ gnostr-git:deps/gnostr-git/gnostr-git## 	gnostr-git
 
 
 
+gnostr-relay:build## 	gnostr-relay:build
 .PHONY:build
-build:## 	cmake build gnostr-relay
+build:## 		cmake build gnostr-relay
 	cmake -S . -B build && cd build && cmake ../ && make
 
 
