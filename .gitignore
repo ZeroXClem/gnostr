@@ -1,3 +1,16 @@
+http_relay
+cmake_install.cmake
+CMakeFiles/
+http_client
+http_relayV
+nostro
+nostro.log.txt
+server.crt
+server.key
+vostro
+vostro.log.txt
+list_01.txt
+list_02.txt
 CHANGELOG
 KEYS
 GIT-VERSION-FILE
