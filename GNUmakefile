@@ -29,6 +29,8 @@ TRIPLET                                 :=aarch64-linux-gnu
 export TRIPLET
 endif
 
+HOMEBREW                                :=$(shell which brew || false)
+
 ifeq ($(verbose),true)
 VERBOSE                                 :=-v
 else
@@ -230,6 +232,13 @@ report:##
 	@echo 'GIT_REPO_ORIGIN=${GIT_REPO_ORIGIN}'
 	@echo 'GIT_REPO_NAME=${GIT_REPO_NAME}'
 	@echo 'GIT_REPO_PATH=${GIT_REPO_PATH}'
+
+checkbrew:## 	checkbrew
+ifeq ($(HOMEBREW),)
+	@/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+else
+	@type -P brew && brew install wxWidgets openssl@3.0
+endif
 
 tag:## 	git tag & git push
 ##tag
