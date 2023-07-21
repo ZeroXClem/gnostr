@@ -174,13 +174,16 @@ deps/gnostr-git/gnostr-git:deps/gnostr-git/.git
 	cd deps/gnostr-git && make && make install
 gnostr-git:deps/gnostr-git/gnostr-git## 	gnostr-git
 
-deps/gnostr-relay/.git:
-	@devtools/refresh-submodules.sh deps/gnostr-relay
-.PHONY:deps/gnostr-relay
-deps/gnostr-relay:deps/gnostr-relay/.git
-	cd deps/gnostr-relay && make cmake && make all
-.PHONY:gnostr-relay
-gnostr-relay:deps/gnostr-relay
+
+
+
+
+.PHONY:build
+build:## 	cmake build gnostr-relay
+	cmake -S . -B build && cd build && cmake ../ && make
+
+
+
 
 deps/gnostr-legit/.git:
 	@devtools/refresh-submodules.sh deps/gnostr-legit
