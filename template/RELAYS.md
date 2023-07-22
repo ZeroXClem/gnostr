@@ -20,7 +20,6 @@ wss://knostr.neutrine.com
 wss://nostr.nodeofsven.com
 wss://nostr.gromeul.eu
 wss://relay.nostr.ro
-wss://relay.nostrich.de
 wss://nostr.vulpem.com
 wss://relay.farscapian.com
 wss://nostr3.actn.io
@@ -39,9 +38,9 @@ wss://relay.dwadziesciajeden.pl
 wss://nostr-pub1.southflorida.ninja
 wss://relay.orangepill.dev
 wss://nostr.600.wtf
-wss://e.nos.lol
 wss://nostrich.friendship.tw
 wss://nostream-production-5895.up.railway.app
+wss://nostr.bitcoin.sex
 wss://nostr-relay.texashedge.xyz
 wss://nostr.thomascdnns.com
 wss://nostr.btcmp.com
@@ -83,7 +82,6 @@ wss://relay.humanumest.social
 wss://paid.spore.ws
 wss://nostr.notmyhostna.me
 wss://nostr.l00p.org
-wss://relay.reeve.cn
 wss://lightningrelay.com
 wss://no-str.wnhefei.cn:28443
 wss://bitcoinmaximalists.online
@@ -96,6 +94,7 @@ wss://nostr.uthark.com
 wss://nostr.cruncher.com
 wss://nostr.foundrydigital.com
 wss://relay.nostrcheck.me
+wss://nostr.rbel.co
 wss://nostrelay.yeghro.site
 wss://relay.nostr.vet
 wss://nostr-relay.app.ikeji.ma
@@ -112,13 +111,11 @@ wss://nostr.bitcoiner.social
 wss://relay.orange-crush.com
 wss://nostr.screaminglife.io
 wss://nostr.roundrockbitcoiners.com
-wss://relay.f7z.io
 wss://nostr.shawnyeager.net
 wss://relay.nostriches.org
 wss://nostr.arguflow.gg
 wss://relay.nostrology.org
 wss://nostr.kollider.xyz
-wss://nostr.bch.ninja
 wss://relay.nostrati.com
 wss://nostr-dev.wellorder.net
 wss://nostr-relay.nokotaro.com
@@ -261,6 +258,7 @@ wss://nostr.zerofiat.world
 wss://nostr.simplex.icu
 wss://nostr.carlostkd.ch
 wss://relay.utxo.one
+wss://nostr.openhoofd.nl
 wss://relay.bitblockboom.com
 wss://nostr.strits.dk
 wss://nostr.zenon.info
@@ -285,7 +283,6 @@ wss://paid.nostr.lc
 wss://ithurtswhenip.ee
 wss://nerostr.xmr.rocks
 wss://nostr.compile-error.net
-wss://powrelay.xyz
 wss://n-word.sharivegas.com
 wss://nostr.sethforprivacy.com
 wss://nostr.frennet.xyz
@@ -320,6 +317,7 @@ wss://nostr.irrelevant.mooo.com
 wss://relay.sh4.red
 wss://relay.coindebit.io
 wss://nsc.pleb.cloud
+wss://nostr-badur.onrender.com
 wss://bolverker.com/nostrclient/api/v1/relay
 wss://relay.nostrbr.online
 wss://ca.relayable.org
@@ -356,7 +354,6 @@ wss://nostr.438b.net
 wss://nostr.fmar.link
 wss://nfdn.betanet.dotalgo.io
 wss://relay.plebz.space
-wss://relay.old4.win
 wss://relay.nostr.lighting
 wss://nostr.fbxl.net
 wss://nostr.metamadeenah.com
@@ -388,12 +385,17 @@ wss://ryan.nostr1.com
 wss://nostr-01.yakihonne.com
 wss://la.relayable.org
 wss://nostr.geyser.fund
+wss://bitstack.app
 wss://relay.danvergara.com
 wss://relay.break-19.com
 wss://relay.bitcoinpark.com
 wss://crayon-private.nostr-demo.relayaas.com
 wss://relay1.nostr.unitedfop.com
 wss://nostr.xmr.sh
-wss://males-steering-forge-jerry.trycloudflare.com
 wss://relay.0xchat.com
 wss://nostr.tenna.site
+wss://outputs-rat-lying-lifestyle.trycloudflare.com
+wss://egirls.relaying.io
+wss://cloudfodder.nostr1.com
+wss://saltivka.org
+wss://relay.nostrfiles.dev
