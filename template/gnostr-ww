@@ -126,7 +126,7 @@ done
 counter=0 #$randomBetweenAnswer
 gnostr_nonce $counter $LENGTH 1
 echo gnostr_nonce=$gnostr_nonce
-exit;
+#exit;
 if [[ ! -z "$1" ]]; then
     echo "content="$1
     content=$1
@@ -158,7 +158,7 @@ while [[ $counter -lt $LENGTH ]]
 	gnostr --sec $(echo -en "" | openssl dgst -sha256 | sed 's/SHA2-256(stdin)= //g' ) | $(which jq)
     for relay in $RELAYS; do
        echo -e "counter=$counter"\n
-       echo "randomBetweenAnswer=$randomBetweenAnswer"
+       echo "gnostr_nonce=$gnostr_nonce"
 	   #secret=$(echo "$counter" | openssl dgst -sha256 && echo $secret | tr '[a-z]' '[A-Z]')
 	   secret=$(echo "$counter" | openssl dgst -sha256  | sed 's/SHA2-256(stdin)= //g'   )
        export secret
@@ -215,7 +215,7 @@ while [[ $counter -lt $LENGTH ]]
 				   --tag branch "$CURRENT_BRANCH" \
 				   --tag blob_hash "blob_hash" \
 				   --tag location "$relay/$(get_weeble_wobble)/(blob_hash)" \
-				   --created-at $(date +%s) | gnostr-cat -u $relay
+				   --created-at $(date +%s) | gnostr-cat -u ws://localhosr:6102
 
            else
                make -C deps/gnostr-cat/ rustup-install cargo-install
@@ -223,8 +223,8 @@ while [[ $counter -lt $LENGTH ]]
        else
            make gnostr
        fi
-	   gnostr-git diff $PWD/RELAYS.md && git add $PWD/RELAYS.md
-	   gnostr-git commit -m "$PROJECT_NAME/$CURRENT_BRANCH: RELAYS.md" -- RELAYS.md && git push 2>/dev/null || echo
+	   gnostr-git diff
+	   gnostr-legit `pwd` -p 00000 -m "$PROJECT_NAME/$CURRENT_BRANCH/$(get_weeble)/$(get_wobble)" && git push 2>/dev/null || echo
 	   get_relays && echo "\n"
 	   get_time && echo "\n"
 	   get_block_height && echo "\n"
