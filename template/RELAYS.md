@@ -41,7 +41,6 @@ wss://nostr.600.wtf
 wss://e.nos.lol
 wss://nostrich.friendship.tw
 wss://nostream-production-5895.up.railway.app
-wss://nostr.bitcoin.sex
 wss://nostr-relay.texashedge.xyz
 wss://nostr.thomascdnns.com
 wss://nostr.btcmp.com
