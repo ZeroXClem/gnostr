@@ -38,6 +38,7 @@ wss://relay.dwadziesciajeden.pl
 wss://nostr-pub1.southflorida.ninja
 wss://relay.orangepill.dev
 wss://nostr.600.wtf
+wss://e.nos.lol
 wss://nostrich.friendship.tw
 wss://nostream-production-5895.up.railway.app
 wss://nostr.bitcoin.sex
@@ -82,6 +83,7 @@ wss://relay.humanumest.social
 wss://paid.spore.ws
 wss://nostr.notmyhostna.me
 wss://nostr.l00p.org
+wss://relay.reeve.cn
 wss://lightningrelay.com
 wss://no-str.wnhefei.cn:28443
 wss://bitcoinmaximalists.online
@@ -132,7 +134,6 @@ wss://global-relay.cesc.trade
 wss://nostr.weking.tk
 wss://nostr.pjv.me
 wss://nostr-relay.lnmarkets.com
-wss://relay.nostrgraph.net
 wss://rsslay.nostr.moe
 wss://nostrex.fly.dev
 wss://relay.roli.social
@@ -146,7 +147,6 @@ wss://nostr.w3ird.tech
 wss://nostr-relay.bitcoin.ninja
 wss://paid.no.str.cr
 wss://deschooling.us
-wss://foolay.nostr.moe
 wss://nostr.mikedilger.com
 wss://freespeech.casa
 wss://nostr.hugo.md
@@ -186,9 +186,9 @@ wss://nostr.256k1.dev
 wss://relay.beta.fogtype.com
 wss://rsslay.ch3n2k.com
 wss://nostr.rocketnode.space
-wss://relay.nostr.bg
 wss://nostr.malin.onl
 wss://nostr.reamde.dev
+wss://nostr.globals.fans
 wss://nostr.fractalized.ovh
 wss://nostr.primz.org
 wss://relay.nostr.au
@@ -207,7 +207,6 @@ wss://nostr.cercatrova.me
 wss://nostr.swiss-enigma.ch
 wss://nostr-relay.derekross.me
 wss://nostro.online
-wss://nostr.oxtr.dev
 wss://relay.s3x.social
 wss://nostr.gruntwerk.org
 wss://relay.mostr.pub
@@ -244,6 +243,10 @@ wss://therelayofallrelays.nostr1.com
 wss://nostr1.current.fyi
 wss://filter.stealth.wine/npub18kzz4lkdtc5n729kvfunxuz287uvu9f64ywhjz43ra482t2y5sks0mx5sz?broadcast=true
 wss://nostr-relay.app
+wss://nb.relay.center
+wss://wine.relay.center
+wss://damus.relay.center
+wss://offchain.relay.center
 wss://ts.relays.world
 wss://relays.world/nostr
 wss://nostr.azte.co
@@ -263,6 +266,7 @@ wss://relay.bitblockboom.com
 wss://nostr.strits.dk
 wss://nostr.zenon.info
 wss://nostr.joaorodriguesjr.com
+wss://relay.nostr.moctane.com
 wss://nostr.thesamecat.io
 wss://relay.deezy.io
 wss://nostr-usa.ka1gbeoa21bnm.us-west-2.cs.amazonlightsail.com
@@ -270,6 +274,7 @@ wss://lingoh.dev
 wss://relay.2nodez.com
 wss://relay.punkhub.me
 wss://relay.poster.place
+wss://relay-jp.nostr.moctane.com
 wss://anon.computer
 wss://freerelay.xyz
 wss://bitcoinforthe.lol
@@ -283,6 +288,7 @@ wss://paid.nostr.lc
 wss://ithurtswhenip.ee
 wss://nerostr.xmr.rocks
 wss://nostr.compile-error.net
+wss://powrelay.xyz
 wss://n-word.sharivegas.com
 wss://nostr.sethforprivacy.com
 wss://nostr.frennet.xyz
@@ -290,7 +296,6 @@ wss://relay.vanderwarker.family
 wss://wc1.current.ninja
 wss://lamp.wtf
 wss://relay.toastr.space
-wss://relay.btcplebs.com/nostrrelay/asdf1234
 wss://nostr.ingwie.me
 wss://n0p0.shroomslab.net
 wss://botrelay.com
@@ -322,7 +327,9 @@ wss://bolverker.com/nostrclient/api/v1/relay
 wss://relay.nostrbr.online
 wss://ca.relayable.org
 wss://nostr.incognito.cat
+wss://eden.relay.center
 wss://relay.stpaulinternet.net
+wss://nostr.f4255529.shop
 wss://nostr.koutakou.tech
 wss://nostr.dncn.xyz
 wss://booger.pro
@@ -348,7 +355,6 @@ wss://r.v0l.io
 wss://nostr-tbd.website
 wss://sats.lnaddy.com/nostrclient/api/v1/relay
 wss://nostr.impervious.live
-wss://nostr.p3k.space
 wss://nostr.melhorque.com.br
 wss://nostr.438b.net
 wss://nostr.fmar.link
@@ -385,17 +391,25 @@ wss://ryan.nostr1.com
 wss://nostr-01.yakihonne.com
 wss://la.relayable.org
 wss://nostr.geyser.fund
-wss://bitstack.app
-wss://relay.danvergara.com
-wss://relay.break-19.com
-wss://relay.bitcoinpark.com
-wss://crayon-private.nostr-demo.relayaas.com
-wss://relay1.nostr.unitedfop.com
-wss://nostr.xmr.sh
 wss://relay.0xchat.com
-wss://nostr.tenna.site
-wss://outputs-rat-lying-lifestyle.trycloudflare.com
+wss://relay.flurs.art
+wss://nostr.fort-btc.club
+wss://relay.nostrfiles.dev
+wss://relay.bitcoinpark.com
+wss://nostr.seankibler.com
+wss://satdow.relaying.io
+wss://nostr.olwe.link
+wss://nostr01.counterclockwise.io
+wss://test.relay.report
+wss://relap.orzv.workers.dev
+wss://relay.bitransfermedia.com
+wss://relay.cubanoticias.info
 wss://egirls.relaying.io
+wss://christpill.nostr1.com
+wss://nostr.sixteensixtyone.com
 wss://cloudfodder.nostr1.com
 wss://saltivka.org
-wss://relay.nostrfiles.dev
+wss://outputs-rat-lying-lifestyle.trycloudflare.com
+wss://relay.danvergara.com
+wss://relay1.nostr.unitedfop.com
+wss://nostr.ufocult.cc
