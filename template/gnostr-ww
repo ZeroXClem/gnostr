@@ -25,7 +25,7 @@ REPO_NAME=$(pwd | grep -o "[^/]*$")
 CURRENT_BRANCH=$(git branch --show-current)
 FULLPATH=$PWD
 echo $FULLPATH
-source ./random-between.sh
+source gnostr-random-between
 
 function get_time(){
 
