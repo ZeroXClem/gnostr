@@ -124,8 +124,8 @@ done
 # randomBetween
 # echo randomBetweenAnswer=$randomBetweenAnswer
 counter=0 #$randomBetweenAnswer
-randomBetween $counter $LENGTH 1
-echo randomBetweenAnswer=$randomBetweenAnswer
+gnostr_nonce $counter $LENGTH 1
+echo gnostr_nonce=$gnostr_nonce
 exit;
 if [[ ! -z "$1" ]]; then
     echo "content="$1

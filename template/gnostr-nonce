@@ -5,7 +5,7 @@
 # Used with permission.
 
 
-function randomBetween() {
+function gnostr_nonce() {
    #  Generates a positive or negative random number
    #+ between $min and $max
    #+ and divisible by $divisibleBy.
@@ -16,7 +16,7 @@ function randomBetween() {
    syntax() {
    # Function embedded within function.
       echo
-      echo    "Syntax: randomBetween [min] [max] [multiple]"
+      echo    "Syntax: gnostr_nonce [min] [max] [multiple]"
       echo
       echo    "Expects up to 3 passed parameters, but all are completely optional."
       echo    "min is the minimum value"
@@ -27,7 +27,7 @@ function randomBetween() {
       echo    "If any value is missing, defaults area supplied as: 0 32767 1"
       echo    "Successful completion returns 0, unsuccessful completion returns"
       echo    "function syntax and 1."
-      echo    "The answer is returned in the global variable randomBetweenAnswer"
+      echo    "The answer is returned in the global variable gnostr_nonceAnswer"
       echo    "Negative values for any passed parameter are handled correctly."
    }
 
@@ -95,10 +95,10 @@ function randomBetween() {
    spread=$((max-min))
    [ ${spread} -lt 0 ] && spread=$((0-spread))
    let spread+=divisibleBy
-   export randomBetweenAnswer=$(((RANDOM%spread)/divisibleBy*divisibleBy+min))
-   #echo $randomBetweenAnswer
+   export gnostr_nonce=$(((RANDOM%spread)/divisibleBy*divisibleBy+min))
+   #echo $gnostr_nonce
 
-   return $randomBetweenAnswer
+   return $gnostr_nonce
    #return 0
 
    #  However, Paulo Marcel Coelho Aragao points out that
@@ -115,8 +115,8 @@ function randomBetween() {
 min=-100
 max=1000
 divisibleBy=1
-randomBetween
-return $randomBetweenAnswer
+gnostr_nonce
+return $gnostr_nonce
 exit 0;
 
 #  Generate an array of expected answers and check to make sure we get
@@ -165,14 +165,14 @@ for ((i=0; i<${loopIt}; ++i)); do
    #  Note that we are specifying min and max in reversed order here to
    #+ make the function correct for this case.
 
-   randomBetween ${max} ${min} ${divisibleBy}
+   gnostr_nonce ${max} ${min} ${divisibleBy}
 
    # Report an error if an answer is unexpected.
-   [ ${randomBetweenAnswer} -lt ${min} -o ${randomBetweenAnswer} -gt ${max} ] && echo MIN or MAX error - ${randomBetweenAnswer}!
-   [ $((randomBetweenAnswer%${divisibleBy})) -ne 0 ] && echo DIVISIBLE BY error - ${randomBetweenAnswer}!
+   [ ${gnostr_nonceAnswer} -lt ${min} -o ${gnostr_nonceAnswer} -gt ${max} ] && echo MIN or MAX error - ${gnostr_nonceAnswer}!
+   [ $((gnostr_nonceAnswer%${divisibleBy})) -ne 0 ] && echo DIVISIBLE BY error - ${gnostr_nonceAnswer}!
 
    # Store the answer away statistically.
-   answer[randomBetweenAnswer+displacement]=$((answer[randomBetweenAnswer+displacement]+1))
+   answer[gnostr_nonceAnswer+displacement]=$((answer[gnostr_nonceAnswer+displacement]+1))
 done
 
 
