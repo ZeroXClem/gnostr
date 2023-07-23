@@ -1,6 +1,14 @@
 #!/bin/bash
 #
+##absolute path of script
+SCRIPT=$(realpath -s "$0")
+echo $SCRIPT
+##directory script is in
+SCRIPTPATH=$(dirname "$SCRIPT")
+echo $SCRIPTPATH
 PWD=$(pwd | grep -o "[^/]*$")
+echo $PWD
+#exit;
 if [[ "$PWD" == ".gnostr" ]]; then
 echo $PWD
 declare -a LENGTH
@@ -30,7 +38,7 @@ get_time
 
 function get_block_height(){
 	BLOCKHEIGHT=$(curl https://blockchain.info/q/getblockcount 2>/dev/null)
-	echo -n $BLOCKHEIGHT
+	#echo -n $BLOCKHEIGHT
 	return $BLOCKHEIGHT
 }
 echo -e "\n"
@@ -131,7 +139,7 @@ if [[ ! -z "$1" ]] || [[ ! -z "$2" ]]; then
 	echo "\n"
     echo -e "counter="$2
 	echo "\n"
-    counter=$2
+    counter=$2"\n"
 else
     echo "content="
     content=""
@@ -147,18 +155,19 @@ while [[ $counter -lt $LENGTH ]]
 	#test
 	gnostr --sec $(echo -en "" | openssl dgst -sha256 | sed 's/SHA2-256(stdin)= //g' ) | $(which jq)
     for relay in $RELAYS; do
-       echo -e "counter=$counter\n"
+       echo -e "counter=$counter"\n
        echo "randomBetweenAnswer=$randomBetweenAnswer"
 	   #secret=$(echo "$counter" | openssl dgst -sha256 && echo $secret | tr '[a-z]' '[A-Z]')
 	   secret=$(echo "$counter" | openssl dgst -sha256  | sed 's/SHA2-256(stdin)= //g'   )
        export secret
        echo "secret=$secret"
 
+	   mkdir -p $PWD/keys
 	   touch $PWD/keys/$secret && echo $secret > $PWD/keys/$secret
        echo "$relay"
 
        if hash gnostr; then
-           if hash nostcat; then
+           if hash gnostr-cat; then
 
 			   #blob location/remote blob location
 			   #empty hash nostr profile "0"
@@ -192,7 +201,7 @@ while [[ $counter -lt $LENGTH ]]
 				   --tag branch "$CURRENT_BRANCH" \
 				   --tag blob_hash "blob_hash" \
 				   --tag location "$relay/$(get_weeble_wobble)/(blob_hash)" \
-				   --created-at $(date +%s) | websocat $relay
+				   --created-at $(date +%s) | gnostr-cat $relay
 			   gnostr --sec $secret --kind 2 \
 				   --envelope \
 				   --tag weeble/wobble $(get_weeble_wobble) \
@@ -202,19 +211,19 @@ while [[ $counter -lt $LENGTH ]]
 				   --tag branch "$CURRENT_BRANCH" \
 				   --tag blob_hash "blob_hash" \
 				   --tag location "$relay/$(get_weeble_wobble)/(blob_hash)" \
-				   --created-at $(date +%s) | nostcat -u $relay
+				   --created-at $(date +%s) | gnostr-cat -u $relay
 
            else
-               make -C deps/nostcat/ rustup-install cargo-install
+               make -C deps/gnostr-cat/ rustup-install cargo-install
            fi
        else
            make gnostr
        fi
 	   git diff $PWD/RELAYS.md && git add $PWD/RELAYS.md
 	   git commit -m "$PROJECT_NAME/$CURRENT_BRANCH: RELAYS.md" -- RELAYS.md && git push 2>/dev/null || echo
-	   get_relays
-	   get_time
-	   get_block_height
+	   get_relays && echo "\n"
+	   get_time && echo "\n"
+	   get_block_height && echo "\n"
 
        ((counter++))
 
@@ -222,5 +231,5 @@ while [[ $counter -lt $LENGTH ]]
 done
 echo All done
 else
-    [[ -d ".gnostr"  ]] && cd .gnostr && ./weeble_wobble.sh || echo "initialize a .gnostr repo..."
+    [[ -d ".gnostr"  ]] && cd .gnostr && gnostr-ww || echo "initialize a .gnostr repo..."
 fi
