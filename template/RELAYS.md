@@ -117,6 +117,7 @@ wss://relay.nostriches.org
 wss://nostr.arguflow.gg
 wss://relay.nostrology.org
 wss://nostr.kollider.xyz
+wss://nostr.bch.ninja
 wss://relay.nostrati.com
 wss://nostr-dev.wellorder.net
 wss://nostr-relay.nokotaro.com
@@ -146,6 +147,7 @@ wss://nostr.w3ird.tech
 wss://nostr-relay.bitcoin.ninja
 wss://paid.no.str.cr
 wss://deschooling.us
+wss://foolay.nostr.moe
 wss://nostr.mikedilger.com
 wss://freespeech.casa
 wss://nostr.hugo.md
