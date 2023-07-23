@@ -187,6 +187,7 @@ wss://nostr.256k1.dev
 wss://relay.beta.fogtype.com
 wss://rsslay.ch3n2k.com
 wss://nostr.rocketnode.space
+wss://relay.nostr.bg
 wss://nostr.malin.onl
 wss://nostr.reamde.dev
 wss://nostr.globals.fans
