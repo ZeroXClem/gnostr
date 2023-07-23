@@ -25,7 +25,7 @@ REPO_NAME=$(pwd | grep -o "[^/]*$")
 CURRENT_BRANCH=$(git branch --show-current)
 FULLPATH=$PWD
 echo $FULLPATH
-source gnostr-random-between
+source gnostr-nonce
 
 function get_time(){
 
@@ -118,13 +118,15 @@ echo "" > RELAYS.md
 for relay in $RELAYS; do
     echo $relay >> RELAYS.md
     let LENGTH=$((LENGTH + 1))
+    echo $relay
+    echo $LENGTH
 done
 # randomBetween
 # echo randomBetweenAnswer=$randomBetweenAnswer
 counter=0 #$randomBetweenAnswer
 randomBetween $counter $LENGTH 1
 echo randomBetweenAnswer=$randomBetweenAnswer
-
+exit;
 if [[ ! -z "$1" ]]; then
     echo "content="$1
     content=$1
@@ -192,6 +194,7 @@ while [[ $counter -lt $LENGTH ]]
 				   --tag blob_hash "blob_hash" \
 				   --tag location "$relay/$(get_weeble_wobble)/(blob_hash)" \
 				   --created-at $(date +%s) #| $(which jq)
+
 			   gnostr --sec $secret --kind 2 \
 				   --envelope \
 				   --tag weeble/wobble $(get_weeble_wobble) \
@@ -201,7 +204,8 @@ while [[ $counter -lt $LENGTH ]]
 				   --tag branch "$CURRENT_BRANCH" \
 				   --tag blob_hash "blob_hash" \
 				   --tag location "$relay/$(get_weeble_wobble)/(blob_hash)" \
-				   --created-at $(date +%s) | gnostr-cat $relay
+				   --created-at $(date +%s) | gnostr-cat -u $relay
+
 			   gnostr --sec $secret --kind 2 \
 				   --envelope \
 				   --tag weeble/wobble $(get_weeble_wobble) \
@@ -219,8 +223,8 @@ while [[ $counter -lt $LENGTH ]]
        else
            make gnostr
        fi
-	   git diff $PWD/RELAYS.md && git add $PWD/RELAYS.md
-	   git commit -m "$PROJECT_NAME/$CURRENT_BRANCH: RELAYS.md" -- RELAYS.md && git push 2>/dev/null || echo
+	   gnostr-git diff $PWD/RELAYS.md && git add $PWD/RELAYS.md
+	   gnostr-git commit -m "$PROJECT_NAME/$CURRENT_BRANCH: RELAYS.md" -- RELAYS.md && git push 2>/dev/null || echo
 	   get_relays && echo "\n"
 	   get_time && echo "\n"
 	   get_block_height && echo "\n"
