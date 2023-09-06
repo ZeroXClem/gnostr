@@ -1,3 +1,5 @@
+[![release-matrix](https://github.com/gnostr-org/gnostr/actions/workflows/release.yml/badge.svg?branch=master)](https://github.com/gnostr-org/gnostr/actions/workflows/release.yml)
+
 nostril(1)
 
 # NAME
