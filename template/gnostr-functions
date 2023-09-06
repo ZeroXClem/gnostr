@@ -31,42 +31,6 @@ ifconfig en1 | grep --word-regexp inet | awk '{print $2}'
 DEVICE=$(ifconfig en1 | grep --color=auto --word-regexp inet | awk '{print $2}') ## && echo $DEVICE
 }
 
-function gnostr-install-depends(){
-
-    if [[ "$OSTYPE" == "linux-gnu" ]]; then
-
-        if hash apt 2>/dev/null; then
-
-            apt -y install autoconf build-essential          \
-                libtool autotools-dev automake               \
-                pkg-config bsdmainutils python3              \
-                libboost libqrencode libevent-dev            \
-                libboost-system-dev libboost-filesystem-dev  \
-                libboost-test-dev libboost-thread-dev        \
-                libminiupnpc-dev libzmq3-dev libqrencode-dev \
-                linuxbrew-wrapper                            \
-                wget
-        fi
-
-    elif [[ "$OSTYPE" == "darwin"* ]]; then
-
-        if hash brew 2>/dev/null; then
-
-            brew install autoconf automake                   \
-                curlpp                                       \
-                libevent librsvg libtool                     \
-                miniupnpc                                    \
-                pkg-config python                            \
-                qrencode                                     \
-                wget
-        else
-
-            /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-            gnostr-install-depends
-        fi
-    fi
-}
-
 function gnostr-fetch-branches(){
 
     $GNOSTR stash && export STASH=true || echo "no stash"
