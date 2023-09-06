@@ -105,3 +105,4 @@ gnostr --mine-pubkey --pow <difficulty>
 ```
 ./gnostr --envelope --sec <key> --content "this is reply message" --tag e <thread_id> --tag e <note_id> | websocat wss://relay.damus.io
 ```
+
