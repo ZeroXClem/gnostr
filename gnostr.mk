@@ -55,10 +55,22 @@ gnostr-docs:docker-start doc/gnostr.1## 	docs: convert README to doc/gnostr.1
 		type -P docker && docker pull pandoc/latex:2.6 && \
 		docker run --rm --volume "`pwd`:/data" --user `id -u`:`id -g` pandoc/latex:2.6 README.md
 	git add --ignore-errors sources/*.md 2>/dev/null || echo && git add --ignore-errors *.md 2>/dev/null || echo
+	$(MAKE) install-doc
 #@git ls-files -co --exclude-standard | grep '\.md/$\' | xargs git
-
-doc/gnostr.1: README##
-	scdoc < $^ > $@
+.PHONY:doc doc/gnostr.1 doc/gnostr.2
+doc:doc/gnostr.1 doc/gnostr.2
+doc/gnostr.1:sources/GNOSTR.1.md
+	touch $@
+	touch $^
+	man2html < $^ > index.html
+	pandoc --from man --to html < $@ > $@.html
+	## scdoc < $^ > $@
+doc/gnostr.2:sources/GNOSTR.2.md
+	touch $@
+	touch $^
+	man2html < $^ > $@.html
+	pandoc --from man --to html < $@ > $@.html
+	## scdoc < $^ > $@
 
 .PHONY: version
 version: gnostr.c## 	print version

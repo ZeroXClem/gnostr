@@ -17,6 +17,9 @@ gnostr-tests
 src/nostril/libnostri.a
 src/nostril/nostril
 
+doc/gnostr*.html
+doc/gnostr*.*.html
+
 libnostr.a
 
 node_modules

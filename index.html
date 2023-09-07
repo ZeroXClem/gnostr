@@ -165,13 +165,14 @@
   <![endif]-->
 </head>
 <body>
-<p>nostril(1)</p>
+<p>gnostr(1)</p>
 <h1 id="name">NAME</h1>
-<p>nostril - generate nostr events</p>
+<p>gnostr - a git+nostr development utility</p>
 <h1 id="synposis">SYNPOSIS</h1>
-<p><em>nostril</em> [OPTIONS…]</p>
+<p><em>gnostr</em> [OPTIONS…]</p>
 <h1 id="description">DESCRIPTION</h1>
-<p><em>nostril</em> is a tool that creates and signs nostr events.</p>
+<p><em>gnostr</em> is a suite of utilites that enable a git+nostr
+development workflow.</p>
 <h1 id="options">OPTIONS</h1>
 <p><em>–content</em> The text contents of the note</p>
 <p><em>–dm</em> <hex pubkey> Create a direct message. This will create a
@@ -192,7 +193,7 @@ mine for proof-of-work.</p>
 <note id>
 <h1 id="examples">Examples</h1>
 <p><em>Generate an event</em></p>
-<pre><code>$ ./nostril --sec &lt;key&gt; --content &quot;this is a message&quot;
+<pre><code>$ ./gnostr --sec &lt;key&gt; --content &quot;this is a message&quot;
 {
     &quot;id&quot;: &quot;da9c36bb8206e748cf136af2a43613a5ee113cb5906a09a8d3df5386039d53ab&quot;,
     &quot;pubkey&quot;: &quot;4f6fa8547cf2888415522918175ea0bc0eb473287c5bd7cc459ca440bdf87d97&quot;,
@@ -203,7 +204,7 @@ mine for proof-of-work.</p>
     &quot;sig&quot;: &quot;3e4d7d93522e54f201a22944d4d37eb4505ef1cf91c278a3f7d312b772a6c6509d1e11f146d5a003265ae10411a20057bade2365501872d2f2f24219730eed87&quot;
 }</code></pre>
 <p><em>Wrap event to send to a relay</em></p>
-<pre><code>$ ./nostril --envelope --sec &lt;key&gt; --content &quot;hello&quot;
+<pre><code>$ ./gnostr --envelope --sec &lt;key&gt; --content &quot;hello&quot;
 [ &quot;EVENT&quot;,
 {
     &quot;id&quot;: &quot;ed378d3fdda785c091e9311c6e6eeb075db349a163c5e38de95946f6013a8001&quot;,
@@ -215,13 +216,13 @@ mine for proof-of-work.</p>
     &quot;sig&quot;: &quot;9d9a49bbc66d4782030b24c71416965e790214d02a54ab132d960c2b02def0371c3d93e5a60a285c55e99721599d1332450731e2c6bb1114b96b591c6967f872&quot;
 } ]</code></pre>
 <p><em>Send to a relay</em></p>
-<pre><code>nostril --envelope --sec &lt;key&gt; --content &quot;this is a message&quot; | websocat wss://relay.damus.io</code></pre>
+<pre><code>gnostr --envelope --sec &lt;key&gt; --content &quot;this is a message&quot; | websocat wss://relay.damus.io</code></pre>
 <p><em>Send a nip04 DM</em></p>
-<pre><code>nostril --envelope --dm &lt;pubkey&gt; --sec &lt;key&gt; --content &quot;this is a secret&quot; | websocat wss://relay.damus.io</code></pre>
+<pre><code>gnostr --envelope --dm &lt;pubkey&gt; --sec &lt;key&gt; --content &quot;this is a secret&quot; | websocat wss://relay.damus.io</code></pre>
 <p><em>Mine a pubkey</em></p>
-<pre><code>nostril --mine-pubkey --pow &lt;difficulty&gt;</code></pre>
+<pre><code>gnostr --mine-pubkey --pow &lt;difficulty&gt;</code></pre>
 <p><em>Reply to an event. nip10 compliant, includes the
 <code>thread_id</code></em></p>
-<pre><code>./nostril --envelope --sec &lt;key&gt; --content &quot;this is reply message&quot; --tag e &lt;thread_id&gt; --tag e &lt;note_id&gt; | websocat wss://relay.damus.io</code></pre>
+<pre><code>./gnostr --envelope --sec &lt;key&gt; --content &quot;this is reply message&quot; --tag e &lt;thread_id&gt; --tag e &lt;note_id&gt; | websocat wss://relay.damus.io</code></pre>
 </body>
 </html>
