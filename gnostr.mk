@@ -180,6 +180,8 @@ gnostr-build-install:gnostr-build## 	gnostr-build-install
 	cd build && make install
 	$(MAKE) gnostr-install || echo
 
+
+
 deps/gnostr-command/.git:gnostr-git
 	@devtools/refresh-submodules.sh deps/gnostr-command
 deps/gnostr-command/gnostr-command:deps/gnostr-command/.git
@@ -213,14 +215,28 @@ deps/gnostr-sha256/target/release/gnostr-sha256:deps/gnostr-sha256/gnostr-sha256
 .PHONY:
 gnostr-sha256:deps/gnostr-sha256/target/release/gnostr-sha256
 
+
+
+deps/gnostr-org/.git:
+	@devtools/refresh-submodules.sh deps/gnostr-org
+.phony:deps/gnostr-org
+deps/gnostr-org:deps/gnostr-org/.git
+	cd deps/gnostr-org && \
+		$(make) install
+gnostr-org:deps/gnostr-org
+	install deps/gnostr-org/gnostr-org /usr/local/bin
+
+
 deps/gnostr-proxy/.git:
 	@devtools/refresh-submodules.sh deps/gnostr-proxy
-.PHONY:deps/gnostr-proxy
+.phony:deps/gnostr-proxy
 deps/gnostr-proxy:deps/gnostr-proxy/.git
 	cd deps/gnostr-proxy && \
-		$(MAKE) install
+		$(make) install
 gnostr-proxy:deps/gnostr-proxy
 	install deps/gnostr-proxy/gnostr-proxy /usr/local/bin
+
+
 
 #deps/gnostr-relay/.git:
 #	@devtools/refresh-submodules.sh deps/gnostr-relay
