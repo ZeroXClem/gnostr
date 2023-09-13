@@ -224,6 +224,7 @@ deps/gnostr-org:deps/gnostr-org/.git
 	cd deps/gnostr-org && \
 		$(make) install
 gnostr-org:deps/gnostr-org
+	install deps/gnostr-org/gnostr-org template
 	install deps/gnostr-org/gnostr-org /usr/local/bin
 
 
