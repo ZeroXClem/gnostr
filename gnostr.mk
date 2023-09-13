@@ -235,6 +235,7 @@ deps/gnostr-proxy:deps/gnostr-proxy/.git
 	cd deps/gnostr-proxy && \
 		$(make) install
 gnostr-proxy:deps/gnostr-proxy
+	install deps/gnostr-proxy/gnostr-proxy template
 	install deps/gnostr-proxy/gnostr-proxy /usr/local/bin
 
 
