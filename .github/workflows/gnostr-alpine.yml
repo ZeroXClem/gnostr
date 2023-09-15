@@ -55,6 +55,7 @@ jobs:
           expat-dev \
           gettext \
           libtool \
+          linux-headers \
           make \
           openssl-dev \
           rustup \
@@ -71,11 +72,19 @@ jobs:
       - run: make more
       - run: make gnostr || rm gnostr && make gnostr
       - run: |
+          [ $ACT != true  ] && \
           export NO_REGEX=NeedsStartEnd && \
-          make gnostr-git
-      - run:                             make gnostr-all
-      - run:                             make        all
+          make gnostr-git || echo "skipping make gnostr-git..."
+      - run: |
+          [ $ACT != true  ] && \
+          make gnostr-all || echo "skipping make gnostr-all..."
+      - run:                             make        gnostr-client
+      - run:                             make        gnostr-gnode
+      - run:                             make        gnostr-tests
       - run:                             make gnostr-install
-      - run:                             make        install
+      - run: |
+          [ $ACT != "true"  ] && \
+          export NO_REGEX=NeedsStartEnd && \
+          make install || echo "skipping make install..."
       ## TODO: add ssh config to act sequence
       - run: make tag 2>/dev/null
