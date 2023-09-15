@@ -9,3 +9,4 @@ gnostr-act-alpine:submodules docker-start## 	run gnostr-act in .github
 	#we use -b to bind the repo to the gnostr-act container
 	#in the single dep instances we reuse (-r) the container
 	@type -P gnostr-act && GITHUB_TOKEN=$(shell cat ~/GITHUB_TOKEN.txt) && gnostr-act $(VERBOSE) $(BIND) $(REUSE) -W $(PWD)/.github/workflows/gnostr-alpine.yml || $(MAKE) gnostr-act-install
+	@git update-index --assume-unchanged src/nostril/config.h
