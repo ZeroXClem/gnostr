@@ -48,8 +48,12 @@ jobs:
       - run: make
       - run: make help
       - run: make libsecp256k1.a || rm -rf deps/secp256k1 && make libsecp256k1.a
+      - run: make more
       - run: make gnostr || rm gnostr && make gnostr
-      - run: make gnostr-all
-      - run: make gnostr-install
+      - run: NO_REGEX=NeedsStartEnd      make gnostr-git
+      - run:                             make gnostr-all
+      - run:                             make        all
+      - run:                             make gnostr-install
+      - run:                             make        install
       ## TODO: add ssh config to act sequence
       - run: make tag 2>/dev/null
