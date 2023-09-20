@@ -1,6 +1,7 @@
-gnostr-act-install:## 	install gnostr-act from deps/gnostr-act/install.sh -b
+.ONESHELL:gnostr-act-install
+gnostr-act-install:submodules## 	install gnostr-act from deps/gnostr-act/install.sh -b
 	@git submodule update --init --recursive  deps/gnostr-act
-	./deps/gnostr-act/install.sh -b /usr/local/bin && exec bash
+	@./deps/gnostr-act/install-gnostr-act -b /usr/local/bin && exec bash
 gnostr-act-gnostr:submodules docker-start## 	run gnostr-act in .github
 	#we use -b to bind the repo to the gnostr-act container
 	#in the single dep instances we reuse (-r) the container
