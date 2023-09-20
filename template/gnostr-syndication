@@ -1,6 +1,21 @@
 #!/usr/bin/env bash
 
+GNOSTR_PROXY="http://127.0.0.1:6102"
+GNOSTR_PROXY_WS="ws://127.0.0.1:6102"
+GNOSTR_PROXY_WSS="wss://127.0.0.1:6102"
 
-gnostr --sec $(gnostr --hash) --tag gnostr relays --tag gnostr test-syndication --envelope --content "$(gnostr-get-relays)" | gnostr-cat -u ws://192.168.254.135:6102
+function reachable(){
+if curl -s --head  --request GET $GNOSTR_PROXY | grep "200 OK" > /dev/null; then 
+   echo ## "mysite.com is UP"
+else
+    $(which gnostr-proxy) & reachable
+fi
+}
 
-gnostr-query -t gnostr | gnostr-cat -u ws://192.168.254.135:6102
+gnostr --sec $(gnostr --hash) --tag gnostr relays --tag weeble $(gnostr-weeble || WEEBLE) --tag wobble $(gnostr-wobble || WOBBLE) --tag blockheight $(gnostr-blockheight || BLOCKHEIGHT) -t gnostr --envelope --content "$(gnostr-get-relays)" | gnostr-cat -u $GNOSTR_PROXY_WS
+
+gnostr-query -t gnostr      -l 1 | gnostr-cat -u $GNOSTR_PROXY_WS
+gnostr-query -t weeble      -l 1 | gnostr-cat -u $GNOSTR_PROXY_WS
+gnostr-query -t wobble      -l 1 | gnostr-cat -u $GNOSTR_PROXY_WS
+gnostr-query -t blockheight -l 1 | gnostr-cat -u $GNOSTR_PROXY_WS
+#gnostr-query -t gnostr -t weeble -t wobble -t blockheight -l 1 | gnostr-cat -u $GNOSTR_PROXY_WS
