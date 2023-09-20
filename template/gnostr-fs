@@ -16,4 +16,10 @@ function gnostr-fs() {
 		du $arg .[^.]* ./*;
 	fi;
 }
+if [[ $1 == "-h" ]] || [[ $1 == "--help" ]];
+then
+    man du | sed 's/du/gnostr-du/g';
+    man df | sed 's/df/gnostr-df/g';
+    exit;
+fi
 gnostr-fs
