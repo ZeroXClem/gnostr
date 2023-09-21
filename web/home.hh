@@ -25,6 +25,9 @@ private:
   Wt::WLineEdit* m_edit_event_id;
   Wt::WLineEdit* m_edit_author;
   Wt::WComboBox* m_combo_kind;
+  Wt::WComboBox* m_combo_tag0;
+  Wt::WComboBox* m_combo_tag1;
+  Wt::WComboBox* m_combo_tag2;
   Wt::WCheckBox* m_check_raw;
   std::shared_ptr<Wt::WButtonGroup> m_button_message;
   Wt::WTable* m_table_messages;
