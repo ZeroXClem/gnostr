@@ -327,14 +327,14 @@ void ContainerHome::send_message()
   {
     std::stringstream ss;
     ss << "Opened connection: HTTP " << connection.get()->http_version << " , code " << connection.get()->status_code;
-    comm::log(ss.str());
+    // comm::log(ss.str());
 
     std::string message = m_area_message->text().toUTF8();
 
     ss.str(std::string());
     ss.clear();
     ss << "Sending: " << message;
-    comm::log(ss.str());
+    // comm::log(ss.str());
     comm::json_to_file("on_open_message.json", message);
 
     m_table_messages->clear();
