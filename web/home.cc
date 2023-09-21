@@ -16,8 +16,8 @@ ContainerHome::ContainerHome() : m_row(0)
   this->setStyleClass("blue-box");
 
   //first Nostr event to "nostr.pleb.network"
-  const std::string event_id("d75d56b2141b12be96421fc5c913092cda06904208ef798b51a28f1c906bbab7");
-  const std::string def_pubkey("4ea843d54a8fdab39aa45f61f19f3ff79cc19385370f6a272dda81fade0a052b");
+  const std::string event_id("9192fcade65e0ce84413e92970d3c0d671f46438d2af90e72851fdbd142b7f62");
+  const std::string def_pubkey("a34b99f22c790c4e36b2b3c2c35a36db06226e41c692fc82b8b56ac1c540c5bd");
 
   std::string uri = relays.at(1);
   pubkey = def_pubkey;
