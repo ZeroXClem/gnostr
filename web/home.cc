@@ -105,6 +105,8 @@ ContainerHome::ContainerHome() : m_row(0)
 
   Wt::WText* wtext_kind = group_request->addWidget(std::make_unique<Wt::WText>("Kind"));
   wtext_kind->setMargin(10, Wt::Side::Right);
+
+//m_combo_kind
   m_combo_kind = group_request->addNew<Wt::WComboBox>();
   m_combo_kind->addItem("1 Short Text Note");
   m_combo_kind->addItem("3 Contacts");
@@ -124,7 +126,79 @@ ContainerHome::ContainerHome() : m_row(0)
   group_request->addWidget(std::make_unique<Wt::WBreak>());
 
   /////////////////////////////////////////////////////////////////////////////////////////////////////
-  // event id 
+  // tag0
+  /////////////////////////////////////////////////////////////////////////////////////////////////////
+
+  auto group_request_tag0 = box_right->addWidget(std::make_unique<Wt::WGroupBox>("Tags"));
+  group_request_tag0->setStyleClass("col");
+  m_combo_tag0 = group_request_tag0->addNew<Wt::WComboBox>();
+  m_combo_tag0->addItem("tag0.0");
+  m_combo_tag0->addItem("tag0.1");
+  m_combo_tag0->setCurrentIndex(0);
+  m_combo_tag0->setMargin(10, Wt::Side::Bottom);
+  m_combo_tag0->changed().connect([=]
+    {
+      //1 Short Text Note 1
+      //3 Contacts 2
+      int index = m_combo_tag0->currentIndex();
+      if (index == 1)
+      {
+        m_edit_author->setText(m_edit_pubkey->text());
+      }
+    });
+
+  group_request_tag0->addWidget(std::make_unique<Wt::WBreak>());
+
+  /////////////////////////////////////////////////////////////////////////////////////////////////////
+  // tag1
+  /////////////////////////////////////////////////////////////////////////////////////////////////////
+
+  auto group_request_tag1 = box_right->addWidget(std::make_unique<Wt::WGroupBox>("Tags"));
+  group_request_tag1->setStyleClass("col");
+  m_combo_tag1 = group_request_tag1->addNew<Wt::WComboBox>();
+  m_combo_tag1->addItem("tag1.0");
+  m_combo_tag1->addItem("tag1.1");
+  m_combo_tag1->setCurrentIndex(0);
+  m_combo_tag1->setMargin(10, Wt::Side::Bottom);
+  m_combo_tag1->changed().connect([=]
+    {
+      //1 Short Text Note 1
+      //3 Contacts 2
+      int index = m_combo_tag1->currentIndex();
+      if (index == 1)
+      {
+        m_edit_author->setText(m_edit_pubkey->text());
+      }
+    });
+
+  group_request_tag1->addWidget(std::make_unique<Wt::WBreak>());
+
+  /////////////////////////////////////////////////////////////////////////////////////////////////////
+  // tag2
+  /////////////////////////////////////////////////////////////////////////////////////////////////////
+
+  auto group_request_tag2 = box_right->addWidget(std::make_unique<Wt::WGroupBox>("Tags"));
+  group_request_tag2->setStyleClass("col");
+  m_combo_tag2 = group_request_tag2->addNew<Wt::WComboBox>();
+  m_combo_tag2->addItem("tag2.0");
+  m_combo_tag2->addItem("tag2.1");
+  m_combo_tag2->setCurrentIndex(0);
+  m_combo_tag2->setMargin(10, Wt::Side::Bottom);
+  m_combo_tag2->changed().connect([=]
+    {
+      //1 Short Text Note 1
+      //3 Contacts 2
+      int index = m_combo_tag2->currentIndex();
+      if (index == 1)
+      {
+        m_edit_author->setText(m_edit_pubkey->text());
+      }
+    });
+
+  group_request_tag2->addWidget(std::make_unique<Wt::WBreak>());
+
+  /////////////////////////////////////////////////////////////////////////////////////////////////////
+  // event id
   /////////////////////////////////////////////////////////////////////////////////////////////////////
 
   group_request->addWidget(std::make_unique<Wt::WText>("Event id"));
