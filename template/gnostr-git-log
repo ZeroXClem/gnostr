@@ -31,15 +31,15 @@ help(){
     exit
   fi
 	gnostr-git    log -h | sed -e "s/git/gnostr-git/g"
-	printf "   or: gnostr-git log [--hash-list] [-hl]\n"
-	printf "   or: gnostr-git log [--format] [-f]\n"
-	printf "   or: gnostr-git log [-gd]\n"
-	printf "   or: gnostr-git log [--commit-list] [-cl]\n"
+	printf "   or: gnostr-git    log [--hash-list] [-hl]\n"
+	printf "   or: gnostr-git    log [--format] [-f]\n"
+	printf "   or: gnostr-git    log [-gd]\n"
+	printf "   or: gnostr-git    log [--commit-list] [-cl]\n"
 	printf "   "
 	printf "   \n"
 	printf "gnostr-git log accepts any of the options accepted by git log\n"
 	echo "  try:"
-	echo "       gnostr-git log    --format='%C(auto)%H%<|(17)%gd/%s'"
+	echo "       gnostr-git    log --format='%C(auto)%H%<|(17)%gd/%s'"
 	echo "       gnostr-git reflog --format='%C(auto)%H%<|(17)%gd/commit:%s'"
 	printf "\n"
 	printf "gnostr:\n"
@@ -135,7 +135,7 @@ gnostr-git    log      --format=$(pwd | grep -o '[^/]*$')'/%C(auto)%H%<|(17)%gd'
 	exit
 elif
 [[ ${!i} == "-cl" ]] || [[ ${!i} == "--commit-log" ]]; then
-gnostr-git log    --format=$(pwd | grep -o '[^/]*$')'/%C(auto)%H%<|(17)%gd/commit/%s'
+gnostr-git    log      --format=$(pwd | grep -o '[^/]*$')'/%C(auto)%H%<|(17)%gd/commit/%s'
 	exit
 else
 	##silence is golden
