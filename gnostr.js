@@ -9,19 +9,19 @@ if (!shell.which('git')) {
 }
 // console.log(shell.which('git'));
 if (!shell.which('gnostr')) {
-  console.log(shel.which('gnostr'));
+  console.log(shell.which('gnostr'));
   shell.echo('Sorry, this script requires gnostr');
   shell.exit(1);
 }
 // console.log(shell.which('gnostr'));
 if (!shell.which('gnostr-proxy')) {
-  console.log(shel.which('gnostr-proxy'));
+  console.log(shell.which('gnostr-proxy'));
   shell.echo('Sorry, this script requires gnostr');
   shell.exit(1);
 }
 // console.log(shell.which('gnostr-proxy'));
 if (!shell.which('gnostr-sha256')) {
-  console.log(shel.which('gnostr-sha256'));
+  console.log(shell.which('gnostr-sha256'));
   shell.echo('Sorry, this script requires gnostr-sha256');
   shell.exit(1);
 }
