@@ -5,11 +5,14 @@ mkdir -p .gnostr
 declare ORG
 
 declare WEEBLE
-WEEBLE=$(gnostr-weeble)
+WEEBLE=$(gnostr-weeble 2>/tmp/gnostr-git-reflog.log)
+[ -z $WEEBLE ] && WEEBLE=0000
 declare WOBBLE
-WOBBLE=$(gnostr-wobble)
+WOBBLE=$(gnostr-wobble 2>/tmp/gnostr-git-reflog.log)
+[ -z $WOBBLE ] && WOBBLE=000000
 declare BLOCKHEIGHT
-BLOCKHEIGHT=$(gnostr-blockheight)
+BLOCKHEIGHT=$(gnostr-blockheight 2>/tmp/gnostr-git-reflog.log)
+[ -z $BLOCKHEIGHT ] && BLOCKHEIGHT=000000
 
 declare REPO
 REPO=$(pwd | grep -o '[^/]*$')
