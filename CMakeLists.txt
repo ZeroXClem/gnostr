@@ -49,7 +49,8 @@ include_directories(${CMAKE_SOURCE_DIR}/ext/json-3.11.2/single_include)
 include_directories(${CMAKE_SOURCE_DIR}/ext/secp256k1-0.3.2/include)
 
 add_subdirectory(${CMAKE_SOURCE_DIR}/ext/secp256k1-0.3.2)
-## add_subdirectory(${CMAKE_SOURCE_DIR}/ext/wt-4.10.0)
+add_subdirectory(${CMAKE_SOURCE_DIR}/ext/wt-4.10.0)
+add_subdirectory(${CMAKE_SOURCE_DIR}/ext/wxWidgets-3.2.2.1)
 
 ## include(FetchContent)
 ## FetchContent_Declare(
