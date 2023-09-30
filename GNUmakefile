@@ -251,6 +251,7 @@ endif
 	bash -c "[ '$(shell uname -s)' == 'Linux' ] && sudo apt-get install golang-go         || echo   "
 	bash -c "[ '$(shell uname -s)' == 'Linux' ] && sudo apt-get install libcurl4-openssl-dev || echo"
 	bash -c "[ '$(shell uname -s)' == 'Linux' ] && sudo apt-get install libboost-all-dev  || echo"
+	bash -c "[ '$(shell uname -s)' == 'Linux' ] && sudo apt-get install libgtk-3-dev      || echo"
 	bash -c "[ '$(shell uname -s)' == 'Linux' ] && sudo apt-get install libssl-dev        || echo   "
 	bash -c "[ '$(shell uname -s)' == 'Linux' ] && sudo apt-get install libtool           || echo   "
 	bash -c "[ '$(shell uname -s)' == 'Linux' ] && sudo apt-get install mercurial         || echo   "
