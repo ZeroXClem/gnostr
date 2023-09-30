@@ -263,7 +263,7 @@ endif
 	bash -c "[ '$(shell uname -s)' == 'Linux' ] && $(SUDO) apt-get install python-is-python3 || echo   "
 	bash -c "[ '$(shell uname -s)' == 'Linux' ] && $(SUDO) apt-get install util-linux        || echo   "
 	bash -c "[ '$(shell uname -s)' == 'Linux' ] && $(SUDO) apt-get install virtualenv        || echo   "
-	bash -c "[ '$(shell uname -s)' == 'Linux' ] && $(SUDO) apt-get install zlib              || echo   "
+	bash -c "[ '$(shell uname -s)' == 'Linux' ] && $(SUDO) apt-get install zlib1g-dev        || echo   "
 
 ##	install gvm sequence
 	@rm -rf $(HOME)/.gvm || echo "not removing ~/.gvm"
