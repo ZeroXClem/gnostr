@@ -5,27 +5,27 @@ mkdir -p .gnostr
 GNOSTR_GIT=$(which gnostr-git)
 declare WEEBLE
 WEEBLE=$(gnostr-weeble)
-echo $WEEBLE
+## echo $WEEBLE
 declare WOBBLE
 WOBBLE=$(gnostr-wobble)
-echo $WOBBLE
+## echo $WOBBLE
 declare BLOCKHEIGHT
 BLOCKHEIGHT=$(gnostr-blockheight)
-echo $BLOCKHEIGHT
+## echo $BLOCKHEIGHT
 
 declare REPO
 REPO=$(pwd | grep -o '[^/]*$')
-echo $REPO
+## echo $REPO
 declare BRANCH
 BRANCH=$(echo $(git branch --show-current) | sed -e 's/\//-/g')
-echo $BRANCH
+## echo $BRANCH
 declare UTC_SECS
 UTC_SECS=$(date +%s)
-echo $UTC_SECS
+## echo $UTC_SECS
 
 declare REMOTE_PATH
 REMOTE_PATH=$REPO-$WEEBLE-$WOBBLE-$BLOCKHEIGHT-$BRANCH
-echo $REMOTE_PATH
+## echo $REMOTE_PATH
 
 help(){
 	printf "   or: gnostr-git log [--commit-list] [-cl]\n"
