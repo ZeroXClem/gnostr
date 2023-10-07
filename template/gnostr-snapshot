@@ -28,15 +28,16 @@ REMOTE_PATH=$REPO-$WEEBLE-$WOBBLE-$BLOCKHEIGHT-$BRANCH
 ## echo $REMOTE_PATH
 
 help(){
-	printf "   or: gnostr-git log [--commit-list] [-cl]\n"
+	printf "   gnostr-snapshot --help     [-h]     print help\n"
+	printf "   gnostr-snapshot --depth    [-d]     depth\n"
 	printf "   "
 	exit
 }
 
 #git using sha1
 default(){
-touch gnostr-snapshot-$REMOTE_PATH.patch
-$GNOSTR_GIT diff 4b825dc642cb6eb9a060e54bf8d69288fbee4904 HEAD > gnostr-snapshot-$REMOTE_PATH.patch
+touch $REMOTE_PATH.patch
+$GNOSTR_GIT diff 4b825dc642cb6eb9a060e54bf8d69288fbee4904 HEAD > $REMOTE_PATH.patch
 exit;
 }
 
@@ -48,9 +49,27 @@ exit;
 }
 
 for ((i=1; i<=$#; i++)); do
-if [[ ${!i} == "-h" ]] || [[ $1 == "--help" ]] || [[ $1 == "help" ]]; then
-	help
-	exit
-fi
+
+  ## echo "i=${!i}"
+
+  if [[ ${!i} == "-h" ]] || [[ $1 == "--help" ]] || [[ $1 == "help" ]]; then
+    help
+    exit
+  fi
+
+  if [[ ${!i} == "-d" ]] || [[ $1 == "--depth" ]] || [[ $1 == "depth" ]]; then
+  ((i++))
+    if [[ ${!i} =~ ^[0-9]+$ ]]; then
+      declare DEPTH
+      DEPTH=${!i}
+       ## echo "${!i} is a number"
+       ## echo DEPTH=$DEPTH
+      ((i++))
+    else
+       echo "${!i} is not a number"
+       help
+    fi
+  fi
+
 done
 default
