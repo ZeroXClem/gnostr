@@ -175,6 +175,8 @@ gnostr-cargo-binstall:
 	type -P cargo && \
 		cargo install cargo-binstall && \
 		cargo-binstall \
+		--no-confirm \
+		--no-discover-github-token \
 		gnostr-cat \
 		gnostr-cli \
 		gnostr-command \
