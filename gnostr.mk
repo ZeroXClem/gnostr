@@ -388,6 +388,7 @@ gnostr-install:
 	@install -m755 -v template/gnostr-get-relays     $(PREFIX)/bin     2>/dev/null
 	@install -m755 -v template/gnostr-set-relays     $(PREFIX)/bin     2>/dev/null
 	@install -m755 -v template/gnostr-*-*            $(PREFIX)/bin     2>/dev/null
+	@install -m755 -v build/web/gnostr-web           $(PREFIX)/bin     2>/dev/null
 
 .ONESHELL:
 ##install-doc
