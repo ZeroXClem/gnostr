@@ -4,6 +4,9 @@ import sys
 import argparse
 import json
 
+## view first git commit over nostr
+## gnostr-query -i fbf73a17a4e0fe390aba1808a8d55f1b50717d5dd765b2904bf39eba18c51f7c
+
 parser = argparse.ArgumentParser(prog = 'gnostr-query', description = 'Construct nostr queries')
 parser.add_argument('-a', '--authors')
 parser.add_argument('-p', '--mentions')
@@ -11,7 +14,7 @@ parser.add_argument('-e', '--references')
 parser.add_argument('-t', '--hashtag')
 parser.add_argument('-i', '--ids')
 parser.add_argument('-k', '--kinds')
-parser.add_argument('-g', 
+parser.add_argument('-g',
                     '--generic',
                     nargs=2,
                     metavar=('tag', 'value'),
