@@ -157,6 +157,10 @@ web:
 	@devtools/refresh-submodules.sh web
 	@cmake . -DBUILD_WEB=ON -DCMAKE_C_FLAGS=-g -DCMAKE_BUILD_TYPE=Release
 	@$(MAKE) gnostr-web
+
+.PHONY:web/view
+web/view:
+	echo "web/view"
 gnostr-web-deploy:
 	gnostr-web --http-address=0.0.0.0 --http-port=80 --deploy-path=/web --docroot=. & \
     $(shell which open) http://0.0.0.0:80
@@ -212,11 +216,19 @@ deps/gnostr-command/.git:gnostr-git
 	@devtools/refresh-submodules.sh deps/gnostr-command
 deps/gnostr-command/gnostr-command:deps/gnostr-command/.git
 	cd deps/gnostr-command && \
-		make install
+		make install && make cargo-i
 deps/gnostr-command/target/release/gnostr-command:deps/gnostr-command/gnostr-command## 	gnostr-command
 gnostr-command:deps/gnostr-command/target/release/gnostr-command## 	gnostr-command
 	cp $< $@ && exit;
 
+.PHONY:bins/.git bins
+bins/.git:
+	@devtools/refresh-submodules.sh bins
+.PHONY:bins/target/release/libgnostr_bins.d
+bins/target/release/libgnostr_bins.d:bins/.git
+bins:bins/target/release/libgnostr_bins.d
+	cd bins && \
+		make install && make cargo-i
 
 deps/gnostr-legit/.git:gnostr-git
 	@devtools/refresh-submodules.sh deps/gnostr-legit
