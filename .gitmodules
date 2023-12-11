@@ -112,3 +112,8 @@
 [submodule "bins"]
 	path = bins
 	url = https://github.com/gnostr-org/gnostr-bins.git
+  ignore = dirty
+  depth = shallow
+[submodule "gnostr-tui"]
+	path = tui
+	url = https://github.com/gnostr-org/gnostr-tui.git
