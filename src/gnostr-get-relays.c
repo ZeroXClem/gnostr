@@ -4,10 +4,12 @@
 #include <stdlib.h>
 #include <string.h>
 void help(){
-  printf("\nhelp");
+  printf("help");
+    exit(0);
 }
 void version(){
-  printf("\nversion");
+  printf("version");
+    exit(0);
 }
 int main(int argc, const char **argv) {
   //printf("%d",argc);//exit(0);
