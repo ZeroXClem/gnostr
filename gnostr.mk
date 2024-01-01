@@ -37,6 +37,33 @@ GTAR                                   :=$(shell which tar)
 endif
 export GTAR
 
+DOCS=\
+gnostr-blockheight\
+gnostr-cat\
+gnostr-cli\
+gnostr-client\
+gnostr-get-relays-c\
+gnostr-get-relays\
+gnostr-git-log\
+gnostr-git-reflog\
+gnostr-gnode\
+gnostr-grep\
+gnostr-keyconv\
+gnostr-post\
+gnostr-proxy\
+gnostr-query\
+gnostr-readme\
+gnostr-relays\
+gnostr-repo\
+gnostr-req\
+gnostr-send\
+gnostr-set-relays\
+gnostr-sha256\
+gnostr-tests\
+gnostr-web\
+gnostr-weeble\
+gnostr-wobble\
+gnostr\
 
 ##all:
 #all: submodules gnostr gnostr-git gnostr-get-relays gnostr-docs## 	make gnostr gnostr-cat gnostr-git gnostr-relay gnostr-xor docs
@@ -57,8 +84,36 @@ gnostr-docs:docker-start doc/gnostr.1## 	docs: convert README to doc/gnostr.1
 	git add --ignore-errors sources/*.md 2>/dev/null || echo && git add --ignore-errors *.md 2>/dev/null || echo
 #@git ls-files -co --exclude-standard | grep '\.md/$\' | xargs git
 
-doc/gnostr.1: README##
-	scdoc < $^ > $@
+.PHONY:doc
+doc:##
+##help2man < $^ > $@
+	help2man gnostr-act | sed 's/act /gnostr\-act /g' | sed 's/ACT /GNOSTR\-ACT /g' > doc/gnostr-act.1 #&& man doc/gnostr-act.1
+	help2man gnostr-git | sed 's/ git / gnostr\-git /g' | sed 's/ GIT / GNOSTR\-GIT /g' > doc/gnostr-git.1 #&& man doc/gnostr-git.1
+	@(\
+	for b in $(DOCS);\
+  do touch doc/$$b.1;\
+  done;\
+  exit;\
+	)
+	(\
+	for b in $(DOCS);\
+  do echo doc/$$b.1 > /tmp/make-doc.log;\
+  done;\
+  exit;\
+	)
+	(\
+	for b in $(DOCS);\
+  do help2man $$b > doc/$$b.1;\
+  echo $$b;\
+  done;\
+  exit;\
+	)
+	#for b in $(DOCS); do echo $b; done; exit
+	#for b in $(DOCS); do touch doc/$(DOCS); done;exit
+	#for n in $(DOCS); do touch doc/$n.1; done
+	#bash -c "for n in $(ls gnostr-*   ); do touch doc/$n.1; done"
+	#for n in $(DOCS); do [ -x $n ] &&  help2man $n > doc/$n.1 || true; done
+	#bash -c "for n in $(ls gnostr-* ); do [ -x $n ] &&  help2man $n > doc/$n.1 || true; done"
 
 .PHONY: version
 version: gnostr.c## 	print version
