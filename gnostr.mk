@@ -39,7 +39,6 @@ export GTAR
 
 DOCS=\
 gnostr-blockheight\
-gnostr-cat\
 gnostr-cli\
 gnostr-client\
 gnostr-get-relays-c\
@@ -88,6 +87,7 @@ gnostr-docs:docker-start doc/gnostr.1## 	docs: convert README to doc/gnostr.1
 doc:##
 ##help2man < $^ > $@
 	help2man gnostr-act | sed 's/act /gnostr\-act /g' | sed 's/ACT /GNOSTR\-ACT /g' > doc/gnostr-act.1 #&& man doc/gnostr-act.1
+	help2man gnostr-cat > doc/gnostr-cat.1 #&& man doc/gnostr-cat.1
 	help2man gnostr-git | sed 's/ git / gnostr\-git /g' | sed 's/ GIT / GNOSTR\-GIT /g' > doc/gnostr-git.1 #&& man doc/gnostr-git.1
 	@(\
 	for b in $(DOCS);\
