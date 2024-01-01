@@ -98,10 +98,17 @@ void version()
 }
 void usage()
 {
-	printf("usage: gnostr [OPTIONS]\n");
+	printf("\nusage: gnostr [OPTIONS]\n");
 	printf("\n");
-	printf("  GNOSTR-GIT:\n");
-	printf("  CONFIG:\n");
+	printf("  gnostr --sec $(gnostr-git config --global --get gnostr.secretkey)");
+	printf("\n");
+	printf("  gnostr --sec $(gnostr-git config --global --get gnostr.secretkey) --envelope --content \" \"\n\n");
+	printf("\n");
+	printf("COMMAND CONTEXT:\n\n");
+	printf("  gnostr --sec $(gnostr-sha256 $(curl -s https://blockchain.info/q/getblockcount)) \\\n          -t block \\\n          -t $(curl -s https://blockchain.info/q/getblockcount) \\\n          --envelope \\\n          --content \"BLOCK:$(curl -s https://blockchain.info/q/getblockcount)\"\n\n");
+	printf("\n");
+	printf("GNOSTR-GIT:\n");
+	printf("CONFIG:\n");
 	printf("\n");
 	printf("  gnostr-git config\n\n");
 	printf("  gnostr git config --global\n\n");
@@ -109,14 +116,9 @@ void usage()
 	printf("  gnostr git config --global --get gnostr.secretkey\n");
 //printf("  5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5");
 	printf("\n");
-	printf("  gnostr --sec $(gnostr-git config --global --get gnostr.secretkey)");
+	printf("RELAY OPTIONS:\n\n");
 	printf("\n");
-	printf("  gnostr --sec $(gnostr-git config --global --get gnostr.secretkey) --envelope --content \" \"\n\n");
-	printf("\n");
-	printf("  gnostr --sec $(gnostr-sha256 $(curl -s https://blockchain.info/q/getblockcount)) \\\n          -t block \\\n          -t $(curl -s https://blockchain.info/q/getblockcount) \\\n          --envelope \\\n          --content \"BLOCK:$(curl -s https://blockchain.info/q/getblockcount)\"\n\n");
-	printf("  RELAY OPTIONS\n\n");
-	printf("\n");
-	printf("  NOSTR OPTIONS\n");
+	printf("NOSTR OPTIONS:\n");
 	printf("\n");
 	printf("      --content <string>              the content of the note\n");
 	printf("      --dm <hex pubkey>               make an encrypted dm to said pubkey. sets kind and tags.\n");
