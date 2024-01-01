@@ -159,9 +159,10 @@ def supported_prefixes():
 def help():
     print("\n")
     print("	gnostr-keyconv [-h, --help]\n")
+    print("	gnostr-keyconv [-v, --verion]\n")
     print("	gnostr-keyconv [-t, --tests]\n")
     print("	gnostr-keyconv [-p, --prefixes]\n")
-    print("	gnostr-keyconv [-v, --vectors]\n")
+    print("	gnostr-keyconv [-vecs, --vectors]\n")
     print("	gnostr-keyconv <key> <type>	\n")
     print("	")
     exit();
@@ -231,7 +232,10 @@ try:
     if key == "--help":
         help();
         ##exit();
-    if key == "-v" or key == "--vectors":
+    if key == "-v" or key == "--version":
+        print("v0.0.0");
+        exit();
+    if key == "-vecs" or key == "--vectors":
         vectors();
         exit();
     if key == "-t" or key == "--tests":
