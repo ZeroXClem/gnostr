@@ -112,8 +112,9 @@ void usage()
 	printf("  gnostr --sec $(gnostr-git config --global --get gnostr.secretkey)");
 	printf("\n");
 	printf("  gnostr --sec $(gnostr-git config --global --get gnostr.secretkey) --envelope --content \" \"\n\n");
-	printf("  RELAY OPTIONS\n\n");
 	printf("\n");
+	printf("  gnostr --sec $(gnostr-sha256 $(curl -s https://blockchain.info/q/getblockcount)) \\\n          -t block \\\n          -t $(curl -s https://blockchain.info/q/getblockcount) \\\n          --envelope \\\n          --content \"BLOCK:$(curl -s https://blockchain.info/q/getblockcount)\"\n\n");
+	printf("  RELAY OPTIONS\n\n");
 	printf("\n");
 	printf("  NOSTR OPTIONS\n");
 	printf("\n");
@@ -679,7 +680,8 @@ static int mine_event(struct nostr_event *ev, int difficulty)
 			return 0;
 
 		if ((res = count_leading_zero_bits(ev->id)) >= difficulty) {
-			fprintf(stderr, "mined %d bits\n", res);
+			//fprintf(stderr, "mined %d bits\n", res);
+			fprintf(stderr, "");
 			return 1;
 		}
 	}
