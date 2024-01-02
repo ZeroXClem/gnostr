@@ -163,13 +163,13 @@ http://web.comlab.ox.ac.uk/oucl/work/jeremy.gibbons/publications/spigot.pdf
 
 int main(int argc, char** argv) {
 
-  if (argc >= 2) {
+if (argc >= 2) {
 
     if (DEBUG) {
 
       printf(">=2:%x\n",argc);
 
-    };
+    }
 
     #ifdef _OPENMP
 
@@ -185,9 +185,9 @@ int main(int argc, char** argv) {
         printf("BENCH:ELSE:DEBUG:%x\n",argc);
         printf("strcmp(argv[1],\"--bench\") = %x\n", !strcmp(argv[1], "--bench"));
 
-      };
+      }
 
-    };
+    }
 
     #endif
 
@@ -200,8 +200,7 @@ int main(int argc, char** argv) {
 
       };
 
-    };
-
+    }
     if (!strcmp(argv[1], "-t")) {
 
       if (DEBUG) {
@@ -212,13 +211,11 @@ int main(int argc, char** argv) {
       };
 
     }
-
     if (argc >= 3) {
 
       printf(">=3:%x\n",argc);
 
     }
-
     if (!strcmp(argv[1], "--help")) {
 
       if (DEBUG) {
@@ -239,7 +236,6 @@ int main(int argc, char** argv) {
       }
 
     }
-
     if (!strcmp(argv[1], "--version")) {
 
       if (DEBUG) {
@@ -283,7 +279,7 @@ int main(int argc, char** argv) {
 
     }
 
-  }
+}
 
 /*
    input 0 4 8 12 16 20 24 28 etc...
