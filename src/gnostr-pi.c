@@ -4,6 +4,9 @@
 #include <stdlib.h>
 #include <string.h>
 
+#ifndef DEBUG
+#define DEBUG 0
+#endif
 void int2bin(int n, int* bin, int* bin_size, const int bits);
 
 void int2bin(int n, int* bin, int *bin_size, const int bits)
@@ -73,6 +76,76 @@ http://web.comlab.ox.ac.uk/oucl/work/jeremy.gibbons/publications/spigot.pdf
 
 int main(int argc, char** argv) {
 
+  if (argc >= 2) {
+
+    if (DEBUG) {
+
+      printf("%x\n",argc);
+
+    };
+
+    if (!strcmp(argv[1], "--test")) {
+
+      if (DEBUG) {
+
+        printf("%x\n",argc);
+        printf("strcmp(argv[1],\"--test\") = %x\n", !strcmp(argv[1], "--test"));
+
+      };
+
+    };
+
+    if (!strcmp(argv[1], "-t")) {
+
+      if (DEBUG) {
+
+        printf("%x\n",argc);
+        printf("strcmp(argv[1],\"-t\") = %x\n", !strcmp(argv[1], "-t"));
+
+      };
+
+    }
+
+    if (argc == 3) {
+
+      printf("%x\n",argc);
+
+    }
+
+    if (!strcmp(argv[1], "--help")) {
+
+      if (DEBUG) {
+
+        printf("%x\n",argc);
+        printf("strcmp(argv[1],\"--help\") = %x\n", !strcmp(argv[1], "--help"));
+
+      }
+
+    }
+
+    if (!strcmp(argv[1], "--version")) {
+
+      if (DEBUG) {
+
+        printf("%x\n",argc);
+        printf("strcmp(argv[1],\"--version\") = %x\n", !strcmp(argv[1], "--version"));
+
+      }
+
+    }
+    if (!strcmp(argv[1], "-v")) {
+
+      if (DEBUG) {
+
+        printf("%x\n",argc);
+        printf("strcmp(argv[1],\"-v\") = %x\n", !strcmp(argv[1], "-v"));
+
+      }
+
+    }
+
+  } else {}
+
 /*
    input 0 4 8 12 16 20 24 28 etc...
 */
@@ -80,7 +153,6 @@ int main(int argc, char** argv) {
 /*
    begin int2bin
 */
-
    char ch;
    ch = 'A';
    int binary[32];
