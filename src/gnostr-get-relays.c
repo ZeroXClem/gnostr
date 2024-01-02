@@ -39,7 +39,7 @@ int main(int argc, const char **argv) {
   char command[128];
   strcpy(command, "curl  -sS 'https://api.nostr.watch/v1/online' > /tmp/gnostr.relays ");
   system(command);
-  strcpy(command, "cat /tmp/gnostr.relays | sed 's/\\[//' | sed 's/\\]//' | sed 's/\"//g'");
+  strcpy(command, "echo $(cat /tmp/gnostr.relays | sed 's/\\[//' | sed 's/\\]//' | sed 's/\"//g')");
   system(command);
   return 0;
 }
