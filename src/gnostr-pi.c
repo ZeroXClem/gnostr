@@ -7,7 +7,7 @@
 #include <time.h>
 
 #ifndef DEBUG
-#define DEBUG 1
+#define DEBUG 0
 #endif
 
 #ifdef _OPENMP
@@ -163,6 +163,28 @@ http://web.comlab.ox.ac.uk/oucl/work/jeremy.gibbons/publications/spigot.pdf
 
 int main(int argc, char** argv) {
 
+if (DEBUG) { printf("main:%x\n",argc); }
+
+if (argc == 1) {
+
+  if (DEBUG) { printf("==1:%x\n",argc); }
+
+}
+if (argc == 2) {
+
+  if (DEBUG) { printf("==2:%x\n",argc); }
+
+}
+if (argc == 3) {
+
+  if (DEBUG) { printf("==3:%x\n",argc); }
+
+}
+if (argc >= 3) {
+
+  if (DEBUG) { printf(">=3:%x\n",argc); }
+
+}
 if (argc >= 2) {
 
     if (DEBUG) {
@@ -198,7 +220,7 @@ if (argc >= 2) {
         printf("TEST:%x\n",argc);
         printf("strcmp(argv[1],\"--test\") = %x\n", !strcmp(argv[1], "--test"));
 
-      };
+      }
 
     }
     if (!strcmp(argv[1], "-t")) {
@@ -209,11 +231,6 @@ if (argc >= 2) {
         printf("strcmp(argv[1],\"-t\") = %x\n", !strcmp(argv[1], "-t"));
 
       };
-
-    }
-    if (argc >= 3) {
-
-      printf(">=3:%x\n",argc);
 
     }
     if (!strcmp(argv[1], "--help")) {
@@ -259,25 +276,15 @@ if (argc >= 2) {
 
   } else {
 
-    if (!strcmp(argv[1], "--else")) {
-
       if (DEBUG) {
 
-        printf("ELSE:%x\n",argc);
-        printf("strcmp(argv[1],\"--else\") = %x\n", !strcmp(argv[1], "--else"));
+        printf("ELSE:DEBUG:%x\n",argc);
+
+      } else {
+
+        //printf("ELSE:ELSE:%x\n",argc);
 
       }
-
-    } else {
-
-      if (DEBUG) {
-
-        printf("ELSE:ELSE:%x\n",argc);
-        printf("strcmp(argv[1],\"--else\") = %x\n", !strcmp(argv[1], "--else"));
-
-      }
-
-    }
 
 }
 
