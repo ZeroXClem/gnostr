@@ -278,25 +278,21 @@ bins:
 
 deps/gnostr-legit/.git:gnostr-git
 	@devtools/refresh-submodules.sh deps/gnostr-legit
-#.PHONY:deps/gnostr-legit/gnostr-legit
-deps/gnostr-legit/gnostr-legit:deps/gnostr-legit/.git
+#.PHONY:deps/gnostr-legit/release/gnostr-legit
+deps/gnostr-legit/target/release/gnostr-legit:deps/gnostr-legit/.git
 	cd deps/gnostr-legit && \
-		make cargo-build-release install
-deps/gnostr-legit/target/release/gnostr-legit:deps/gnostr-legit/gnostr-legit## 	gnostr-legit
+		make cargo-b-release install
 gnostr-legit:deps/gnostr-legit/target/release/gnostr-legit## 	gnostr-legit
 	cp $< $@ && exit;
 	install -v template/gnostr-* /usr/local/bin >/tmp/gnostr-legit.log
-
-
 
 deps/gnostr-sha256/.git:
 	@devtools/refresh-submodules.sh deps/gnostr-sha256
 #.PHONY:deps/gnostr-sha256/gnostr-sha256
 deps/gnostr-sha256/gnostr-sha256:deps/gnostr-sha256/.git
 	cd deps/gnostr-sha256 && \
-		make cargo-install
+		make cargo-b-release install
 deps/gnostr-sha256/target/release/gnostr-sha256:deps/gnostr-sha256/gnostr-sha256## 	gnostr-sha256
-.PHONY:
 gnostr-sha256:deps/gnostr-sha256/target/release/gnostr-sha256
 
 
