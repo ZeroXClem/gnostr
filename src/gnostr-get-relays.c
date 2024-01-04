@@ -8,7 +8,7 @@ void help(){
     exit(0);
 }
 void version(){
-  printf("version");
+  printf("v0.0.0");
     exit(0);
 }
 int main(int argc, const char **argv) {
