@@ -114,13 +114,18 @@
 	url = https://github.com/gnostr-org/gnostr-bins.git
   ignore = dirty
   depth = shallow
-[submodule "gnostr-tui"]
-	path = tui
-	url = https://github.com/gnostr-org/gnostr-tui.git
+[submodule "workspace"]
+	path = workspace
+	url = https://github.com/gnostr-org/gnostr-workspace.git
   ignore = dirty
   depth = shallow
-[submodule "gnostr-drives"]
+[submodule "drives"]
 	path = drives
 	url = https://github.com/gnostr-org/gnostr-drives.git
+  ignore = dirty
+  depth = shallow
+[submodule "tui"]
+	path = tui
+	url = https://github.com/gnostr-org/gnostr-tui.git
   ignore = dirty
   depth = shallow
