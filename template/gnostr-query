@@ -7,6 +7,7 @@ import argparse
 import json
 
 parser = argparse.ArgumentParser(prog = 'gnostr-query', description = 'Construct gnostr queries')
+parser.add_argument('-v', '--version',action='store_true')
 parser.add_argument('-a', '--authors')
 parser.add_argument('-p', '--mentions')
 parser.add_argument('-e', '--references')
@@ -44,6 +45,9 @@ if args.test is True:
   print("%s",args.test)
   test();
 
+if args.version:
+  print('v0.0.0'); exit();
+
 if args.authors:
     filt["authors"] = args.authors.split(",")
 
@@ -51,7 +55,7 @@ if args.ids:
     filt["ids"] = args.ids.split(",")
 
 if args.limit is not None:
-    filt["limit"] = args.limit
+    filt["limit"] =largs.limit
 
 if args.generic:
     (tag, val) = args.generic
