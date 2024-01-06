@@ -85,7 +85,7 @@ doc-gnostr-cat:
 doc-gnostr-git:
 	help2man gnostr-git | sed 's/ git / gnostr\-git /g' | sed 's/ GIT / GNOSTR\-GIT /g' > doc/gnostr-git.1 #&& man doc/gnostr-git.1
 .PHONY:doc
-doc:doc-gnostr-act doc-gnostr-cat doc-gnostr-git##
+doc:doc-gnostr-act doc-gnostr-cat doc-gnostr-git gnostr-install##
 ##help2man < $^ > $@
 	@(\
 	for b in $(DOCS);\
