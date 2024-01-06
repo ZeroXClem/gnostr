@@ -35,6 +35,11 @@ fi
 
 TMP=$(mktemp)
 
+if [[ $ARG == "--content" ]];
+then
+  echo $CONTENT > $TMP
+fi
+
 $EDITOR "$TMP"
 
 if [ ! -f "$TMP" ]; then
