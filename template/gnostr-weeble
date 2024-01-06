@@ -12,7 +12,15 @@ declare -a CURRENT_BRANCH
 REPO_NAME=$(pwd | grep -o "[^/]*$")
 CURRENT_BRANCH=$(git branch --show-current)
 FULLPATH=$PWD
-source gnostr-nonce
+#source gnostr-nonce
+function help(){
+
+  get_weeble
+
+  printf "gnostr-weeble\n";
+	printf "WEEBLE=TIME/BLOCKHEIGHT"
+  exit;
+}
 
 function get_time(){
 
@@ -34,3 +42,23 @@ function get_weeble(){
 }
 get_weeble
 
+if [[ $1 == "-h" ]];
+then
+  help
+fi
+if [[ $1 == "--help" ]];
+then
+  help
+fi
+if [[ $1 == "help" ]];
+then
+  help
+fi
+if [[ $1 == "-v" ]];
+then
+  printf "v0.0.0"; exit
+fi
+if [[ $1 == "--version" ]];
+then
+  printf "v0.0.0"; exit
+fi
