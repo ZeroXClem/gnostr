@@ -29,13 +29,12 @@ get_block_height
 
 function get_wobble(){
 	WOBBLE=$(expr $TIME % $BLOCKHEIGHT)
-	#echo $WOBBLE
+	echo $WOBBLE
 }
-get_wobble
 
 function get_help(){
 
-  get_wobble
+  #get_wobble
 
   #printf "gnostr-wobble\n";
   printf "WOBBLE=TIME mod BLOCKHEIGHT"
@@ -61,3 +60,4 @@ if [[ $1 == "--version" ]];
 then
   printf "v0.0.0"; exit
 fi
+get_wobble

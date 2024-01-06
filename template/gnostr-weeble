@@ -15,9 +15,8 @@ FULLPATH=$PWD
 #source gnostr-nonce
 function help(){
 
-  get_weeble
+  #get_weeble
 
-  printf "gnostr-weeble\n";
 	printf "WEEBLE=TIME/BLOCKHEIGHT"
   exit;
 }
@@ -40,7 +39,6 @@ function get_weeble(){
 	WEEBLE=$(expr $TIME / $BLOCKHEIGHT)
 	echo $WEEBLE
 }
-get_weeble
 
 if [[ $1 == "-h" ]];
 then
@@ -62,3 +60,4 @@ if [[ $1 == "--version" ]];
 then
   printf "v0.0.0"; exit
 fi
+get_weeble
