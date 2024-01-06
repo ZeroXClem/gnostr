@@ -4,21 +4,11 @@
 gnostr \- manual page for gnostr 0.0.13
 .SH DESCRIPTION
 usage: gnostr [OPTIONS]
-.PP
-GNOSTR\-GIT:
-CONFIG:
-.IP
-gnostr\-git config
-.IP
-gnostr git config \fB\-\-global\fR
-.IP
-gnostr git config \fB\-\-global\fR \fB\-\-add\fR gnostr.secretkey $(gnostr\-sha256 12345)
-gnostr git config \fB\-\-global\fR \fB\-\-get\fR gnostr.secretkey
 .IP
 gnostr \fB\-\-sec\fR $(gnostr\-git config \fB\-\-global\fR \fB\-\-get\fR gnostr.secretkey)
 gnostr \fB\-\-sec\fR $(gnostr\-git config \fB\-\-global\fR \fB\-\-get\fR gnostr.secretkey) \fB\-\-envelope\fR \fB\-\-content\fR " "
 .PP
-COMMAND CONTEXT
+COMMAND CONTEXT:
 .IP
 gnostr \fB\-\-sec\fR $(gnostr\-sha256 $(curl \fB\-s\fR https://blockchain.info/q/getblockcount)) \e
 .HP
@@ -30,9 +20,19 @@ gnostr \fB\-\-sec\fR $(gnostr\-sha256 $(curl \fB\-s\fR https://blockchain.info/q
 .HP
 \fB\-\-content\fR "BLOCK:$(curl \fB\-s\fR https://blockchain.info/q/getblockcount)"
 .PP
-RELAY OPTIONS
+GNOSTR\-GIT:
+CONFIG:
+.IP
+gnostr\-git config
+.IP
+gnostr git config \fB\-\-global\fR
+.IP
+gnostr git config \fB\-\-global\fR \fB\-\-add\fR gnostr.secretkey $(gnostr\-sha256 12345)
+gnostr git config \fB\-\-global\fR \fB\-\-get\fR gnostr.secretkey
 .PP
-NOSTR OPTIONS
+RELAY OPTIONS:
+.PP
+NOSTR OPTIONS:
 .TP
 \fB\-\-content\fR <string>
 the content of the note
