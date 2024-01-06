@@ -1,6 +1,19 @@
 #!/usr/bin/env bash
 #
 
+if [[ $1 = "-h" ]] || [[ $1 = "--help" ]]; then
+
+  echo ""help""
+
+exit;
+fi
+if [[ $1 = "-v" ]] || [[ $1 = "--version" ]]; then
+
+  echo ""v0.0.0""
+
+exit;
+fi
+
 RELAYS=$(curl  'https://api.nostr.watch/v1/online' 2>/dev/null |
     sed -e 's/[{}]/''/g' |
     sed -e 's/\[/''/g' |
