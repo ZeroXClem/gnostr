@@ -24,11 +24,22 @@ usage() {
 	exit 0
 }
 
+if [[ $1 = "-h" ]] || [[ $1 = "--help" ]]; then
+
+  echo ""help""
+
+exit;
+fi
+if [[ $1 = "-v" ]] || [[ $1 = "--version" ]]; then
+
+  echo ""v0.0.0""
+
+exit;
+fi
+
+
 while getopts "dr:t:" o; do
     case "${o}" in
-        h)
-            usage
-            ;;
         r)
             relay=${OPTARG}
             ;;
