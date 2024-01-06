@@ -24,6 +24,14 @@ if [[ $ARG == "help" ]];
 then
   printf "gnostr-post help"; exit
 fi
+if [[ $ARG == "-v" ]];
+then
+  printf "v0.0.0"; exit
+fi
+if [[ $ARG == "--version" ]];
+then
+  printf "v0.0.0"; exit
+fi
 
 TMP=$(mktemp)
 
