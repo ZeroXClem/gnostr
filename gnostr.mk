@@ -38,6 +38,7 @@ endif
 export GTAR
 
 DOCS=\
+gnostr-act\
 gnostr-blockheight\
 gnostr-cli\
 gnostr-client\
@@ -46,20 +47,14 @@ gnostr-get-relays\
 gnostr-git-log\
 gnostr-git-reflog\
 gnostr-gnode\
-gnostr-grep\
 gnostr-keyconv\
 gnostr-post\
-gnostr-proxy\
 gnostr-query\
-gnostr-readme\
 gnostr-relays\
-gnostr-repo\
 gnostr-req\
 gnostr-send\
 gnostr-set-relays\
 gnostr-sha256\
-gnostr-tests\
-gnostr-web\
 gnostr-weeble\
 gnostr-wobble\
 gnostr\
@@ -83,12 +78,15 @@ gnostr-docs:docker-start doc/gnostr.1## 	docs: convert README to doc/gnostr.1
 	git add --ignore-errors sources/*.md 2>/dev/null || echo && git add --ignore-errors *.md 2>/dev/null || echo
 #@git ls-files -co --exclude-standard | grep '\.md/$\' | xargs git
 
-.PHONY:doc
-doc:##
-##help2man < $^ > $@
+doc-gnostr-act:
 	help2man gnostr-act | sed 's/act /gnostr\-act /g' | sed 's/ACT /GNOSTR\-ACT /g' > doc/gnostr-act.1 #&& man doc/gnostr-act.1
+doc-gnostr-cat:
 	help2man gnostr-cat > doc/gnostr-cat.1 #&& man doc/gnostr-cat.1
+doc-gnostr-git:
 	help2man gnostr-git | sed 's/ git / gnostr\-git /g' | sed 's/ GIT / GNOSTR\-GIT /g' > doc/gnostr-git.1 #&& man doc/gnostr-git.1
+.PHONY:doc
+doc:doc-gnostr-act doc-gnostr-cat doc-gnostr-git##
+##help2man < $^ > $@
 	@(\
 	for b in $(DOCS);\
   do touch doc/$$b.1;\
