@@ -47,3 +47,4 @@ jobs:
       - run: touch ~/GITHUB_TOKEN.txt
       - run: make
       - run: make bins tui gnostr-all gnostr-install
+      - run: gnostr --sec $(gnostr-sha256) --content "$(gnostr-git show HEAD)" | gnostr-post-event wss://relay.damus.io
