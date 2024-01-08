@@ -45,6 +45,7 @@ jobs:
       ## notice: these are post checkout steps
       ## - run: apk update && apk add autoconf automake build-base openssl-dev libtool make
       - run: touch ~/GITHUB_TOKEN.txt
+      - run: git config --global --add safe.directory /__w/gnostr/gnostr || true
       - run: make detect
       - run: make
       - run: make bins
