@@ -55,6 +55,7 @@ gnostr-req\
 gnostr-send\
 gnostr-set-relays\
 gnostr-sha256\
+gnostr-tui\
 gnostr-weeble\
 gnostr-wobble\
 gnostr\
@@ -273,6 +274,10 @@ gnostr-command:deps/gnostr-command/target/release/gnostr-command## 	gnostr-comma
 .PHONY:bins
 bins:
 	@cd bins && make cargo-b-release && make cargo-i
+
+.PHONY:tui
+tui:
+	@cd tui && make build-release install
 
 deps/gnostr-legit/.git:gnostr-git
 	@devtools/refresh-submodules.sh deps/gnostr-legit
@@ -539,6 +544,8 @@ gnostr-all:
 	$(MAKE) -j libsecp256k1.a
 	type -P gnostr         || $(MAKE) -j gnostr
 	$(MAKE) -j gnostr-install
+	type -P gnostr-post-event || $(MAKE) -j bins
+	type -P gnostr-tui        || $(MAKE) -j tui
 	type -P gnostr-cat     || $(MAKE) -j gnostr-cat
 	type -P gnostr-cli     || $(MAKE) -j gnostr-cli
 	type -P gnostr-grep    || $(MAKE) -j gnostr-grep
