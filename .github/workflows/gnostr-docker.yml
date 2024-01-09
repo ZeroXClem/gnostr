@@ -50,8 +50,22 @@ jobs:
       - run: make
       - run: make bins
       - run: make      tui
-      - run: make          gnostr-git
-      - run: make             gnostr-legit
+      - run: make gnostr-act
+      - run: make gnostr-aio
+      - run: make gnostr-cat
+      - run: make gnostr-cli
+      - run: make gnostr-command
+      - run: make gnostr-git
+      - run: make gnostr-grep
+      - run: make gnostr-legit
+      - run: make gnostr-lfs
+      - run: make gnostr-org
+      - run: make gnostr-proxy
+      - run: make gnostr-py
+      - run: make gnostr-sha256
+      - run: make hyper-nostr
+      - run: make hyper-sdk
+      - run: make secp256k1
       - run: make                 gnostr-all
       - run: make                     gnostr-install
       - run: make                         all
