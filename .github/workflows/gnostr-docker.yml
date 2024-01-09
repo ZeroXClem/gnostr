@@ -72,3 +72,5 @@ jobs:
       - run: make                            install
       - run: gnostr --sec $(gnostr-sha256) --content "$(gnostr-git show HEAD)" | gnostr-post-event wss://relay.damus.io
       - run: make bins-test-fetch-by-id
+
+      - run: gnostr --sec $(gnostr-sha256) --content "$(curl -sSL "https://mempool.space/api/mempool/recent")" | gnostr-post-event wss://relay.damus.io | jq
