@@ -23,20 +23,19 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-20.04
-
     strategy:
       fail-fast: false
       matrix:
+        os: ["ubuntu-latest", "macos-latest"]
         tag: ["latest", "slim-bullseye", "slim-bookworm"]
-
+    runs-on: ${{ matrix.os }}
     container: rust:${{ matrix.tag }}
 
     steps:
       ## notice: this is a pre checkout step
       ## notice: additional operations can be done prior to checkout
       ## - run: apk update && apk add bash cmake git python3 && python3 -m ensurepip
-      - run: apt-get update && apt-get install autoconf build-essential cmake libexpat1-dev libcurl4-openssl-dev libssl-dev git make nodejs npm pkg-config python3 python-is-python3 sudo tcl zlib1g-dev -y
+      - run: apt-get update && apt-get install autoconf build-essential cmake libexpat1-dev libcurl4-openssl-dev libssl-dev libtool git make nodejs npm pkg-config python3 python-is-python3 sudo tcl zlib1g-dev -y
       - run: printenv
       - name: checkout@v3 fetch-depth submodules set-safe-dir true
         uses: actions/checkout@v3
