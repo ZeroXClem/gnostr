@@ -61,7 +61,7 @@ jobs:
       - run: make gnostr-org
       - run: make gnostr-proxy
       - run: make gnostr-sha256
-      - run: make secp256k1
+      - run: make libsecp256k1.a
       - run: make                 gnostr-all
       - run: make                     gnostr-install
       - run: make                         all
