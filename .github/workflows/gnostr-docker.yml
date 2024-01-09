@@ -1,6 +1,8 @@
 name: gnostr-docker
 
 on:
+  schedule:
+    - cron: '0 2 * * *' # run at 2 AM UTC
   pull_request:
     branches:
       - '*'
