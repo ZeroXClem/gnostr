@@ -23,13 +23,12 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-20.04
-
     strategy:
       fail-fast: false
       matrix:
+        os: ["ubuntu-latest", "macos-latest"]
         tag: ["latest", "slim-bullseye", "slim-bookworm"]
-
+    runs-on: ${{ matrix.os }}
     container: rust:${{ matrix.tag }}
 
     steps:
