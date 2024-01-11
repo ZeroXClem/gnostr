@@ -28,7 +28,7 @@ jobs:
       GNOSTR: "gnostr"
     strategy:
       matrix:
-        os: [ubuntu-latest, macos-latest]
+        os: [ubuntu-latest]#, macos-latest]
     runs-on: ${{ matrix.os }}
     steps:
       - name: echo test
