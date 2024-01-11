@@ -73,9 +73,9 @@ gnostr-docs:docker-start doc/gnostr.1## 	docs: convert README to doc/gnostr.1
 	@bash -c 'cat $(PWD)/sources/HEADER.md                >  $(PWD)/README.md 2>/dev/null'
 	@bash -c 'cat $(PWD)/sources/COMMANDS.md              >> $(PWD)/README.md 2>/dev/null'
 	@bash -c 'cat $(PWD)/sources/FOOTER.md                >> $(PWD)/README.md 2>/dev/null'
-	@type -P pandoc && pandoc -s README.md -o index.html 2>/dev/null || \
-		type -P docker && docker pull pandoc/latex:2.6 && \
-		docker run --rm --volume "`pwd`:/data" --user `id -u`:`id -g` pandoc/latex:2.6 README.md
+	##@type -P pandoc && pandoc -s README.md -o index.html 2>/dev/null || \
+	##	type -P docker && docker pull pandoc/latex:2.6 && \
+	##	docker run --rm --volume "`pwd`:/data" --user `id -u`:`id -g` pandoc/latex:2.6 README.md
 	git add --ignore-errors sources/*.md 2>/dev/null || echo && git add --ignore-errors *.md 2>/dev/null || echo
 #@git ls-files -co --exclude-standard | grep '\.md/$\' | xargs git
 
