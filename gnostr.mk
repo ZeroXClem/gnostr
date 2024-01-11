@@ -287,6 +287,7 @@ bins-test-fetch-by-id:
 .PHONY:tui gnostr-tui
 gnostr-tui:tui
 tui:
+	@devtools/refresh-submodules.sh tui
 	@cd tui && make build-release install
 
 deps/gnostr-legit/.git:gnostr-git
