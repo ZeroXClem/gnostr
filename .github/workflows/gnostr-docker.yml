@@ -48,6 +48,7 @@ jobs:
       - run: touch ~/GITHUB_TOKEN.txt
       - run: git config --global --add safe.directory /__w/gnostr/gnostr || true
       - run: make detect
+      - run: ./build.cmake.sh
       - run: cmake .
       - run: make
       - run: make nvm
