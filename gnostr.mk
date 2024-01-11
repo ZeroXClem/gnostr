@@ -23,7 +23,7 @@ ARS                                    := libsecp256k1.a
 LIB_ARS                                := libsecp256k1.a libgit.a
 
 #SUBMODULES                              = deps/secp256k1
-SUBMODULES                              = deps/secp256k1 deps/git deps/gnostr-cat deps/hyper-nostr deps/hyper-sdk deps/gnostr-act deps/openssl deps/gnostr-py deps/gnostr-aio deps/gnostr-legit deps/gnostr-relay deps/gnostr-proxy deps/gnostr-relay ext/boost_1_82_0
+SUBMODULES                              = deps/secp256k1 deps/git deps/gnostr-cat deps/gnostr-act deps/openssl deps/gnostr-py deps/gnostr-aio deps/gnostr-legit deps/gnostr-relay deps/gnostr-proxy deps/gnostr-relay ext/boost_1_82_0
 
 VERSION                                :=$(shell cat version)
 export VERSION
@@ -156,7 +156,7 @@ diff-log:
 	@gnostr-git-reflog -h > tests/gnostr-git-reflog-h.log
 	@gnostr-relay -h > tests/gnostr-relay-h.log
 .PHONY:submodules
-submodules:deps/secp256k1/.git deps/gnostr-git/.git deps/gnostr-cat/.git deps/hyper-sdk/.git deps/hyper-nostr/.git deps/gnostr-aio/.git deps/gnostr-py/.git deps/gnostr-act/.git deps/gnostr-legit/.git deps/gnostr-proxy/.git #ext/boost_1_82_0/.git ## 	refresh-submodules
+submodules:deps/secp256k1/.git deps/gnostr-git/.git deps/gnostr-cat/.git deps/hyper-sdk/.git deps/gnostr-aio/.git deps/gnostr-py/.git deps/gnostr-act/.git deps/gnostr-legit/.git deps/gnostr-proxy/.git #ext/boost_1_82_0/.git ## 	refresh-submodules
 	git submodule update --init --recursive
 
 #.PHONY:deps/secp256k1/config.log
@@ -396,10 +396,10 @@ gnostr-grep:deps/gnostr-grep/target/release/gnostr-grep## 	gnostr-grep
 
 
 
-deps/hyper-sdk/.git:
-	@devtools/refresh-submodules.sh deps/hyper-sdk
-deps/hyper-nostr/.git:
-	@devtools/refresh-submodules.sh deps/hyper-nostr
+#deps/hyper-sdk/.git:
+#	@devtools/refresh-submodules.sh deps/hyper-sdk
+#deps/hyper-nostr/.git:
+#	@devtools/refresh-submodules.sh deps/hyper-nostr
 deps/openssl/.git:
 	@devtools/refresh-submodules.sh deps/openssl
 deps/gnostr-py/.git:
