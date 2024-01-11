@@ -67,7 +67,7 @@ all: submodules gnostr gnostr-git gnostr-get-relays ##gnostr-docs## 	make gnostr
 
 ##gnostr-docs:
 ##	docker-start doc/gnostr.1
-gnostr-docs:docker-start doc/gnostr.1## 	docs: convert README to doc/gnostr.1
+gnostr-docs:doc/gnostr.1 doc## 	docs: convert README to doc/gnostr.1
 #@echo docs
 	@bash -c 'if pgrep MacDown; then pkill MacDown; fi; 2>/dev/null'
 	@bash -c 'cat $(PWD)/sources/HEADER.md                >  $(PWD)/README.md 2>/dev/null'
@@ -80,7 +80,8 @@ gnostr-docs:docker-start doc/gnostr.1## 	docs: convert README to doc/gnostr.1
 #@git ls-files -co --exclude-standard | grep '\.md/$\' | xargs git
 
 doc-gnostr-act:gnostr-act
-	help2man gnostr-act | sed 's/act /gnostr\-act /g' | sed 's/ACT /GNOSTR\-ACT /g' > doc/gnostr-act.1 #&& man doc/gnostr-act.1
+	[ -x $(shell which gnostr-act) ] || $(MAKE) gnostr-act
+	[ -x $(shell which gnostr-act) ] && help2man gnostr-act | sed 's/act /gnostr\-act /g' | sed 's/ACT /GNOSTR\-ACT /g' > doc/gnostr-act.1 #&& man doc/gnostr-act.1
 doc-gnostr-cat:gnostr-cat
 	#help2man gnostr-cat > doc/gnostr-cat.1 #&& man doc/gnostr-cat.1
 doc-gnostr-git:gnostr-git
