@@ -73,9 +73,9 @@ jobs:
         run: |
           echo $GNOSTR
 
-      - name:  apt-get update || brew install virtualenv
+      - name:  apt-get update && apt-get install jq || brew install virtualenv
         run: |
-          sudo apt-get update || brew install virtualenv
+          sudo apt-get update && apt-get install jq || brew install virtualenv
           touch ~/GITHUB_TOKEN.txt
 
       - run: python3 -m pip install virtualenv
